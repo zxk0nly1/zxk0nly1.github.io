@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-28T15:27:36.409Z</updated>
+  <updated>2019-11-28T17:28:23.083Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Yilia主题配置访问量</title>
+    <link href="http://yoursite.com/2019/11/29/Yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E9%87%8F/"/>
+    <id>http://yoursite.com/2019/11/29/Yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E9%87%8F/</id>
+    <published>2019-11-28T17:25:39.000Z</published>
+    <updated>2019-11-28T17:28:23.083Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-yilia页脚添加总访问量"><a href="#hexo-yilia页脚添加总访问量" class="headerlink" title="hexo+yilia页脚添加总访问量"></a>hexo+yilia页脚添加总访问量</h2><h5 id="脚本方法使用不蒜子计数"><a href="#脚本方法使用不蒜子计数" class="headerlink" title="脚本方法使用不蒜子计数"></a>脚本方法使用不蒜子计数</h5><p>安装脚本</p><p>要使用不蒜子（官网：<a href="http://busuanzi.ibruce.info/）必须在页面中引入busuanzi.js，代码如下：" target="_blank" rel="noopener">http://busuanzi.ibruce.info/）必须在页面中引入busuanzi.js，代码如下：</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">            &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br></pre></td></tr></table></figure><p>在themes/yilia/layout/_partial/footer中添加上述脚本</p><p><img src="https://img2018.cnblogs.com/blog/1338341/201810/1338341-20181027102159206-1713161383.png" alt="footer_busuanzi"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;hexo-yilia页脚添加总访问量&quot;&gt;&lt;a href=&quot;#hexo-yilia页脚添加总访问量&quot; class=&quot;headerlink&quot; title=&quot;hexo+yilia页脚添加总访问量&quot;&gt;&lt;/a&gt;hexo+yilia页脚添加总访问量&lt;/h2&gt;&lt;h5 id=&quot;脚
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔</title>
+    <link href="http://yoursite.com/2019/11/29/%E9%9A%8F%E7%AC%94/"/>
+    <id>http://yoursite.com/2019/11/29/%E9%9A%8F%E7%AC%94/</id>
+    <published>2019-11-28T17:15:00.000Z</published>
+    <updated>2019-11-28T17:18:47.981Z</updated>
+    
+    <content type="html"><![CDATA[<p>桎梏樊笼，让人感到窒息,天天繁重的功课压迫这着我脆弱疲惫的心。</p><p>尽管现在的生活枯燥无聊，尽管说现在每日学习到凌晨。</p><p>难免有压力，难免有困惑。但，无病呻吟，也不可取。唯有向上，唯有坚持。</p><p>这是我们毕业生的必然选择。老师不是说过吗，“有压力才有动力，既然改变不了什么，那就学着适应它。”</p><p>在每日两点一线的生活中，也不乏的向上的奋斗。我想我就像一颗埋在土里的种。</p><p>早晚会噗的冲破束缚住我的壳，长成一棵参天的大树。不论多高，天空永远是我的目标。</p><p>马云说过：“不吃苦，你要青春干嘛？”是的，我们在正值青春的大好年华里，不吃点苦，不去顽强拼搏，生活有何意义？</p><p>我不想在最能吃苦的日子里选择安逸，那么就去拼一拼吧，不就是中考吗，努力一定能考出真实自己！</p><p>加油吧！冲破囚牢，突破自己，方能化茧成蝶！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;桎梏樊笼，让人感到窒息,天天繁重的功课压迫这着我脆弱疲惫的心。&lt;/p&gt;
+&lt;p&gt;尽管现在的生活枯燥无聊，尽管说现在每日学习到凌晨。&lt;/p&gt;
+&lt;p&gt;难免有压力，难免有困惑。但，无病呻吟，也不可取。唯有向上，唯有坚持。&lt;/p&gt;
+&lt;p&gt;这是我们毕业生的必然选择。老师不是说过吗，“有
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="心得" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/%E5%BF%83%E5%BE%97/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -264,9 +321,9 @@ $ sudo firewall-cmd --reload    &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
       <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
     
     
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
       <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   
@@ -296,9 +353,9 @@ $ sudo firewall-cmd --reload    &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
       <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
-    
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   

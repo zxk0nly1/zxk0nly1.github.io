@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Yilia主题配置访问量</title>
+    <url>/2019/11/29/Yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E9%87%8F/</url>
+    <content><![CDATA[<h2 id="hexo-yilia页脚添加总访问量"><a href="#hexo-yilia页脚添加总访问量" class="headerlink" title="hexo+yilia页脚添加总访问量"></a>hexo+yilia页脚添加总访问量</h2><h5 id="脚本方法使用不蒜子计数"><a href="#脚本方法使用不蒜子计数" class="headerlink" title="脚本方法使用不蒜子计数"></a>脚本方法使用不蒜子计数</h5><p>安装脚本</p>
+<p>要使用不蒜子（官网：<a href="http://busuanzi.ibruce.info/）必须在页面中引入busuanzi.js，代码如下：" target="_blank" rel="noopener">http://busuanzi.ibruce.info/）必须在页面中引入busuanzi.js，代码如下：</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">            &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在themes/yilia/layout/_partial/footer中添加上述脚本</p>
+<p><img src="https://img2018.cnblogs.com/blog/1338341/201810/1338341-20181027102159206-1713161383.png" alt="footer_busuanzi"></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随笔</title>
+    <url>/2019/11/29/%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<p>桎梏樊笼，让人感到窒息,天天繁重的功课压迫这着我脆弱疲惫的心。</p>
+<p>尽管现在的生活枯燥无聊，尽管说现在每日学习到凌晨。</p>
+<p>难免有压力，难免有困惑。但，无病呻吟，也不可取。唯有向上，唯有坚持。</p>
+<p>这是我们毕业生的必然选择。老师不是说过吗，“有压力才有动力，既然改变不了什么，那就学着适应它。”</p>
+<p>在每日两点一线的生活中，也不乏的向上的奋斗。我想我就像一颗埋在土里的种。</p>
+<p>早晚会噗的冲破束缚住我的壳，长成一棵参天的大树。不论多高，天空永远是我的目标。</p>
+<p>马云说过：“不吃苦，你要青春干嘛？”是的，我们在正值青春的大好年华里，不吃点苦，不去顽强拼搏，生活有何意义？</p>
+<p>我不想在最能吃苦的日子里选择安逸，那么就去拼一拼吧，不就是中考吗，努力一定能考出真实自己！</p>
+<p>加油吧！冲破囚牢，突破自己，方能化茧成蝶！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2019/11/21/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -541,8 +579,8 @@ phpinfo();
         <category>JS</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>JS</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -561,8 +599,8 @@ phpinfo();
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>markdown</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>
