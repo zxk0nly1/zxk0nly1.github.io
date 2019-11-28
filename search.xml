@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/11/21/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo常用命令笔记</title>
+    <url>/2019/11/19/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><pre><code>npm install hexo -g #安装  
+npm update hexo -g #升级  
+hexo init #初始化</code></pre><h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><pre><code>hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章
+hexo p == hexo publish
+hexo g == hexo generate#生成
+hexo s == hexo server #启动服务预览
+hexo d == hexo deploy#部署</code></pre><a id="more"></a>
+<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><pre><code>hexo server #Hexo 会监视文件变动并自动更新，您无须重启服务器。
+hexo server -s #静态模式
+hexo server -p 5000 #更改端口
+hexo server -i 192.168.1.1 #自定义 IP
+
+hexo clean #清除缓存 网页正常情况下可以忽略此条命令
+hexo g #生成静态网页
+hexo d #开始部署</code></pre><h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><pre><code>hexo generate #使用 Hexo 生成静态文件快速而且简单
+hexo generate --watch #监视文件变动</code></pre><h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><pre><code>两个命令的作用是相同的
+hexo generate --deploy
+hexo deploy --generate</code></pre><p>hexo deploy -g<br>hexo server -g</p>
+]]></content>
+      <categories>
+        <category>Shell</category>
+      </categories>
+      <tags>
+        <tag>hexo Shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh远程免密登录</title>
+    <url>/2019/11/19/ssh%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="利用ssh-key实现Linux免密访问github"><a href="#利用ssh-key实现Linux免密访问github" class="headerlink" title="利用ssh key实现Linux免密访问github"></a>利用ssh key实现Linux免密访问github</h2><p>使用git bash的windows用户或者linux用户对上传到远端版本库软件（github，gitee等代码托管仓库）时，<br>发现每次git push 或者是 git pull等命令是需要输入自己的账号和密钥时，<br>一次两次还好，每次都做这没啥技术含量的动作，就感觉很繁琐和烦躁，<br>所以，学会使用ssh免密访问必不可少，对我们之后的工作，学习都有好处（这里以linux命令为演示，Windows用git bash一样的处理）</p>
+<h3 id="1-生成ssh-key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）"><a href="#1-生成ssh-key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）" class="headerlink" title="1 生成ssh key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）"></a>1 生成ssh key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）</h3><pre><code>[root@localhost ~]# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:CvE7bPPDYb1EnQsGsDjs8uqUoiW2XH8g36ycVixmJBw root@localhost.localdomain
+The key&apos;s randomart image is:
++---[RSA 2048]----+
+|      ..         |
+|   E . ..        |
+|  . * .  . . .   |
+|   + =    + o    |
+|  . = o S+ . .   |
+|   = B =o o .    |
+|o.+.* &amp;o o .     |
+|+=o.o+.Bo .      |
+|.+o .=o ..       |
++----[SHA256]-----+
+[root@localhost ~]#</code></pre><a id="more"></a>
+<h3 id="2-将公钥文件-root-ssh-id-rsa-pub上传到github"><a href="#2-将公钥文件-root-ssh-id-rsa-pub上传到github" class="headerlink" title="2 将公钥文件/root/.ssh/id_rsa.pub上传到github"></a>2 将公钥文件/root/.ssh/id_rsa.pub上传到github</h3><p>在个人用户头像选择settings–&gt;&gt;SSH and GPG keys</p>
+<p>显示如下</p>
+<p><img src="https://img-blog.csdn.net/20180609185051636" alt="ssh" title="ssh"></p>
+<p>用命令行输入指令并复制显示出来的数据（或用记事本打开文件，然后拷贝内容到github）</p>
+<pre><code>[root@localhost ~]#cd
+[root@localhost ~]#cd .ssh/
+[root@localhost ~]#cat id_rsa.pub</code></pre><p><img src="https://img-blog.csdn.net/20180609185425339" alt="key" title="key"></p>
+<h3 id="3-测试（切换为ssh方式，而不是默认的http方式）"><a href="#3-测试（切换为ssh方式，而不是默认的http方式）" class="headerlink" title="3 测试（切换为ssh方式，而不是默认的http方式）"></a>3 测试（切换为ssh方式，而不是默认的http方式）</h3><p><img src="https://img-blog.csdn.net/20180609190534672" alt="test" title="test"></p>
+<pre><code>[root@localhost github]# git remote add origin git@github.com:username/repository.git
+//username:你的github或其它远程代码托管仓库的用户名，repository:你的克隆仓库
+[root@localhost github]# git push -u origin master</code></pre>]]></content>
+      <categories>
+        <category>Linux shell</category>
+      </categories>
+      <tags>
+        <tag>Linux SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue学习笔记</title>
+    <url>/2019/11/19/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="vue学习笔记"><a href="#vue学习笔记" class="headerlink" title="vue学习笔记"></a>vue学习笔记</h2><h3 id="开篇语"><a href="#开篇语" class="headerlink" title="开篇语"></a>开篇语</h3><p>建议新手学习,请不要用npm的方式(vue-cli,vue脚手架),太复杂了. 请直接下载vue.js文件本地引入,就上手学习吧<br>参照菜鸟教程网站的vue.js教程<a href="https://www.runoob.com/vue2/vue-start.html" target="_blank" rel="noopener">https://www.runoob.com/vue2/vue-start.html</a><br>从基础开始理解和上手,请看我写的中文注释,帮助理解</p>
+<h3 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h3><p>直接把菜鸟教程的例子复制到自己的代码编辑器里看更好</p>
+<p>菜鸟教程的好处我觉得之一是其有很多实例子,那么就应该拿例子复制回来本地自己的编辑器看.</p>
+<p>因为菜鸟的例子左边代码,右边视图.就很小了,不好审视.</p>
+<p>要打开浏览器控制台(比如我们推荐用谷歌浏览器chrome在浏览器按f12就可以打开控制台),</p>
+<p>直观的看到js和dom层,比看到界面更重要的是看到dom层的实际操作变化</p>
+<p><img src="https://segmentfault.com/img/bVbcvzG?w=1598&h=918" alt="vue" title="vue"></p>
+<h3 id="一个简单的vue-js例子"><a href="#一个简单的vue-js例子" class="headerlink" title="一个简单的vue.js例子"></a>一个简单的vue.js例子</h3><pre><code>&lt;body&gt;
+ &lt;h2&gt;vue&lt;/h2&gt;
+  &lt;div id=&quot;myapp&quot;&gt;
+   &lt;p title=&quot;哈哈&quot;&gt;学习vue很舒服&lt;/p&gt; 
+   &lt;p&gt;{{ message }}&lt;/p&gt; &lt;p&gt;{{ mz }}&lt;/p&gt; 
+   &lt;/div&gt; 
+   &lt;script src=&quot;js/vue.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
+   &lt;script type=&quot;text/javascript&quot;&gt; 
+   var myapp = new Vue( //新建一个Vue 实例并赋值给变量&apos;myapp&apos;,这时变量myapp就是这个vue实例 
+   { 
+       el:&apos;#myapp&apos;,
+       data:{ message:&apos;hello Vue&apos;,  //myapp.message = &apos;hello Vue&apos; 
+       mz:&apos;张三33&apos;  //myapp.mz = &apos;张三33&apos; } } 
+   ); 
+   &lt;/script&gt; 
+   &lt;/body&gt;</code></pre><a id="more"></a>
+<h3 id="vue-js一个简单例子的基础说明系列-第1个例子"><a href="#vue-js一个简单例子的基础说明系列-第1个例子" class="headerlink" title="vue.js一个简单例子的基础说明系列-[第1个例子]"></a>vue.js一个简单例子的基础说明系列-[第1个例子]</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;vue一个简单例子的基础说明&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;vue_det&quot;&gt;
+&lt;!--  {{ }} 用于输出对象属性和函数返回值。  --&gt;
+&lt;h3&gt;site : {{site}}&lt;/h3&gt;
+&lt;h3&gt;url : {{url}}&lt;/h3&gt;
+&lt;h3&gt;alexa : {{alexa}}&lt;/h3&gt;
+&lt;h3&gt;{{details()}}&lt;/h3&gt;
+&lt;/div&gt;
+&lt;script src=&quot;js/vue.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var vm = new Vue({
+el: &apos;#vue_det&apos;,//el 参数，它是 DOM 元素中的 id,这意味着我们在该div里面作业,外面不受影响,不会影响外面
+data: {//data 用于定义属性，实例中有三个属性分别为：site、url、alexa。
+site: &quot;菜鸟教程&quot;,//这是一个属性site,其值是字符串&quot;菜鸟教程&quot;
+url: &quot;www.runoob.com&quot;,//同上
+alexa: &quot;10000&quot;//这是一个属性alexa,其值是字符串&quot;10000&quot;
+},
+methods: {//methods 用于定义的函数，可以通过 return 来返回函数值。
+details: function() {
+return this.site + &quot; - 学的不仅是技术，更是梦想！&quot;;
+}
+}
+})
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><h3 id="vue-js一个简单例子的基础说明系列-第2个例子-—实例属性与方法-它们都有前缀"><a href="#vue-js一个简单例子的基础说明系列-第2个例子-—实例属性与方法-它们都有前缀" class="headerlink" title="vue.js一个简单例子的基础说明系列-[第2个例子]—实例属性与方法,它们都有前缀 $"></a>vue.js一个简单例子的基础说明系列-[第2个例子]—实例属性与方法,它们都有前缀 $</h3><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;vue.js一个简单例子的基础说明系列-[第2个例子]&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;vue_det&quot;&gt;
+&lt;h1&gt;site : {{site}}&lt;/h1&gt;
+&lt;h1&gt;url : {{url}}&lt;/h1&gt;
+&lt;h1&gt;Alexa : {{alexa}}&lt;/h1&gt;
+&lt;/div&gt;
+&lt;script src=&quot;js/vue.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// 我们的数据对象
+//除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来。
+var data = { site: &quot;菜鸟教程&quot;, url: &quot;www.runoob.com&quot;, alexa: 10000}//定义一个js变量.即js属性
+var xm = &apos;小明&apos;;//定义一个js变量.即js属性
+var vm = new Vue({
+el: &apos;#vue_det&apos;,//定义一个vue属性el,要使用vm.$el才能访问
+data: data//定义一个vue属性data,要使用vm.$data才能访问
+})
+//       我们在浏览器控制台访问上面的那些变量和属性,直接通过.的方式
+//        document的子是vm,vm的子是el和data,document.vm能访问vm,而vm.el这样写是
+                                    //访问不到vm的,要这样写vm.$el才能访问,因为el是Vue实例的直接子变量
+//       data  -&gt;{__ob__: wr}   //是对象
+// xm   -&gt;&apos;小明&apos;
+// el   -&gt;VM113:1 Uncaught ReferenceError: el is not defined    //这样是访问不了的,因为el不是js的全局变量/属性
+// vm.el   -&gt;undefined    //这样也不行,要写成vm.$el才对
+//       vm.$el   -&gt;&lt;div id=&quot;vue-det&quot;&gt;...&lt;/div&gt;    //这样才是访问vue的
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexoBlog</title>
+    <url>/2019/11/14/hexoBlog/</url>
+    <content><![CDATA[<h1 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h1><hr>
+<h2 id="一、安装-nodejs"><a href="#一、安装-nodejs" class="headerlink" title="一、安装 nodejs"></a>一、安装 nodejs</h2><p>从<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener" title="nodejs">node.js下载页面</a>, 安装一路下一步就ok<br><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-nodejs.png" alt="nodejs" title="nodejs"></p>
+<hr>
+<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><h2 id="安装完nodejs后，-用npm安装hexo"><a href="#安装完nodejs后，-用npm安装hexo" class="headerlink" title="安装完nodejs后， 用npm安装hexo"></a>安装完nodejs后， 用npm安装hexo</h2><pre><code>$ npm install -g hexo-cli 
+$ hexo -v</code></pre><hr>
+<h2 id><a href="#" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo.png" alt="hexo-v" title="hexo-v"></h2><h2 id="三、使用hexo"><a href="#三、使用hexo" class="headerlink" title="三、使用hexo"></a>三、使用hexo</h2><hr>
+<h3 id="1、用hexo初始化并生成blog"><a href="#1、用hexo初始化并生成blog" class="headerlink" title="1、用hexo初始化并生成blog"></a>1、用hexo初始化并生成blog</h3><hr>
+<pre><code>$ hexo init my_hexo</code></pre><hr>
+<h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/hexo-init-blog.png" alt="my_hexo" title="my_hexo"></h2><a id="more"></a>
+<h3 id="2、安装依赖，然后用hexo-generate，-hexo-g-生成静态页面"><a href="#2、安装依赖，然后用hexo-generate，-hexo-g-生成静态页面" class="headerlink" title="2、安装依赖，然后用hexo generate，(hexo g)生成静态页面"></a>2、安装依赖，然后用hexo generate，(hexo g)生成静态页面</h3><pre><code>$cd my_hexo
+$ls -l
+$npm install
+(这里可能会很慢，所以需要修改一下npm安装源)
+$npm config set registry https://registry.npm.taobao.org 
+（或者下载cnpm）
+$ npm install cnpm -g
+$ cnpm install
+$ hexo generate //生成静态页面</code></pre><hr>
+<h2 id="-2"><a href="#-2" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo-deps.png" alt="hexo-g" title="hexo-g"></h2><h3 id="3、生成静态页面后，可以用hexo-server-或者hexo-s-启动服务器，并通过http-localhost-4000访问"><a href="#3、生成静态页面后，可以用hexo-server-或者hexo-s-启动服务器，并通过http-localhost-4000访问" class="headerlink" title="3、生成静态页面后，可以用hexo server(或者hexo s)启动服务器，并通过http://localhost:4000访问"></a>3、生成静态页面后，可以用hexo server(或者hexo s)启动服务器，并通过<a href="http://localhost:4000访问" target="_blank" rel="noopener">http://localhost:4000访问</a></h3><p><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/blog-index.png" alt="hexo-s" title="hexo-s"></p>
+<h5 id="至此，hexo博客就部署好了"><a href="#至此，hexo博客就部署好了" class="headerlink" title="至此，hexo博客就部署好了"></a>至此，hexo博客就部署好了</h5><p><em>下一讲，可以换一下hexo默认的主题和如何去写一篇博客</em></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos7</title>
+    <url>/2019/11/14/centos7/</url>
+    <content><![CDATA[<h1 id="centos7搭建LAMP环境"><a href="#centos7搭建LAMP环境" class="headerlink" title="centos7搭建LAMP环境"></a>centos7搭建LAMP环境</h1><hr>
+<h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><hr>
+<h3 id="1-安装apache"><a href="#1-安装apache" class="headerlink" title="1.安装apache"></a>1.安装apache</h3><hr>
+<h4 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h4><pre><code>$ sudo cat /etc/redhat-release</code></pre><hr>
+<h4 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h4><pre><code>$ sudo yum -y install httpd httpd-devel</code></pre><hr>
+<h4 id="启动apache服务"><a href="#启动apache服务" class="headerlink" title="启动apache服务"></a>启动apache服务</h4><pre><code>$ sudo systemctl httpd start</code></pre><hr>
+<h4 id="设置httpd服务开机启动"><a href="#设置httpd服务开机启动" class="headerlink" title="设置httpd服务开机启动"></a>设置httpd服务开机启动</h4><pre><code>$ sudo systemctl enable httpd</code></pre><hr>
+<h4 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h4><pre><code>$ sudo systemctl status httpd</code></pre><hr>
+<h4 id="防火墙设置开启80端口"><a href="#防火墙设置开启80端口" class="headerlink" title="防火墙设置开启80端口"></a>防火墙设置开启80端口</h4><pre><code>$ sudo firewall-cmd --permanent --zone=public  --add-service=http
+$ sudo firewall-cmd --permanent --zone=public  --add-service=https
+$ sudo firewall-cmd --reload    </code></pre><hr>
+<h4 id="确认80端口监听中"><a href="#确认80端口监听中" class="headerlink" title="确认80端口监听中"></a>确认80端口监听中</h4><pre><code>$ ss -tulp | grep httpd</code></pre><hr>
+<h4 id="查服务器IP"><a href="#查服务器IP" class="headerlink" title="查服务器IP"></a>查服务器IP</h4><pre><code>$ ip addr</code></pre><hr>
+<a id="more"></a>
+<h4 id="浏览器登陆"><a href="#浏览器登陆" class="headerlink" title="浏览器登陆"></a>浏览器登陆</h4><hr>
+<p><img src="https://images2015.cnblogs.com/blog/1054216/201707/1054216-20170721173607855-676796079.jpg" alt="img"><br>apache环境搭建成功！</p>
+<hr>
+<h3 id="2-安装mysql"><a href="#2-安装mysql" class="headerlink" title="2.安装mysql"></a>2.安装mysql</h3><hr>
+<h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><pre><code>$ sudo yum install mariadb mariadb-server mariadb-libs mariadb-devel
+$ sudo rpm -qa | grep mariadb</code></pre><hr>
+<h4 id="开启mysql服务，并设置开机启动，检查mysql状态"><a href="#开启mysql服务，并设置开机启动，检查mysql状态" class="headerlink" title="开启mysql服务，并设置开机启动，检查mysql状态"></a>开启mysql服务，并设置开机启动，检查mysql状态</h4><pre><code>$ sudo systemctl start  mariadb
+$ sudo systemctl enable  mariadb 
+$ ss -tulp |grep mysqld</code></pre><hr>
+<h4 id="数据库安全设置"><a href="#数据库安全设置" class="headerlink" title="数据库安全设置"></a>数据库安全设置</h4><pre><code>$ sudo mysql_secure_installation (yynyyy)</code></pre><hr>
+<h4 id="登陆数据库测试"><a href="#登陆数据库测试" class="headerlink" title="登陆数据库测试"></a>登陆数据库测试</h4><pre><code>$ mysql -uroot -p(输入设置好的密码)
+MariaDB [(none)]&gt; show databases;</code></pre><hr>
+<h3 id="3-安装php"><a href="#3-安装php" class="headerlink" title="3.安装php"></a>3.安装php</h3><hr>
+<h4 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h4><pre><code>$ sudo yum -y install php
+$ sudo rpm -ql php</code></pre><hr>
+<h4 id="连接mysql与php"><a href="#连接mysql与php" class="headerlink" title="连接mysql与php"></a>连接mysql与php</h4><pre><code>$ sudo yum -y install php-mysql
+$ sudo rpm -ql php-mysql</code></pre><hr>
+<h4 id="安装php常用模块"><a href="#安装php常用模块" class="headerlink" title="安装php常用模块"></a>安装php常用模块</h4><pre><code>$ sudo yum install -y php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap curl curl-devel php-bcmath</code></pre><hr>
+<h4 id="测试php"><a href="#测试php" class="headerlink" title="测试php"></a>测试php</h4><pre><code>$ cd /var/www/html
+$ ls
+$ pwd
+$ vi info.php</code></pre><?php
+phpinfo();
+?>
+
+
+
+<h2 id="按esc退出输入，输入’-wq’-保存并退出"><a href="#按esc退出输入，输入’-wq’-保存并退出" class="headerlink" title="(按esc退出输入，输入’:wq’,保存并退出)"></a>(按esc退出输入，输入’:wq’,保存并退出)</h2><h4 id="重启apache服务器"><a href="#重启apache服务器" class="headerlink" title="重启apache服务器"></a>重启apache服务器</h4><pre><code>$ sudo systemctl restart http</code></pre><hr>
+<h4 id="测试PHP"><a href="#测试PHP" class="headerlink" title="测试PHP"></a>测试PHP</h4><pre><code>在自己电脑浏览器输入服务器的ip/info.php(如192.168.190.130/info.php)，你可以看到已经安装的模块；</code></pre><p><img src="https://images2015.cnblogs.com/blog/1054216/201707/1054216-20170725104919468-1062733523.jpg" alt="img"></p>
+<h5 id="至此，你的centos7的Apache-Mysql-Php环境就搭建好了"><a href="#至此，你的centos7的Apache-Mysql-Php环境就搭建好了" class="headerlink" title="至此，你的centos7的Apache+Mysql+Php环境就搭建好了"></a>至此，你的centos7的Apache+Mysql+Php环境就搭建好了</h5>]]></content>
+      <categories>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>LAMP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>makedown案例</title>
+    <url>/2019/11/04/makedown%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<p><strong>Markdown是一种轻量级的「标记语言」</strong></p>
+<p><img src="https://www.mdeditor.com/images/logos/markdown.png" alt="markdown" title="markdown"></p>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
+<h2 id="MdEditor是一个在线编辑Markdown文档的编辑器"><a href="#MdEditor是一个在线编辑Markdown文档的编辑器" class="headerlink" title="MdEditor是一个在线编辑Markdown文档的编辑器"></a>MdEditor是一个在线编辑Markdown文档的编辑器</h2><p><em>MdEditor扩展了Markdown的功能（如表格、脚注、内嵌HTML等等），以使让Markdown转换成更多的格式，和更丰富的展示效果，这些功能原初的Markdown尚不具备。</em></p>
+<blockquote>
+<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
+</blockquote>
+<p>MdEditor源于Pandao的JavaScript开源项目，开源地址<a href="https://github.com/pandao/editor.md" target="_blank" rel="noopener" title="Editor.md">Editor.md</a>，并在MIT开源协议的许可范围内进行了优化，以适应广大用户群体的需求。向优秀的markdown开源编辑器原作者Pandao致敬。</p>
+<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
+<a id="more"></a>
+
+<h2 id="MdEditor的功能列表演示"><a href="#MdEditor的功能列表演示" class="headerlink" title="MdEditor的功能列表演示"></a>MdEditor的功能列表演示</h2><h1 id="标题H1"><a href="#标题H1" class="headerlink" title="标题H1"></a>标题H1</h1><h2 id="标题H2"><a href="#标题H2" class="headerlink" title="标题H2"></a>标题H2</h2><h3 id="标题H3"><a href="#标题H3" class="headerlink" title="标题H3"></a>标题H3</h3><h4 id="标题H4"><a href="#标题H4" class="headerlink" title="标题H4"></a>标题H4</h4><h5 id="标题H5"><a href="#标题H5" class="headerlink" title="标题H5"></a>标题H5</h5><h6 id="标题H5-1"><a href="#标题H5-1" class="headerlink" title="标题H5"></a>标题H5</h6><h3 id="字符效果和横线等"><a href="#字符效果和横线等" class="headerlink" title="字符效果和横线等"></a>字符效果和横线等</h3><hr>
+<p><del>删除线</del> <s>删除线（开启识别HTML标签时）</s></p>
+<p><em>斜体字</em>      <em>斜体字</em></p>
+<p><strong>粗体</strong>  <strong>粗体</strong></p>
+<p><strong><em>粗斜体</em></strong> <strong><em>粗斜体</em></strong></p>
+<p>上标：X<sub>2</sub>，下标：O<sup>2</sup></p>
+<p><strong>缩写(同HTML的abbr标签)</strong></p>
+<blockquote>
+<p>即更长的单词或短语的缩写形式，前提是开启识别HTML标签时，已默认开启</p>
+</blockquote>
+<p>The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.</p>
+<h3 id="引用-Blockquotes"><a href="#引用-Blockquotes" class="headerlink" title="引用 Blockquotes"></a>引用 Blockquotes</h3><blockquote>
+<p>引用文本 Blockquotes</p>
+</blockquote>
+<p>引用的行内混合 Blockquotes</p>
+<blockquote>
+<p>引用：如果想要插入空白换行<code>即&lt;br /&gt;标签</code>，在插入处先键入两个以上的空格然后回车即可，<a href="https://www.mdeditor.com/" target="_blank" rel="noopener">普通链接</a>。</p>
+</blockquote>
+<h3 id="锚点与链接-Links"><a href="#锚点与链接-Links" class="headerlink" title="锚点与链接 Links"></a>锚点与链接 Links</h3><p><a href="https://www.mdeditor.com/" target="_blank" rel="noopener">普通链接</a><br><a href="https://www.mdeditor.com/" target="_blank" rel="noopener" title="普通链接带标题">普通链接带标题</a><br>直接链接：<a href="https://www.mdeditor.com" target="_blank" rel="noopener">https://www.mdeditor.com</a><br>[锚点链接][anchor-id]<br>[anchor-id]: <a href="https://www.mdeditor.com/" target="_blank" rel="noopener">https://www.mdeditor.com/</a><br><a href="mailto:test.test@gmail.com" target="_blank" rel="noopener">mailto:test.test@gmail.com</a><br>GFM a-tail link @pandao<br>邮箱地址自动链接 <a href="mailto:test.test@gmail.com" target="_blank" rel="noopener">test.test@gmail.com</a>  <a href="mailto:www@vip.qq.com" target="_blank" rel="noopener">www@vip.qq.com</a></p>
+<blockquote>
+<p>@pandao</p>
+</blockquote>
+<h3 id="多语言代码高亮-Codes"><a href="#多语言代码高亮-Codes" class="headerlink" title="多语言代码高亮 Codes"></a>多语言代码高亮 Codes</h3><h4 id="行内代码-Inline-code"><a href="#行内代码-Inline-code" class="headerlink" title="行内代码 Inline code"></a>行内代码 Inline code</h4><p>执行命令：<code>npm install marked</code></p>
+<h4 id="缩进风格"><a href="#缩进风格" class="headerlink" title="缩进风格"></a>缩进风格</h4><p>即缩进四个空格，也做为实现类似 <code>&lt;pre&gt;</code> 预格式化文本 ( Preformatted Text ) 的功能。</p>
+<pre><code>&lt;?php
+    echo &quot;Hello world!&quot;;
+?&gt;</code></pre><p>预格式化文本：</p>
+<pre><code>| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |</code></pre><h4 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"Hello world!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="HTML-代码-HTML-codes"><a href="#HTML-代码-HTML-codes" class="headerlink" title="HTML 代码 HTML codes"></a>HTML 代码 HTML codes</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mate</span> <span class="attr">charest</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"Editor.md, Markdown, Editor"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">body</span>&#123;<span class="attribute">font-size</span>:<span class="number">14px</span>;<span class="attribute">color</span>:<span class="number">#444</span>;<span class="attribute">font-family</span>: <span class="string">"Microsoft Yahei"</span>, Tahoma, <span class="string">"Hiragino Sans GB"</span>, Arial;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">ul</span>&#123;<span class="attribute">list-style</span>: none;&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:none;<span class="attribute">vertical-align</span>: middle;&#125;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"text-xxl"</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"text-green"</span>&gt;</span>Plain text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="图片-Images"><a href="#图片-Images" class="headerlink" title="图片 Images"></a>图片 Images</h3><p>图片加链接 (Image + Link)：</p>
+<p><a href="https://www.mdeditor.com/images/logos/markdown.png" target="_blank" rel="noopener" title="markdown"><img src="https://www.mdeditor.com/images/logos/markdown.png" alt></a></p>
+<blockquote>
+<p>Follow your heart.</p>
+</blockquote>
+<hr>
+<h3 id="列表-Lists"><a href="#列表-Lists" class="headerlink" title="列表 Lists"></a>列表 Lists</h3><h4 id="无序列表（减号）Unordered-Lists"><a href="#无序列表（减号）Unordered-Lists" class="headerlink" title="无序列表（减号）Unordered Lists (-)"></a>无序列表（减号）Unordered Lists (-)</h4><ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h4 id="无序列表（星号）Unordered-Lists"><a href="#无序列表（星号）Unordered-Lists" class="headerlink" title="无序列表（星号）Unordered Lists (*)"></a>无序列表（星号）Unordered Lists (*)</h4><ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<h4 id="无序列表（加号和嵌套）Unordered-Lists"><a href="#无序列表（加号和嵌套）Unordered-Lists" class="headerlink" title="无序列表（加号和嵌套）Unordered Lists (+)"></a>无序列表（加号和嵌套）Unordered Lists (+)</h4><ul>
+<li>列表一</li>
+<li>列表二<ul>
+<li>列表二-1</li>
+<li>列表二-2</li>
+<li>列表二-3</li>
+</ul>
+</li>
+<li>列表三<ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+</li>
+</ul>
+<h4 id="有序列表-Ordered-Lists"><a href="#有序列表-Ordered-Lists" class="headerlink" title="有序列表 Ordered Lists (-)"></a>有序列表 Ordered Lists (-)</h4><ol>
+<li>第一行</li>
+<li>第二行</li>
+<li>第三行</li>
+</ol>
+<h4 id="GFM-task-list"><a href="#GFM-task-list" class="headerlink" title="GFM task list"></a>GFM task list</h4><ul>
+<li><input checked disabled type="checkbox"> GFM task list 1</li>
+<li><input checked disabled type="checkbox"> GFM task list 2</li>
+<li><input disabled type="checkbox"> GFM task list 3<ul>
+<li><input disabled type="checkbox"> GFM task list 3-1</li>
+<li><input disabled type="checkbox"> GFM task list 3-2</li>
+<li><input disabled type="checkbox"> GFM task list 3-3</li>
+</ul>
+</li>
+<li><input disabled type="checkbox"> GFM task list 4<ul>
+<li><input disabled type="checkbox"> GFM task list 4-1</li>
+<li><input disabled type="checkbox"> GFM task list 4-2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="绘制表格-Tables"><a href="#绘制表格-Tables" class="headerlink" title="绘制表格 Tables"></a>绘制表格 Tables</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr>
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Function name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>help()</code></td>
+<td>Display the help window.</td>
+</tr>
+<tr>
+<td><code>destroy()</code></td>
+<td><strong>Destroy your computer!</strong></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Left-Aligned</th>
+<th align="center">Center Aligned</th>
+<th align="right">Right Aligned</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">col 3 is</td>
+<td align="center">some wordy text</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td align="left">col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td align="left">zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Computer</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td align="right">$1</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="特殊符号-HTML-Entities-Codes"><a href="#特殊符号-HTML-Entities-Codes" class="headerlink" title="特殊符号 HTML Entities Codes"></a>特殊符号 HTML Entities Codes</h4><p>&copy; &amp;  &uml; &trade; &iexcl; &pound;<br>&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot;</p>
+<p>X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;</p>
+<p>18&ordm;C  &quot;  &apos;</p>
+<p>[========]</p>
+<h3 id="Emoji表情-smiley"><a href="#Emoji表情-smiley" class="headerlink" title="Emoji表情 :smiley:"></a>Emoji表情 :smiley:</h3><blockquote>
+<p>Blockquotes :star:</p>
+</blockquote>
+<h4 id="GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x"><a href="#GFM-task-lists-amp-Emoji-amp-fontAwesome-icon-emoji-amp-editormd-logo-emoji-editormd-logo-5x" class="headerlink" title="GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:"></a>GFM task lists &amp; Emoji &amp; fontAwesome icon emoji &amp; editormd logo emoji :editormd-logo-5x:</h4><ul>
+<li><input checked disabled type="checkbox"> :smiley: @mentions, :smiley: #refs, <a href>links</a>, <strong>formatting</strong>, and <del>tags</del> supported :editormd-logo:;</li>
+<li><input checked disabled type="checkbox"> list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;</li>
+<li><input checked disabled type="checkbox"> [ ] :smiley: this is a complete item :smiley:;</li>
+<li><input disabled type="checkbox"> []this is an incomplete item <a href="#">test link</a> :fa-star: @pandao;</li>
+<li><input disabled type="checkbox"> [ ]this is an incomplete item :fa-star: :fa-gear:;<ul>
+<li><input disabled type="checkbox"> :smiley: this is an incomplete item <a href="#">test link</a> :fa-star: :fa-gear:;</li>
+<li><input disabled type="checkbox"> :smiley: this is  :fa-star: :fa-gear: an incomplete item <a href="#">test link</a>;</li>
+</ul>
+</li>
+</ul>
+<h4 id="反斜杠-Escape"><a href="#反斜杠-Escape" class="headerlink" title="反斜杠 Escape"></a>反斜杠 Escape</h4><p>*literal asterisks*</p>
+<p>[========]</p>
+<h3 id="科学公式-TeX-KaTeX"><a href="#科学公式-TeX-KaTeX" class="headerlink" title="科学公式 TeX(KaTeX)"></a>科学公式 TeX(KaTeX)</h3><p>$$E=mc^2$$</p>
+<p>行内的公式$$E=mc^2$$行内的公式，行内的$$E=mc^2$$公式。</p>
+<p>$$x &gt; y$$</p>
+<p>$$(\sqrt{3x-1}+(1+x)^2)$$</p>
+<p>$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$</p>
+<p>多行公式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">\left( \sum\_&#123;k=1&#125;^n a\_k b\_k \right)^2</span><br><span class="line">\leq</span><br><span class="line">\left( \sum\_&#123;k=1&#125;^n a\_k^2 \right)</span><br><span class="line">\left( \sum\_&#123;k=1&#125;^n b\_k^2 \right)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\displaystyle</span><br><span class="line">    \frac&#123;1&#125;&#123;</span><br><span class="line">        \Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;</span><br><span class="line">        \frac25 \pi&#125;&#125; = 1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;</span><br><span class="line">        1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span><br><span class="line">        &#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125;</span><br><span class="line">         &#123;1+\cdots&#125; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f(x) = \int_&#123;-\infty&#125;^\infty</span><br><span class="line">    \hat f(\xi)\,e^&#123;2 \pi i \xi x&#125;</span><br><span class="line">    \,d\xi</span><br></pre></td></tr></table></figure>
+<h3 id="分页符-Page-break"><a href="#分页符-Page-break" class="headerlink" title="分页符 Page break"></a>分页符 Page break</h3><blockquote>
+<p>Print Test: Ctrl + P</p>
+</blockquote>
+<p>[========]</p>
+<h3 id="绘制流程图-Flowchart"><a href="#绘制流程图-Flowchart" class="headerlink" title="绘制流程图 Flowchart"></a>绘制流程图 Flowchart</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st=&gt;start: 用户登陆</span><br><span class="line">op=&gt;operation: 登陆操作</span><br><span class="line">cond=&gt;condition: 登陆成功 Yes or No?</span><br><span class="line">e=&gt;end: 进入后台</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<p>[========]</p>
+<h3 id="绘制序列图-Sequence-Diagram"><a href="#绘制序列图-Sequence-Diagram" class="headerlink" title="绘制序列图 Sequence Diagram"></a>绘制序列图 Sequence Diagram</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></table></figure>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3>]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My first Blog article</title>
+    <url>/2019/11/04/My-first-Blog-article/</url>
+    <content><![CDATA[<h2 id="My-first-Blog-Acticle"><a href="#My-first-Blog-Acticle" class="headerlink" title="My first Blog Acticle"></a>My first Blog Acticle</h2><h3 id="前端的第一篇博客—-致自己"><a href="#前端的第一篇博客—-致自己" class="headerlink" title="前端的第一篇博客—-致自己"></a>前端的第一篇博客—-致自己</h3><pre><code>前端开发菜鸟，一直处于心神游离的状态，
+对于测试抛过来的bug从未达到过“神来杀神，佛来杀佛”的感觉，
+总结起来就是一个问题，自己技术不过关，重复出现的问题没能做及时总结和归档，
+所以决定从写前端博客开始，
+一来方便自己查阅和加深印象，
+二来也贡献于遇到同样问题的同胞，
+三来也是得到自我监督和公众监督的一种方式，
+希望能在前端这条路上越走越远</code></pre><a id="more"></a>
+<h3 id="Best-wishes-to-yourself"><a href="#Best-wishes-to-yourself" class="headerlink" title="Best wishes to yourself!"></a>Best wishes to yourself!</h3>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+</search>
