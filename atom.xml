@@ -321,9 +321,9 @@ $ sudo firewall-cmd --reload    &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
       <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
     
     
-      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
-    
       <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
     
   </entry>
   
@@ -353,9 +353,9 @@ $ sudo firewall-cmd --reload    &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
       <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
       <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
     
   </entry>
   

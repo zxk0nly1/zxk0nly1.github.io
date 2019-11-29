@@ -579,8 +579,8 @@ phpinfo();
         <category>JS</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>markdown</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -599,8 +599,8 @@ phpinfo();
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>blog</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
