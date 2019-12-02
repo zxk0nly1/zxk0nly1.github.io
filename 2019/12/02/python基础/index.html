@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Blog</title>
+  <title>python基础 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="1、python基础1、python中的变量2、python中的数据类型整型 浮点型 复数 布尔类型复数分为实部和虚部3、python中的算术运算符+*&#x2F;&#x2F;&#x2F; 地板除(取整运算)% 取余运算** 幂运算 4、if条件判断语句让程序根据条件选择性的执行某条或者某些语句123456if 条件表达式1:  语句块1elif 条件表达式2:  语句块2else:  语句块3 if与elif语句的区别当程序">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;python%E5%9F%BA%E7%A1%80&#x2F;index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="1、python基础1、python中的变量2、python中的数据类型整型 浮点型 复数 布尔类型复数分为实部和虚部3、python中的算术运算符+*&#x2F;&#x2F;&#x2F; 地板除(取整运算)% 取余运算** 幂运算 4、if条件判断语句让程序根据条件选择性的执行某条或者某些语句123456if 条件表达式1:  语句块1elif 条件表达式2:  语句块2else:  语句块3 if与elif语句的区别当程序">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-02T15:49:37.278Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -158,24 +162,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-ssh远程免密登录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-python基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/19/ssh%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">ssh远程免密登录</a>
+    <h1 class="article-title" itemprop="name">
+      python基础
     </h1>
   
 
         
         
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-<a href="/2019/11/19/ssh%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-11-19T15:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
+
+<a href="/2019/12/02/python%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2019-12-02T14:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
 </a>
 		
           <div style="margin-top:10px;">
@@ -183,7 +190,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">412字</span>
+        <span class="post-count">3.4k字</span>
       </span>
     </span>
 
@@ -192,7 +199,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">14分</span>
       </span>
     </span>
 </div>
@@ -202,32 +209,72 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="利用ssh-key实现Linux免密访问github"><a href="#利用ssh-key实现Linux免密访问github" class="headerlink" title="利用ssh key实现Linux免密访问github"></a>利用ssh key实现Linux免密访问github</h2><p>使用git bash的windows用户或者linux用户对上传到远端版本库软件（github，gitee等代码托管仓库）时，<br>发现每次git push 或者是 git pull等命令是需要输入自己的账号和密钥时，<br>一次两次还好，每次都做这没啥技术含量的动作，就感觉很繁琐和烦躁，<br>所以，学会使用ssh免密访问必不可少，对我们之后的工作，学习都有好处（这里以linux命令为演示，Windows用git bash一样的处理）</p>
-<h3 id="1-生成ssh-key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）"><a href="#1-生成ssh-key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）" class="headerlink" title="1 生成ssh key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）"></a>1 生成ssh key，使用默认保存位置（注意要求输入密码时直接回车，否则每次要输密码）</h3><pre><code>[root@localhost ~]# ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/root/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /root/.ssh/id_rsa.
-Your public key has been saved in /root/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:CvE7bPPDYb1EnQsGsDjs8uqUoiW2XH8g36ycVixmJBw root@localhost.localdomain
-The key&apos;s randomart image is:
-+---[RSA 2048]----+
-|      ..         |
-|   E . ..        |
-|  . * .  . . .   |
-|   + =    + o    |
-|  . = o S+ . .   |
-|   = B =o o .    |
-|o.+.* &amp;o o .     |
-|+=o.o+.Bo .      |
-|.+o .=o ..       |
-+----[SHA256]-----+
-[root@localhost ~]#</code></pre>
-        
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="1、python基础"><a href="#1、python基础" class="headerlink" title="1、python基础"></a>1、python基础</h1><h2 id="1、python中的变量"><a href="#1、python中的变量" class="headerlink" title="1、python中的变量"></a>1、python中的变量</h2><h2 id="2、python中的数据类型"><a href="#2、python中的数据类型" class="headerlink" title="2、python中的数据类型"></a>2、python中的数据类型</h2><h3 id="整型-浮点型-复数-布尔类型"><a href="#整型-浮点型-复数-布尔类型" class="headerlink" title="整型 浮点型 复数 布尔类型"></a>整型 浮点型 复数 布尔类型</h3><h3 id="复数分为实部和虚部"><a href="#复数分为实部和虚部" class="headerlink" title="复数分为实部和虚部"></a>复数分为实部和虚部</h3><h2 id="3、python中的算术运算符"><a href="#3、python中的算术运算符" class="headerlink" title="3、python中的算术运算符"></a>3、python中的算术运算符</h2><h2 id><a href="#" class="headerlink" title="+"></a>+</h2><p>*<br>/<br>// 地板除(取整运算)<br>% 取余运算<br>** 幂运算</p>
+<h2 id="4、if条件判断语句"><a href="#4、if条件判断语句" class="headerlink" title="4、if条件判断语句"></a>4、if条件判断语句</h2><h3 id="让程序根据条件选择性的执行某条或者某些语句"><a href="#让程序根据条件选择性的执行某条或者某些语句" class="headerlink" title="让程序根据条件选择性的执行某条或者某些语句"></a>让程序根据条件选择性的执行某条或者某些语句</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件表达式<span class="number">1</span>:</span><br><span class="line">  语句块<span class="number">1</span></span><br><span class="line"><span class="keyword">elif</span> 条件表达式<span class="number">2</span>:</span><br><span class="line">  语句块<span class="number">2</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  语句块<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h3 id="if与elif语句的区别"><a href="#if与elif语句的区别" class="headerlink" title="if与elif语句的区别"></a>if与elif语句的区别</h3><h3 id="当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行"><a href="#当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行" class="headerlink" title="当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行"></a>当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行</h3><h3 id="5、if语句的嵌套"><a href="#5、if语句的嵌套" class="headerlink" title="5、if语句的嵌套"></a>5、if语句的嵌套</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n=int(input(<span class="string">"请输入一个月份："</span>))</span><br><span class="line"><span class="keyword">if</span> <span class="number">1</span>&lt;=n&lt;=<span class="number">12</span>:</span><br><span class="line">  <span class="keyword">if</span> n&lt;=<span class="number">3</span>:</span><br><span class="line">    print(<span class="string">"春季！"</span>)</span><br><span class="line">  <span class="keyword">elif</span> n&lt;=<span class="number">6</span>:</span><br><span class="line">    print(<span class="string">"夏季！"</span>)</span><br><span class="line">  <span class="keyword">elif</span> n&lt;=<span class="number">9</span>:</span><br><span class="line">    print(<span class="string">"秋季！"</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"冬季！"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">"您输入的月份有误！"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、字符串-str"><a href="#6、字符串-str" class="headerlink" title="6、字符串 str"></a>6、字符串 str</h3><h3 id="在python中用引号引起来的部分都称为字符串"><a href="#在python中用引号引起来的部分都称为字符串" class="headerlink" title="在python中用引号引起来的部分都称为字符串"></a>在python中用引号引起来的部分都称为字符串</h3><h3 id="‘’"><a href="#‘’" class="headerlink" title="‘’"></a>‘’</h3><h3 id="“”"><a href="#“”" class="headerlink" title="“”"></a>“”</h3><h3 id="‘’’’’’"><a href="#‘’’’’’" class="headerlink" title="‘’’’’’"></a>‘’’’’’</h3><h3 id="“”””””"><a href="#“”””””" class="headerlink" title="“”””””"></a>“”””””</h3><h3 id="引号的区别"><a href="#引号的区别" class="headerlink" title="引号的区别:"></a>引号的区别:</h3><h3 id="1、单引号内的双引号不算做结束符"><a href="#1、单引号内的双引号不算做结束符" class="headerlink" title="1、单引号内的双引号不算做结束符"></a>1、单引号内的双引号不算做结束符</h3><h3 id="2、双引号内的单引号不算做结束符"><a href="#2、双引号内的单引号不算做结束符" class="headerlink" title="2、双引号内的单引号不算做结束符"></a>2、双引号内的单引号不算做结束符</h3><h3 id="3、三引号一般用于表示函数或者类的文档字符串"><a href="#3、三引号一般用于表示函数或者类的文档字符串" class="headerlink" title="3、三引号一般用于表示函数或者类的文档字符串"></a>3、三引号一般用于表示函数或者类的文档字符串</h3><h3 id="4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为-n"><a href="#4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为-n" class="headerlink" title="4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为\n"></a>4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为\n</h3><h3 id="7、字符串的运算-不可变序列"><a href="#7、字符串的运算-不可变序列" class="headerlink" title="7、字符串的运算(不可变序列)"></a>7、字符串的运算(不可变序列)</h3><h3 id="用于拼接字符串"><a href="#用于拼接字符串" class="headerlink" title="+ 用于拼接字符串"></a>+ 用于拼接字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n=int(input(<span class="string">"请输入一个月份："</span>))</span><br><span class="line"><span class="keyword">if</span> <span class="number">1</span>&lt;=n&lt;=<span class="number">12</span>:</span><br><span class="line">  <span class="keyword">if</span> n&lt;=<span class="number">3</span>:</span><br><span class="line">    print(<span class="string">"春季！"</span>)</span><br><span class="line">  <span class="keyword">elif</span> n&lt;=<span class="number">6</span>:</span><br><span class="line">    print(<span class="string">"夏季！"</span>)</span><br><span class="line">  <span class="keyword">elif</span> n&lt;=<span class="number">9</span>:</span><br><span class="line">    print(<span class="string">"秋季！"</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"冬季！"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  print(<span class="string">"您输入的月份有误！"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="用于原字符串与运算符右侧的字符串进行拼接"><a href="#用于原字符串与运算符右侧的字符串进行拼接" class="headerlink" title="+= 用于原字符串与运算符右侧的字符串进行拼接"></a>+= 用于原字符串与运算符右侧的字符串进行拼接</h3><h3 id="生成重复的字符串-只能和正整型数进行运算"><a href="#生成重复的字符串-只能和正整型数进行运算" class="headerlink" title="* 生成重复的字符串(只能和正整型数进行运算)"></a>* 生成重复的字符串(只能和正整型数进行运算)</h3><h3 id="生成重复的字符串"><a href="#生成重复的字符串" class="headerlink" title="*= 生成重复的字符串"></a>*= 生成重复的字符串</h3><h3 id="8、字符串的索引与切片"><a href="#8、字符串的索引与切片" class="headerlink" title="8、字符串的索引与切片"></a>8、字符串的索引与切片</h3><h3 id="索引-index"><a href="#索引-index" class="headerlink" title="索引 index"></a>索引 index</h3><h3 id="从字符串中获取任意一个字符"><a href="#从字符串中获取任意一个字符" class="headerlink" title="从字符串中获取任意一个字符"></a>从字符串中获取任意一个字符</h3><h3 id="索引分为正向索引和反向索引"><a href="#索引分为正向索引和反向索引" class="headerlink" title="索引分为正向索引和反向索引"></a>索引分为正向索引和反向索引</h3><h3 id="正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的"><a href="#正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的" class="headerlink" title="正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的"></a>正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的</h3><h3 id="索引为字符串的长度-1"><a href="#索引为字符串的长度-1" class="headerlink" title="索引为字符串的长度-1"></a>索引为字符串的长度-1</h3><h3 id="反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一"><a href="#反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一" class="headerlink" title="反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一"></a>反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一</h3><h3 id="个元素的索引为字符串长度的相反数"><a href="#个元素的索引为字符串长度的相反数" class="headerlink" title="个元素的索引为字符串长度的相反数"></a>个元素的索引为字符串长度的相反数</h3><h3 id="s-”A-B-C-D-E-F”"><a href="#s-”A-B-C-D-E-F”" class="headerlink" title="s=”A B C D E F”"></a>s=”A B C D E F”</h3><h3 id="正向索引-0-1-2-3-4-5"><a href="#正向索引-0-1-2-3-4-5" class="headerlink" title="正向索引 0 1 2 3 4 5"></a>正向索引 0 1 2 3 4 5</h3><h3 id="反向索引-6-5-4-3-2-1"><a href="#反向索引-6-5-4-3-2-1" class="headerlink" title="反向索引 -6 -5 -4 -3 -2 -1"></a>反向索引 -6 -5 -4 -3 -2 -1</h3><h3 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则:"></a>语法规则:</h3><h3 id="字符串-整数表达式"><a href="#字符串-整数表达式" class="headerlink" title="字符串[整数表达式]"></a>字符串[整数表达式]</h3><h3 id="切片-slice"><a href="#切片-slice" class="headerlink" title="切片 slice"></a>切片 slice</h3><h3 id="从字符串中获取连续或者带有一定间隔的字符"><a href="#从字符串中获取连续或者带有一定间隔的字符" class="headerlink" title="从字符串中获取连续或者带有一定间隔的字符"></a>从字符串中获取连续或者带有一定间隔的字符</h3><h3 id="语法规则-1"><a href="#语法规则-1" class="headerlink" title="语法规则:"></a>语法规则:</h3><h3 id="字符串-起始索引-终止索引-步长"><a href="#字符串-起始索引-终止索引-步长" class="headerlink" title="字符串[起始索引:终止索引:步长]"></a>字符串[起始索引:终止索引:步长]</h3><h3 id="起始索引-切片切下的位置"><a href="#起始索引-切片切下的位置" class="headerlink" title="起始索引:切片切下的位置"></a>起始索引:切片切下的位置</h3><h3 id="终止索引-切片的终止点，但是不包含终止点"><a href="#终止索引-切片的终止点，但是不包含终止点" class="headerlink" title="终止索引:切片的终止点，但是不包含终止点"></a>终止索引:切片的终止点，但是不包含终止点</h3><h3 id="步长：切片每次获取完元素后，移动的方向和偏移量-没有步长相当于步长为1"><a href="#步长：切片每次获取完元素后，移动的方向和偏移量-没有步长相当于步长为1" class="headerlink" title="步长：切片每次获取完元素后，移动的方向和偏移量(没有步长相当于步长为1)"></a>步长：切片每次获取完元素后，移动的方向和偏移量(没有步长相当于步长为1)</h3><h3 id="当步长为正数时，取正向切片"><a href="#当步长为正数时，取正向切片" class="headerlink" title="当步长为正数时，取正向切片"></a>当步长为正数时，取正向切片</h3><h3 id="当步长为负数时，取反向切片"><a href="#当步长为负数时，取反向切片" class="headerlink" title="当步长为负数时，取反向切片"></a>当步长为负数时，取反向切片</h3><h3 id="当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的"><a href="#当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的" class="headerlink" title="当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的"></a>当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的</h3><h3 id="索引，然后获取这个新索引所对应的元素，以此类推"><a href="#索引，然后获取这个新索引所对应的元素，以此类推" class="headerlink" title="索引，然后获取这个新索引所对应的元素，以此类推"></a>索引，然后获取这个新索引所对应的元素，以此类推</h3><h3 id="当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边"><a href="#当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边" class="headerlink" title="当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边"></a>当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边</h3><p>9、while循环</p>
+<h3 id="让程序根据条件重复的执行某条或某些语句"><a href="#让程序根据条件重复的执行某条或某些语句" class="headerlink" title="让程序根据条件重复的执行某条或某些语句"></a>让程序根据条件重复的执行某条或某些语句</h3><h3 id="从终端输入一个数字打印出如下的图形"><a href="#从终端输入一个数字打印出如下的图形" class="headerlink" title="从终端输入一个数字打印出如下的图形"></a>从终端输入一个数字打印出如下的图形</h3><h3 id="如输入：5"><a href="#如输入：5" class="headerlink" title="如输入：5"></a>如输入：5</h3><p>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 4 5<br>1 2 3 4 5</p>
+<h3 id="10、for循环"><a href="#10、for循环" class="headerlink" title="10、for循环"></a>10、for循环</h3><h3 id="遍历可迭代对象中的数据元素"><a href="#遍历可迭代对象中的数据元素" class="headerlink" title="遍历可迭代对象中的数据元素"></a>遍历可迭代对象中的数据元素</h3><h3 id="可迭代对象是指能够依次获取数据元素的对象"><a href="#可迭代对象是指能够依次获取数据元素的对象" class="headerlink" title="可迭代对象是指能够依次获取数据元素的对象"></a>可迭代对象是指能够依次获取数据元素的对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">i=循环变量初始值</span><br><span class="line">while 真值表达式:</span><br><span class="line">   语句块1</span><br><span class="line">else:</span><br><span class="line">  语句块2</span><br><span class="line"> </span><br><span class="line">n=int(input(&quot;请输入一个整数:&quot;))</span><br><span class="line">i=1</span><br><span class="line">while i&lt;=n:</span><br><span class="line">  j = 1</span><br><span class="line">  while j &lt;= n:</span><br><span class="line">    print(j, end=&quot; &quot;)</span><br><span class="line">    j += 1</span><br><span class="line">  print()</span><br><span class="line">  i+=1</span><br><span class="line">for 变量 in 可迭代对象:</span><br><span class="line">  语句块1</span><br><span class="line">else:</span><br><span class="line">  语句块2</span><br></pre></td></tr></table></figure>
+<h3 id="11、for循环嵌套"><a href="#11、for循环嵌套" class="headerlink" title="11、for循环嵌套"></a>11、for循环嵌套</h3><h3 id="12、列表-list"><a href="#12、列表-list" class="headerlink" title="12、列表 list"></a>12、列表 list</h3><h3 id="列表可以存储任意类型的数据"><a href="#列表可以存储任意类型的数据" class="headerlink" title="列表可以存储任意类型的数据"></a>列表可以存储任意类型的数据</h3><h3 id="列表是可变序列"><a href="#列表是可变序列" class="headerlink" title="列表是可变序列"></a>列表是可变序列</h3><h3 id="1、表示方式"><a href="#1、表示方式" class="headerlink" title="1、表示方式"></a>1、表示方式</h3><h3 id="2、列表的运算"><a href="#2、列表的运算" class="headerlink" title="2、列表的运算"></a>2、列表的运算</h3><h3 id="-1"><a href="#-1" class="headerlink" title="+"></a>+</h3><h3 id="-2"><a href="#-2" class="headerlink" title="+="></a>+=</h3><h3 id="-3"><a href="#-3" class="headerlink" title="*"></a>*</h3><h3 id="-4"><a href="#-4" class="headerlink" title="*="></a>*=</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">s=&quot;ABCDEF&quot;</span><br><span class="line">for i in s:</span><br><span class="line">  print(i)</span><br><span class="line">else:</span><br><span class="line">  print(&quot;for循环因迭代结束而终止！&quot;)</span><br><span class="line">for i in &quot;ABC&quot;:</span><br><span class="line">  for j in &quot;123&quot;:</span><br><span class="line">    print(i+j)</span><br><span class="line">&gt;&gt;&gt; L=[]</span><br><span class="line">&gt;&gt;&gt; L</span><br><span class="line">[]</span><br><span class="line">&gt;&gt;&gt; type(L)</span><br><span class="line">&lt;class &apos;list&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; L=[&quot;abc&quot;,100,200,3.14,[1,2]]</span><br><span class="line">&gt;&gt;&gt; L</span><br><span class="line">[&apos;abc&apos;, 100, 200, 3.14, [1, 2]]</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; s=&quot;abc&quot;</span><br><span class="line">&gt;&gt;&gt; id(s)</span><br><span class="line">2537354902976</span><br><span class="line">&gt;&gt;&gt; s=s+&quot;123&quot;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&apos;abc123&apos;</span><br><span class="line">&gt;&gt;&gt; id(s)</span><br></pre></td></tr></table></figure>
+<p>3、索引与切片<br>列表的索引与切片规则和字符串的索引切片规则完全相同<br>4、索引与切片赋值<br>切片赋值<br>1、当切片赋值取出的数据为连续的时候，可以赋值给他任意个数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">2537384186128</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; s=&quot;abc&quot;</span><br><span class="line">&gt;&gt;&gt; id(s)</span><br><span class="line">2537354902976</span><br><span class="line">&gt;&gt;&gt; s+=&quot;123&quot;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&apos;abc123&apos;</span><br><span class="line">&gt;&gt;&gt; id(s)</span><br><span class="line">2537384186184</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; L=[1,2,3]</span><br><span class="line">&gt;&gt;&gt; id(L)</span><br><span class="line">2537384176264</span><br><span class="line">&gt;&gt;&gt; L=L+[4,5,6]</span><br><span class="line">&gt;&gt;&gt; L</span><br><span class="line">[1, 2, 3, 4, 5, 6]</span><br><span class="line">&gt;&gt;&gt; id(L)</span><br><span class="line">2537384175432</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; L=[1,2,3]</span><br><span class="line">&gt;&gt;&gt; id(L)</span><br><span class="line">2537384176264</span><br><span class="line">&gt;&gt;&gt; L+=[4,5,6]</span><br><span class="line">&gt;&gt;&gt; L</span><br><span class="line">[1, 2, 3, 4, 5, 6]</span><br><span class="line">&gt;&gt;&gt; id(L)</span><br><span class="line">2537384176264</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; L=[1,2,3,4,5,6,7]</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; L[2]</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; L[2]=&quot;B&quot;</span><br><span class="line">&gt;&gt;&gt; L</span><br><span class="line">[1, 2, &apos;B&apos;, 4, 5, 6, 7]</span><br></pre></td></tr></table></figure>
+<h3 id="2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同"><a href="#2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同" class="headerlink" title="2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同"></a>2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同</h3><p>###3、当切片赋值的起始索引和终止索引相同时，代表在这个索引所对应的元素前面插入数据</p>
+<h3 id="13、字典-dict"><a href="#13、字典-dict" class="headerlink" title="13、字典 dict"></a>13、字典 dict</h3><h3 id="字典是可变序列，字典的存储是无序的"><a href="#字典是可变序列，字典的存储是无序的" class="headerlink" title="字典是可变序列，字典的存储是无序的"></a>字典是可变序列，字典的存储是无序的</h3><h3 id="字典的存储方式是由键值对映射存储"><a href="#字典的存储方式是由键值对映射存储" class="headerlink" title="字典的存储方式是由键值对映射存储"></a>字典的存储方式是由键值对映射存储</h3><h3 id="每个键值对之间用逗号分隔，键和值之间用冒号进行连接"><a href="#每个键值对之间用逗号分隔，键和值之间用冒号进行连接" class="headerlink" title="每个键值对之间用逗号分隔，键和值之间用冒号进行连接"></a>每个键值对之间用逗号分隔，键和值之间用冒号进行连接</h3><h3 id="字典的键必须为不可变元素，字典的值可以为任意元素"><a href="#字典的键必须为不可变元素，字典的值可以为任意元素" class="headerlink" title="字典的键必须为不可变元素，字典的值可以为任意元素"></a>字典的键必须为不可变元素，字典的值可以为任意元素</h3><h3 id="字典的键不可重复，是唯一的"><a href="#字典的键不可重复，是唯一的" class="headerlink" title="字典的键不可重复，是唯一的"></a>字典的键不可重复，是唯一的</h3><h3 id="1、表示方式-1"><a href="#1、表示方式-1" class="headerlink" title="1、表示方式"></a>1、表示方式</h3><h3 id="2、字典的基本操作"><a href="#2、字典的基本操作" class="headerlink" title="2、字典的基本操作"></a>2、字典的基本操作</h3><h3 id="1、增加键值对"><a href="#1、增加键值对" class="headerlink" title="1、增加键值对"></a>1、增加键值对</h3><h3 id="增加的键值对的键值不存在原字典中"><a href="#增加的键值对的键值不存在原字典中" class="headerlink" title="增加的键值对的键值不存在原字典中"></a>增加的键值对的键值不存在原字典中</h3><h3 id="2、修改键值对"><a href="#2、修改键值对" class="headerlink" title="2、修改键值对"></a>2、修改键值对</h3><h3 id="增加的键值对的键存在于原字典中"><a href="#增加的键值对的键存在于原字典中" class="headerlink" title="增加的键值对的键存在于原字典中"></a>增加的键值对的键存在于原字典中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; d=&#123;&#125;</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&#125;</span><br><span class="line">&gt;&gt;&gt; type(d)</span><br><span class="line">&lt;class &apos;dict&apos;&gt;</span><br><span class="line">&gt;&gt;&gt; d=&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:20&#125;</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20&#125;</span><br><span class="line">&gt;&gt;&gt; d[&quot;sex&quot;]=&quot;男&quot;</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20, &apos;sex&apos;: &apos;男&apos;&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3、删除键值对"><a href="#3、删除键值对" class="headerlink" title="3、删除键值对"></a>3、删除键值对</h3><p>###3、字典的遍历</p>
+<h3 id="字典的任何操作都是有键来进行操作"><a href="#字典的任何操作都是有键来进行操作" class="headerlink" title="字典的任何操作都是有键来进行操作"></a>字典的任何操作都是有键来进行操作</h3><h3 id="14、元组-tuple"><a href="#14、元组-tuple" class="headerlink" title="14、元组 tuple"></a>14、元组 tuple</h3><h3 id="元组是不可变序列"><a href="#元组是不可变序列" class="headerlink" title="元组是不可变序列"></a>元组是不可变序列</h3><p>###元组可以存储任意类型的元素</p>
+<h3 id="元组的索引与切片规则和字符串中的规则完全相同"><a href="#元组的索引与切片规则和字符串中的规则完全相同" class="headerlink" title="元组的索引与切片规则和字符串中的规则完全相同"></a>元组的索引与切片规则和字符串中的规则完全相同</h3><h3 id="1、表示方式-2"><a href="#1、表示方式-2" class="headerlink" title="1、表示方式"></a>1、表示方式</h3><h4 id="当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象-还是一个元组"><a href="#当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象-还是一个元组" class="headerlink" title="当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象  还是一个元组"></a>当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象  还是一个元组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20, &apos;sex&apos;: &apos;男&apos;&#125;</span><br><span class="line">&gt;&gt;&gt; d[&quot;age&quot;]=30</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 30, &apos;sex&apos;: &apos;男&apos;&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 30, &apos;sex&apos;: &apos;男&apos;&#125;</span><br><span class="line">&gt;&gt;&gt; del d[&quot;sex&quot;]</span><br><span class="line">&gt;&gt;&gt; d</span><br><span class="line">&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 30&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">d=&#123;&quot;name&quot;:&quot;小明&quot;,&quot;age&quot;:20,&quot;sex&quot;:&quot;男&quot;&#125;</span><br><span class="line">for key in d:</span><br><span class="line">  print(d[key])</span><br></pre></td></tr></table></figure>
+<h3 id="15、函数"><a href="#15、函数" class="headerlink" title="15、函数"></a>15、函数</h3><h3 id="有参数有返回值函数"><a href="#有参数有返回值函数" class="headerlink" title="有参数有返回值函数"></a>有参数有返回值函数</h3><h3 id="有参数无返回值函数"><a href="#有参数无返回值函数" class="headerlink" title="有参数无返回值函数"></a>有参数无返回值函数</h3><h3 id="无参数有返回值函数"><a href="#无参数有返回值函数" class="headerlink" title="无参数有返回值函数"></a>无参数有返回值函数</h3><h3 id="无参数无返回值函数"><a href="#无参数无返回值函数" class="headerlink" title="无参数无返回值函数"></a>无参数无返回值函数</h3><p>1、return语句</p>
+<h3 id="如果函数想返回一个指定的对象，就需要用到return语句"><a href="#如果函数想返回一个指定的对象，就需要用到return语句" class="headerlink" title="如果函数想返回一个指定的对象，就需要用到return语句"></a>如果函数想返回一个指定的对象，就需要用到return语句</h3><h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><p>return 对象1，对象2,….</p>
+<h3 id="1、如果一个函数中没有return语句相当于在函数末尾加了一行return-None"><a href="#1、如果一个函数中没有return语句相当于在函数末尾加了一行return-None" class="headerlink" title="1、如果一个函数中没有return语句相当于在函数末尾加了一行return None"></a>1、如果一个函数中没有return语句相当于在函数末尾加了一行return None</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; t=(100)</span><br><span class="line">&gt;&gt;&gt; t</span><br><span class="line">100</span><br><span class="line">&gt;&gt;&gt; type(t)</span><br><span class="line">&lt;class &apos;int&apos;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; t=(100,)</span><br><span class="line">&gt;&gt;&gt; t</span><br><span class="line">(100,)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&gt;&gt;&gt; type(t)</span><br><span class="line">&lt;class &apos;tuple&apos;&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">def 函数名(参数列表):</span><br><span class="line">  pass</span><br><span class="line">def say_demo():</span><br><span class="line">  print(&quot;hello world!&quot;)</span><br><span class="line">  print(&quot;你好世界！&quot;)</span><br><span class="line">say_demo()</span><br><span class="line">def my_add(a,b): # a,b为函数的形参</span><br><span class="line">  c=a+b</span><br><span class="line">  print(&quot;a+b的值为:&quot;,c)</span><br><span class="line">my_add(10,20) # 10,20为函数的实参</span><br></pre></td></tr></table></figure>
+<h3 id="2、如果return语句后面没有返回的指定对象，相当于return-None"><a href="#2、如果return语句后面没有返回的指定对象，相当于return-None" class="headerlink" title="2、如果return语句后面没有返回的指定对象，相当于return None"></a>2、如果return语句后面没有返回的指定对象，相当于return None</h3><h3 id="3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方"><a href="#3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方" class="headerlink" title="3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方"></a>3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方</h3><h3 id="16、面向对象编程"><a href="#16、面向对象编程" class="headerlink" title="16、面向对象编程"></a>16、面向对象编程</h3><h3 id="类-class"><a href="#类-class" class="headerlink" title="类 class"></a>类 class</h3><h3 id="具有相同属性或者行为的对象归为一个集合即为一个类"><a href="#具有相同属性或者行为的对象归为一个集合即为一个类" class="headerlink" title="具有相同属性或者行为的对象归为一个集合即为一个类"></a>具有相同属性或者行为的对象归为一个集合即为一个类</h3><h3 id="类是产生对象-实例-的工厂"><a href="#类是产生对象-实例-的工厂" class="headerlink" title="类是产生对象(实例)的工厂"></a>类是产生对象(实例)的工厂</h3><h3 id="1、类的创建"><a href="#1、类的创建" class="headerlink" title="1、类的创建"></a>1、类的创建</h3><h3 id="2、类的实例化-类的调用"><a href="#2、类的实例化-类的调用" class="headerlink" title="2、类的实例化(类的调用)"></a>2、类的实例化(类的调用)</h3><p>###对象=类名(参数列表)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">def my_sum(a,b):</span><br><span class="line">  if a &gt; b:</span><br><span class="line">    return  a</span><br><span class="line">  else:</span><br><span class="line">    return  b</span><br><span class="line">print(my_sum(10,20))</span><br><span class="line">a=100 # a 为全局变量</span><br><span class="line">def my_func(b,c): # b,c为函数的形参 是局部变量</span><br><span class="line">  d=30</span><br><span class="line">  a=200 # 相当于创建了一个和全局变量相同名称的局部变量，在函数内部没有权限更改全局变量</span><br><span class="line">  print(&quot;b=&quot;,b)</span><br><span class="line">  print(&quot;c=&quot;,c)</span><br><span class="line">  print(&quot;a=&quot;,a) #函数内部可以访问全局变量</span><br><span class="line">my_func(10,20)# print(d) #函数外部不可以访问局部变量</span><br><span class="line">print(&quot;函数执行完毕后a=&quot;,a)</span><br></pre></td></tr></table></figure>
+
+
+<p>class 类名(继承列表):<br>  实例方法<br>  类方法<br>  类变量<br>  静态方法<br>3、实例属性<br>给类产生的对象或者实例添加一个属性<br>对象.实例属性名=属性值<br>car . color=”红色”<br>4、实例方法<br>让类产生的对象可以具备某些行为或者属性<br>实例方法的本质就是定义在类内的函数，每个对象或者实例都可以调用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string"> 此类是一个汽车类</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line">car=Car()  <span class="comment"># 类的实例化</span></span><br><span class="line">print(id(car))</span><br><span class="line">car1=Car()</span><br><span class="line">print(id(car1))</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string"> 此类是一个汽车类</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line">car=Car()  <span class="comment"># 类的实例化</span></span><br><span class="line">car.color=<span class="string">"黑色"</span> <span class="comment">#给对象添加上颜色的属性</span></span><br><span class="line">car1=Car()</span><br><span class="line">car1.color=<span class="string">"红色"</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 类名<span class="params">()</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> 实例方法名<span class="params">(参数列表)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""</span></span><br><span class="line"><span class="string"> 此类是一个汽车类</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">get_speed</span><span class="params">(self,speed)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">   此实例方法是给对象添加速度的一个方法</span></span><br><span class="line"><span class="string">   """</span></span><br><span class="line">    self.car_speed=speed <span class="comment">#给对象添加上速度的属性</span></span><br><span class="line">    print(self.color,<span class="string">"正在以"</span>,self.car_speed,<span class="string">"的速度行驶！"</span>)</span><br></pre></td></tr></table></figure>
+
+<p> 5、实例方法的调用<br> 实例.实例方法名(参数列表)<br> self代表类的实例，他是实例方法中的第一个参数，一般默认为self<br> 6、类的构造函数(初始化函数)<br> 类的构造函数会在类的实例化过程中自动调用，构造函数中一般会存放一些类产生的对象所<br> 具备的公有属性<br> 构造函数的名称必须为init不可改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">car=Car()  # 类的实例化</span><br><span class="line">car.color=&quot;黑色&quot; #给对象添加上颜色的属性</span><br><span class="line">car1=Car()</span><br><span class="line">car1.color=&quot;红色&quot;</span><br><span class="line">class Car(object):</span><br><span class="line">  &quot;&quot;&quot;</span><br><span class="line"> 此类是一个汽车类</span><br><span class="line"> &quot;&quot;&quot;</span><br><span class="line">  def get_speed(self,speed):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">   此实例方法是给对象添加速度的一个方法</span><br><span class="line">   &quot;&quot;&quot;</span><br><span class="line">    self.car_speed=speed #给对象添加上速度的属性</span><br><span class="line">    print(self.color,&quot;的汽车正在以&quot;,self.car_speed,&quot;的速度行驶！&quot;)</span><br><span class="line">car=Car()  # 类的实例化</span><br><span class="line">car.color=&quot;黑色&quot; #给对象添加上颜色的属性</span><br><span class="line">car.get_speed(200) #调用实例方法</span><br><span class="line">car1=Car()</span><br><span class="line">car1.color=&quot;红色&quot;</span><br><span class="line">car1.get_speed(150)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class 类名(继承列表):</span><br><span class="line">  def __init___(self,参数列表):</span><br><span class="line">    pass</span><br><span class="line">class Car(object):</span><br><span class="line">  def __init__(self,color,brand):</span><br><span class="line">    self.color=color</span><br><span class="line">    self.brand=brand</span><br><span class="line">  def get_speed(self,speed):</span><br><span class="line">    self.speed=speed</span><br><span class="line">    print(self.color, &quot;的&quot;, self.brand, &quot;汽车正在以&quot;, self.speed, &quot;的速度行驶！&quot;)</span><br><span class="line">car=Car(&quot;黑色&quot;,&quot;奔驰&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="7、类的继承与派生"><a href="#7、类的继承与派生" class="headerlink" title="7、类的继承与派生"></a>7、类的继承与派生</h4><h4 id="类的继承代表子类可以具备父类所具有的属性和行为"><a href="#类的继承代表子类可以具备父类所具有的属性和行为" class="headerlink" title="类的继承代表子类可以具备父类所具有的属性和行为"></a>类的继承代表子类可以具备父类所具有的属性和行为</h4><h4 id="类的派生是指在子类中添加新的功能"><a href="#类的派生是指在子类中添加新的功能" class="headerlink" title="类的派生是指在子类中添加新的功能"></a>类的派生是指在子类中添加新的功能</h4><h4 id="17、python中的文本文件操作"><a href="#17、python中的文本文件操作" class="headerlink" title="17、python中的文本文件操作"></a>17、python中的文本文件操作</h4><h4 id="操作模式"><a href="#操作模式" class="headerlink" title="操作模式"></a>操作模式</h4><h4 id="r-只读模式"><a href="#r-只读模式" class="headerlink" title="r 只读模式"></a>r 只读模式</h4><h4 id="w-只写模式"><a href="#w-只写模式" class="headerlink" title="w 只写模式"></a>w 只写模式</h4><h4 id="a-追加写入"><a href="#a-追加写入" class="headerlink" title="a 追加写入"></a>a 追加写入</h4><h4 id="rb-二进制读取模式"><a href="#rb-二进制读取模式" class="headerlink" title="rb 二进制读取模式"></a>rb 二进制读取模式</h4><h4 id="wb-二进制写入模式"><a href="#wb-二进制写入模式" class="headerlink" title="wb 二进制写入模式"></a>wb 二进制写入模式</h4><h4 id="1、文件的写入"><a href="#1、文件的写入" class="headerlink" title="1、文件的写入"></a>1、文件的写入</h4><h4 id="f-write"><a href="#f-write" class="headerlink" title="f.write()"></a>f.write()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">car.get_speed(120)</span><br><span class="line">car1=Car(&quot;红色&quot;,&quot;奥迪&quot;)</span><br><span class="line">car1.get_speed(200)</span><br><span class="line">class Father(object):</span><br><span class="line">  def say(self,what):</span><br><span class="line">    print(&quot;正在说:&quot;,what)</span><br><span class="line">  def walk(self,distance):</span><br><span class="line">    print(&quot;行走了&quot;,distance,&quot;米&quot;)</span><br><span class="line">class Son(Father):</span><br><span class="line">  def study(self,subject):</span><br><span class="line">    print(&quot;正在学&quot;,subject)</span><br><span class="line">son=Son() # 子类实例化产生对象</span><br><span class="line">son.say(&quot;你好&quot;)</span><br><span class="line">son.walk(1000)</span><br><span class="line">father=Father()</span><br><span class="line">son.study(&quot;python&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="with-open-文件名-操作模式-encoding-”utf-8”-as-f"><a href="#with-open-文件名-操作模式-encoding-”utf-8”-as-f" class="headerlink" title="with open(文件名,操作模式,encoding=”utf-8”) as f:"></a>with open(文件名,操作模式,encoding=”utf-8”) as f:</h4><h3 id="操作语句"><a href="#操作语句" class="headerlink" title="操作语句"></a>操作语句</h3><h3 id="2、文件的读取"><a href="#2、文件的读取" class="headerlink" title="2、文件的读取"></a>2、文件的读取</h3><h3 id="f-read"><a href="#f-read" class="headerlink" title="f.read()"></a>f.read()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with open(&quot;data.txt&quot;,&quot;w&quot;,encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">  f.write(&quot;hello 100 200 你好&quot;)</span><br><span class="line">with open(&quot;data.txt&quot;,&quot;r&quot;,encoding=&quot;utf-8&quot;) as f:</span><br><span class="line">  info=f.read()</span><br><span class="line">  print(info)</span><br></pre></td></tr></table></figure>
+<h3 id="python-m-pip-install-requests"><a href="#python-m-pip-install-requests" class="headerlink" title="python -m pip install requests"></a>python -m pip install requests</h3><h3 id="python-m-pip-install-lxml"><a href="#python-m-pip-install-lxml" class="headerlink" title="python -m pip install lxml"></a>python -m pip install lxml</h3><h3 id="python-m-pip-install-bs4"><a href="#python-m-pip-install-bs4" class="headerlink" title="python -m pip install bs4"></a>python -m pip install bs4</h3><h3 id="python-m-pip-install-jieba"><a href="#python-m-pip-install-jieba" class="headerlink" title="python -m pip install jieba"></a>python -m pip install jieba</h3><h3 id="python-m-pip-install-wordcloud"><a href="#python-m-pip-install-wordcloud" class="headerlink" title="python -m pip install wordcloud"></a>python -m pip install wordcloud</h3><h3 id="python-m-pip-install-imageio"><a href="#python-m-pip-install-imageio" class="headerlink" title="python -m pip install imageio"></a>python -m pip install imageio</h3><h3 id="python-m-pip-install-matplotlib"><a href="#python-m-pip-install-matplotlib" class="headerlink" title="python -m pip install matplotlib"></a>python -m pip install matplotlib</h3>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -238,7 +285,7 @@ The key&apos;s randomart image is:
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Linux SSH</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -250,7 +297,7 @@ The key&apos;s randomart image is:
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Linux-shell//" class="article-tag-list-link color2">Linux shell</a>
+        			<a href="/categories/python//" class="article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -258,16 +305,75 @@ The key&apos;s randomart image is:
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/19/ssh%E8%BF%9C%E7%A8%8B%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/02/python%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/29/Yilia%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E9%87%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Yilia主题配置访问量</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -282,513 +388,51 @@ The key&apos;s randomart image is:
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-Vue学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/19/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Vue学习笔记</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/11/19/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-11-19T14:09:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.2k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="vue学习笔记"><a href="#vue学习笔记" class="headerlink" title="vue学习笔记"></a>vue学习笔记</h2><h3 id="开篇语"><a href="#开篇语" class="headerlink" title="开篇语"></a>开篇语</h3><p>建议新手学习,请不要用npm的方式(vue-cli,vue脚手架),太复杂了. 请直接下载vue.js文件本地引入,就上手学习吧<br>参照菜鸟教程网站的vue.js教程<a href="https://www.runoob.com/vue2/vue-start.html" target="_blank" rel="noopener">https://www.runoob.com/vue2/vue-start.html</a><br>从基础开始理解和上手,请看我写的中文注释,帮助理解</p>
-<h3 id="一些建议"><a href="#一些建议" class="headerlink" title="一些建议"></a>一些建议</h3><p>直接把菜鸟教程的例子复制到自己的代码编辑器里看更好</p>
-<p>菜鸟教程的好处我觉得之一是其有很多实例子,那么就应该拿例子复制回来本地自己的编辑器看.</p>
-<p>因为菜鸟的例子左边代码,右边视图.就很小了,不好审视.</p>
-<p>要打开浏览器控制台(比如我们推荐用谷歌浏览器chrome在浏览器按f12就可以打开控制台),</p>
-<p>直观的看到js和dom层,比看到界面更重要的是看到dom层的实际操作变化</p>
-<p><img src="https://segmentfault.com/img/bVbcvzG?w=1598&h=918" alt="vue" title="vue"></p>
-<h3 id="一个简单的vue-js例子"><a href="#一个简单的vue-js例子" class="headerlink" title="一个简单的vue.js例子"></a>一个简单的vue.js例子</h3><pre><code>&lt;body&gt;
- &lt;h2&gt;vue&lt;/h2&gt;
-  &lt;div id=&quot;myapp&quot;&gt;
-   &lt;p title=&quot;哈哈&quot;&gt;学习vue很舒服&lt;/p&gt; 
-   &lt;p&gt;{{ message }}&lt;/p&gt; &lt;p&gt;{{ mz }}&lt;/p&gt; 
-   &lt;/div&gt; 
-   &lt;script src=&quot;js/vue.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt; 
-   &lt;script type=&quot;text/javascript&quot;&gt; 
-   var myapp = new Vue( //新建一个Vue 实例并赋值给变量&apos;myapp&apos;,这时变量myapp就是这个vue实例 
-   { 
-       el:&apos;#myapp&apos;,
-       data:{ message:&apos;hello Vue&apos;,  //myapp.message = &apos;hello Vue&apos; 
-       mz:&apos;张三33&apos;  //myapp.mz = &apos;张三33&apos; } } 
-   ); 
-   &lt;/script&gt; 
-   &lt;/body&gt;</code></pre>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue//" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/19/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、python基础"><span class="toc-number">1.</span> <span class="toc-text">1、python基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、python中的变量"><span class="toc-number">1.1.</span> <span class="toc-text">1、python中的变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、python中的数据类型"><span class="toc-number">1.2.</span> <span class="toc-text">2、python中的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#整型-浮点型-复数-布尔类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">整型 浮点型 复数 布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复数分为实部和虚部"><span class="toc-number">1.2.2.</span> <span class="toc-text">复数分为实部和虚部</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、python中的算术运算符"><span class="toc-number">1.3.</span> <span class="toc-text">3、python中的算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-number">1.4.</span> <span class="toc-text">+</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、if条件判断语句"><span class="toc-number">1.5.</span> <span class="toc-text">4、if条件判断语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#让程序根据条件选择性的执行某条或者某些语句"><span class="toc-number">1.5.1.</span> <span class="toc-text">让程序根据条件选择性的执行某条或者某些语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if与elif语句的区别"><span class="toc-number">1.5.2.</span> <span class="toc-text">if与elif语句的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行"><span class="toc-number">1.5.3.</span> <span class="toc-text">当程序中需要使用多条语句进行判断的时候，如果判断语句全部为if语句，那当第一条if语句满足条件后，程序不会结束，而会继续向下判断所有的if语句中的真值表达式，执行所有满足表达式的语句。如果使用if语句和elif语句，当第一条if语句或者任意一个elif语句满足条件后，程序不会再向下继续判断，直接结束程序的执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、if语句的嵌套"><span class="toc-number">1.5.4.</span> <span class="toc-text">5、if语句的嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、字符串-str"><span class="toc-number">1.5.5.</span> <span class="toc-text">6、字符串 str</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在python中用引号引起来的部分都称为字符串"><span class="toc-number">1.5.6.</span> <span class="toc-text">在python中用引号引起来的部分都称为字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#‘’"><span class="toc-number">1.5.7.</span> <span class="toc-text">‘’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#“”"><span class="toc-number">1.5.8.</span> <span class="toc-text">“”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#‘’’’’’"><span class="toc-number">1.5.9.</span> <span class="toc-text">‘’’’’’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#“”””””"><span class="toc-number">1.5.10.</span> <span class="toc-text">“”””””</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引号的区别"><span class="toc-number">1.5.11.</span> <span class="toc-text">引号的区别:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、单引号内的双引号不算做结束符"><span class="toc-number">1.5.12.</span> <span class="toc-text">1、单引号内的双引号不算做结束符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、双引号内的单引号不算做结束符"><span class="toc-number">1.5.13.</span> <span class="toc-text">2、双引号内的单引号不算做结束符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、三引号一般用于表示函数或者类的文档字符串"><span class="toc-number">1.5.14.</span> <span class="toc-text">3、三引号一般用于表示函数或者类的文档字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为-n"><span class="toc-number">1.5.15.</span> <span class="toc-text">4、三引号内可以包含单引号和双引号，三引号内的换行符会自动转换为\n</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、字符串的运算-不可变序列"><span class="toc-number">1.5.16.</span> <span class="toc-text">7、字符串的运算(不可变序列)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用于拼接字符串"><span class="toc-number">1.5.17.</span> <span class="toc-text">+ 用于拼接字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用于原字符串与运算符右侧的字符串进行拼接"><span class="toc-number">1.5.18.</span> <span class="toc-text">+= 用于原字符串与运算符右侧的字符串进行拼接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成重复的字符串-只能和正整型数进行运算"><span class="toc-number">1.5.19.</span> <span class="toc-text">* 生成重复的字符串(只能和正整型数进行运算)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成重复的字符串"><span class="toc-number">1.5.20.</span> <span class="toc-text">*= 生成重复的字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、字符串的索引与切片"><span class="toc-number">1.5.21.</span> <span class="toc-text">8、字符串的索引与切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引-index"><span class="toc-number">1.5.22.</span> <span class="toc-text">索引 index</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从字符串中获取任意一个字符"><span class="toc-number">1.5.23.</span> <span class="toc-text">从字符串中获取任意一个字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引分为正向索引和反向索引"><span class="toc-number">1.5.24.</span> <span class="toc-text">索引分为正向索引和反向索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的"><span class="toc-number">1.5.25.</span> <span class="toc-text">正向索引从0开始，第一个元素的索引为0，第二个元素索引为1，以此类推，最后一个元素的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引为字符串的长度-1"><span class="toc-number">1.5.26.</span> <span class="toc-text">索引为字符串的长度-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一"><span class="toc-number">1.5.27.</span> <span class="toc-text">反向索引从-1开始，最后一个元素的索引为-1，倒数第二个元素的索引为-2，以此类推，第一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个元素的索引为字符串长度的相反数"><span class="toc-number">1.5.28.</span> <span class="toc-text">个元素的索引为字符串长度的相反数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#s-”A-B-C-D-E-F”"><span class="toc-number">1.5.29.</span> <span class="toc-text">s=”A B C D E F”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正向索引-0-1-2-3-4-5"><span class="toc-number">1.5.30.</span> <span class="toc-text">正向索引 0 1 2 3 4 5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反向索引-6-5-4-3-2-1"><span class="toc-number">1.5.31.</span> <span class="toc-text">反向索引 -6 -5 -4 -3 -2 -1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法规则"><span class="toc-number">1.5.32.</span> <span class="toc-text">语法规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串-整数表达式"><span class="toc-number">1.5.33.</span> <span class="toc-text">字符串[整数表达式]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切片-slice"><span class="toc-number">1.5.34.</span> <span class="toc-text">切片 slice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从字符串中获取连续或者带有一定间隔的字符"><span class="toc-number">1.5.35.</span> <span class="toc-text">从字符串中获取连续或者带有一定间隔的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法规则-1"><span class="toc-number">1.5.36.</span> <span class="toc-text">语法规则:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串-起始索引-终止索引-步长"><span class="toc-number">1.5.37.</span> <span class="toc-text">字符串[起始索引:终止索引:步长]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#起始索引-切片切下的位置"><span class="toc-number">1.5.38.</span> <span class="toc-text">起始索引:切片切下的位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#终止索引-切片的终止点，但是不包含终止点"><span class="toc-number">1.5.39.</span> <span class="toc-text">终止索引:切片的终止点，但是不包含终止点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步长：切片每次获取完元素后，移动的方向和偏移量-没有步长相当于步长为1"><span class="toc-number">1.5.40.</span> <span class="toc-text">步长：切片每次获取完元素后，移动的方向和偏移量(没有步长相当于步长为1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当步长为正数时，取正向切片"><span class="toc-number">1.5.41.</span> <span class="toc-text">当步长为正数时，取正向切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当步长为负数时，取反向切片"><span class="toc-number">1.5.42.</span> <span class="toc-text">当步长为负数时，取反向切片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的"><span class="toc-number">1.5.43.</span> <span class="toc-text">当切片带有步长时，切片获取完第一个元素后，用第一个元素的索引加上步长得到一个新的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引，然后获取这个新索引所对应的元素，以此类推"><span class="toc-number">1.5.44.</span> <span class="toc-text">索引，然后获取这个新索引所对应的元素，以此类推</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边"><span class="toc-number">1.5.45.</span> <span class="toc-text">当步长为负数时，起始索引所对应的元素必须在终止索引所对应元素的右边</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#让程序根据条件重复的执行某条或某些语句"><span class="toc-number">1.5.46.</span> <span class="toc-text">让程序根据条件重复的执行某条或某些语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从终端输入一个数字打印出如下的图形"><span class="toc-number">1.5.47.</span> <span class="toc-text">从终端输入一个数字打印出如下的图形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如输入：5"><span class="toc-number">1.5.48.</span> <span class="toc-text">如输入：5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、for循环"><span class="toc-number">1.5.49.</span> <span class="toc-text">10、for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历可迭代对象中的数据元素"><span class="toc-number">1.5.50.</span> <span class="toc-text">遍历可迭代对象中的数据元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可迭代对象是指能够依次获取数据元素的对象"><span class="toc-number">1.5.51.</span> <span class="toc-text">可迭代对象是指能够依次获取数据元素的对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、for循环嵌套"><span class="toc-number">1.5.52.</span> <span class="toc-text">11、for循环嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、列表-list"><span class="toc-number">1.5.53.</span> <span class="toc-text">12、列表 list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表可以存储任意类型的数据"><span class="toc-number">1.5.54.</span> <span class="toc-text">列表可以存储任意类型的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表是可变序列"><span class="toc-number">1.5.55.</span> <span class="toc-text">列表是可变序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、表示方式"><span class="toc-number">1.5.56.</span> <span class="toc-text">1、表示方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、列表的运算"><span class="toc-number">1.5.57.</span> <span class="toc-text">2、列表的运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">1.5.58.</span> <span class="toc-text">+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-2"><span class="toc-number">1.5.59.</span> <span class="toc-text">+=</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-3"><span class="toc-number">1.5.60.</span> <span class="toc-text">*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-4"><span class="toc-number">1.5.61.</span> <span class="toc-text">*=</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同"><span class="toc-number">1.5.62.</span> <span class="toc-text">2、当切片赋值的步长不为1时，切片取出的数据个数和赋值的数据个数必须相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、字典-dict"><span class="toc-number">1.5.63.</span> <span class="toc-text">13、字典 dict</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典是可变序列，字典的存储是无序的"><span class="toc-number">1.5.64.</span> <span class="toc-text">字典是可变序列，字典的存储是无序的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的存储方式是由键值对映射存储"><span class="toc-number">1.5.65.</span> <span class="toc-text">字典的存储方式是由键值对映射存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每个键值对之间用逗号分隔，键和值之间用冒号进行连接"><span class="toc-number">1.5.66.</span> <span class="toc-text">每个键值对之间用逗号分隔，键和值之间用冒号进行连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的键必须为不可变元素，字典的值可以为任意元素"><span class="toc-number">1.5.67.</span> <span class="toc-text">字典的键必须为不可变元素，字典的值可以为任意元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的键不可重复，是唯一的"><span class="toc-number">1.5.68.</span> <span class="toc-text">字典的键不可重复，是唯一的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、表示方式-1"><span class="toc-number">1.5.69.</span> <span class="toc-text">1、表示方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、字典的基本操作"><span class="toc-number">1.5.70.</span> <span class="toc-text">2、字典的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、增加键值对"><span class="toc-number">1.5.71.</span> <span class="toc-text">1、增加键值对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增加的键值对的键值不存在原字典中"><span class="toc-number">1.5.72.</span> <span class="toc-text">增加的键值对的键值不存在原字典中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、修改键值对"><span class="toc-number">1.5.73.</span> <span class="toc-text">2、修改键值对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增加的键值对的键存在于原字典中"><span class="toc-number">1.5.74.</span> <span class="toc-text">增加的键值对的键存在于原字典中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、删除键值对"><span class="toc-number">1.5.75.</span> <span class="toc-text">3、删除键值对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典的任何操作都是有键来进行操作"><span class="toc-number">1.5.76.</span> <span class="toc-text">字典的任何操作都是有键来进行操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、元组-tuple"><span class="toc-number">1.5.77.</span> <span class="toc-text">14、元组 tuple</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元组是不可变序列"><span class="toc-number">1.5.78.</span> <span class="toc-text">元组是不可变序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元组的索引与切片规则和字符串中的规则完全相同"><span class="toc-number">1.5.79.</span> <span class="toc-text">元组的索引与切片规则和字符串中的规则完全相同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、表示方式-2"><span class="toc-number">1.5.80.</span> <span class="toc-text">1、表示方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象-还是一个元组"><span class="toc-number">1.5.80.1.</span> <span class="toc-text">当元组中只存放一个元素时，需要在这个元素后面加一个逗号，用来区分是单个的数据对象  还是一个元组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、函数"><span class="toc-number">1.5.81.</span> <span class="toc-text">15、函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有参数有返回值函数"><span class="toc-number">1.5.82.</span> <span class="toc-text">有参数有返回值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有参数无返回值函数"><span class="toc-number">1.5.83.</span> <span class="toc-text">有参数无返回值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无参数有返回值函数"><span class="toc-number">1.5.84.</span> <span class="toc-text">无参数有返回值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无参数无返回值函数"><span class="toc-number">1.5.85.</span> <span class="toc-text">无参数无返回值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果函数想返回一个指定的对象，就需要用到return语句"><span class="toc-number">1.5.86.</span> <span class="toc-text">如果函数想返回一个指定的对象，就需要用到return语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语法"><span class="toc-number">1.5.87.</span> <span class="toc-text">语法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、如果一个函数中没有return语句相当于在函数末尾加了一行return-None"><span class="toc-number">1.5.88.</span> <span class="toc-text">1、如果一个函数中没有return语句相当于在函数末尾加了一行return None</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、如果return语句后面没有返回的指定对象，相当于return-None"><span class="toc-number">1.5.89.</span> <span class="toc-text">2、如果return语句后面没有返回的指定对象，相当于return None</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方"><span class="toc-number">1.5.90.</span> <span class="toc-text">3、return的作用是结束当前函数的执行，并且返回到调用该函数的地方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、面向对象编程"><span class="toc-number">1.5.91.</span> <span class="toc-text">16、面向对象编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类-class"><span class="toc-number">1.5.92.</span> <span class="toc-text">类 class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具有相同属性或者行为的对象归为一个集合即为一个类"><span class="toc-number">1.5.93.</span> <span class="toc-text">具有相同属性或者行为的对象归为一个集合即为一个类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类是产生对象-实例-的工厂"><span class="toc-number">1.5.94.</span> <span class="toc-text">类是产生对象(实例)的工厂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、类的创建"><span class="toc-number">1.5.95.</span> <span class="toc-text">1、类的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、类的实例化-类的调用"><span class="toc-number">1.5.96.</span> <span class="toc-text">2、类的实例化(类的调用)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7、类的继承与派生"><span class="toc-number">1.5.96.1.</span> <span class="toc-text">7、类的继承与派生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的继承代表子类可以具备父类所具有的属性和行为"><span class="toc-number">1.5.96.2.</span> <span class="toc-text">类的继承代表子类可以具备父类所具有的属性和行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的派生是指在子类中添加新的功能"><span class="toc-number">1.5.96.3.</span> <span class="toc-text">类的派生是指在子类中添加新的功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17、python中的文本文件操作"><span class="toc-number">1.5.96.4.</span> <span class="toc-text">17、python中的文本文件操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#操作模式"><span class="toc-number">1.5.96.5.</span> <span class="toc-text">操作模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#r-只读模式"><span class="toc-number">1.5.96.6.</span> <span class="toc-text">r 只读模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#w-只写模式"><span class="toc-number">1.5.96.7.</span> <span class="toc-text">w 只写模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a-追加写入"><span class="toc-number">1.5.96.8.</span> <span class="toc-text">a 追加写入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rb-二进制读取模式"><span class="toc-number">1.5.96.9.</span> <span class="toc-text">rb 二进制读取模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wb-二进制写入模式"><span class="toc-number">1.5.96.10.</span> <span class="toc-text">wb 二进制写入模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1、文件的写入"><span class="toc-number">1.5.96.11.</span> <span class="toc-text">1、文件的写入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#f-write"><span class="toc-number">1.5.96.12.</span> <span class="toc-text">f.write()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#with-open-文件名-操作模式-encoding-”utf-8”-as-f"><span class="toc-number">1.5.96.13.</span> <span class="toc-text">with open(文件名,操作模式,encoding=”utf-8”) as f:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作语句"><span class="toc-number">1.5.97.</span> <span class="toc-text">操作语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、文件的读取"><span class="toc-number">1.5.98.</span> <span class="toc-text">2、文件的读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#f-read"><span class="toc-number">1.5.99.</span> <span class="toc-text">f.read()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-requests"><span class="toc-number">1.5.100.</span> <span class="toc-text">python -m pip install requests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-lxml"><span class="toc-number">1.5.101.</span> <span class="toc-text">python -m pip install lxml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-bs4"><span class="toc-number">1.5.102.</span> <span class="toc-text">python -m pip install bs4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-jieba"><span class="toc-number">1.5.103.</span> <span class="toc-text">python -m pip install jieba</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-wordcloud"><span class="toc-number">1.5.104.</span> <span class="toc-text">python -m pip install wordcloud</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-imageio"><span class="toc-number">1.5.105.</span> <span class="toc-text">python -m pip install imageio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-m-pip-install-matplotlib"><span class="toc-number">1.5.106.</span> <span class="toc-text">python -m pip install matplotlib</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-
-  
-    <article id="post-hexoBlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/14/hexoBlog/">hexoBlog</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/11/14/hexoBlog/" class="archive-article-date">
-  	<time datetime="2019-11-14T12:35:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">192字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h1><hr>
-<h2 id="一、安装-nodejs"><a href="#一、安装-nodejs" class="headerlink" title="一、安装 nodejs"></a>一、安装 nodejs</h2><p>从<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener" title="nodejs">node.js下载页面</a>, 安装一路下一步就ok<br><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-nodejs.png" alt="nodejs" title="nodejs"></p>
-<hr>
-<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><h2 id="安装完nodejs后，-用npm安装hexo"><a href="#安装完nodejs后，-用npm安装hexo" class="headerlink" title="安装完nodejs后， 用npm安装hexo"></a>安装完nodejs后， 用npm安装hexo</h2><pre><code>$ npm install -g hexo-cli 
-$ hexo -v</code></pre><hr>
-<h2 id><a href="#" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo.png" alt="hexo-v" title="hexo-v"></h2><h2 id="三、使用hexo"><a href="#三、使用hexo" class="headerlink" title="三、使用hexo"></a>三、使用hexo</h2><hr>
-<h3 id="1、用hexo初始化并生成blog"><a href="#1、用hexo初始化并生成blog" class="headerlink" title="1、用hexo初始化并生成blog"></a>1、用hexo初始化并生成blog</h3><hr>
-<pre><code>$ hexo init my_hexo</code></pre><hr>
-<h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/hexo-init-blog.png" alt="my_hexo" title="my_hexo"></h2>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Hexo//" class="article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/14/hexoBlog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-centos7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/14/centos7/">centos7</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/11/14/centos7/" class="archive-article-date">
-  	<time datetime="2019-11-14T11:02:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-14</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">364字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="centos7搭建LAMP环境"><a href="#centos7搭建LAMP环境" class="headerlink" title="centos7搭建LAMP环境"></a>centos7搭建LAMP环境</h1><hr>
-<h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><hr>
-<h3 id="1-安装apache"><a href="#1-安装apache" class="headerlink" title="1.安装apache"></a>1.安装apache</h3><hr>
-<h4 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h4><pre><code>$ sudo cat /etc/redhat-release</code></pre><hr>
-<h4 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h4><pre><code>$ sudo yum -y install httpd httpd-devel</code></pre><hr>
-<h4 id="启动apache服务"><a href="#启动apache服务" class="headerlink" title="启动apache服务"></a>启动apache服务</h4><pre><code>$ sudo systemctl httpd start</code></pre><hr>
-<h4 id="设置httpd服务开机启动"><a href="#设置httpd服务开机启动" class="headerlink" title="设置httpd服务开机启动"></a>设置httpd服务开机启动</h4><pre><code>$ sudo systemctl enable httpd</code></pre><hr>
-<h4 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h4><pre><code>$ sudo systemctl status httpd</code></pre><hr>
-<h4 id="防火墙设置开启80端口"><a href="#防火墙设置开启80端口" class="headerlink" title="防火墙设置开启80端口"></a>防火墙设置开启80端口</h4><pre><code>$ sudo firewall-cmd --permanent --zone=public  --add-service=http
-$ sudo firewall-cmd --permanent --zone=public  --add-service=https
-$ sudo firewall-cmd --reload    </code></pre><hr>
-<h4 id="确认80端口监听中"><a href="#确认80端口监听中" class="headerlink" title="确认80端口监听中"></a>确认80端口监听中</h4><pre><code>$ ss -tulp | grep httpd</code></pre><hr>
-<h4 id="查服务器IP"><a href="#查服务器IP" class="headerlink" title="查服务器IP"></a>查服务器IP</h4><pre><code>$ ip addr</code></pre><hr>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">LAMP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OS//" class="article-tag-list-link color3">OS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/14/centos7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-makedown案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/makedown%E6%A1%88%E4%BE%8B/">makedown案例</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/11/04/makedown%E6%A1%88%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2019-11-04T09:36:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-04</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.4k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">6分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Markdown是一种轻量级的「标记语言」</strong></p>
-<p><img src="https://www.mdeditor.com/images/logos/markdown.png" alt="markdown" title="markdown"></p>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
-<h2 id="MdEditor是一个在线编辑Markdown文档的编辑器"><a href="#MdEditor是一个在线编辑Markdown文档的编辑器" class="headerlink" title="MdEditor是一个在线编辑Markdown文档的编辑器"></a>MdEditor是一个在线编辑Markdown文档的编辑器</h2><p><em>MdEditor扩展了Markdown的功能（如表格、脚注、内嵌HTML等等），以使让Markdown转换成更多的格式，和更丰富的展示效果，这些功能原初的Markdown尚不具备。</em></p>
-<blockquote>
-<p>Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如<del>Pandoc</del>，Pandao；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-</blockquote>
-<p>MdEditor源于Pandao的JavaScript开源项目，开源地址<a href="https://github.com/pandao/editor.md" target="_blank" rel="noopener" title="Editor.md">Editor.md</a>，并在MIT开源协议的许可范围内进行了优化，以适应广大用户群体的需求。向优秀的markdown开源编辑器原作者Pandao致敬。</p>
-<p><img src="https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png" alt="Pandao editor.md" title="Pandao editor.md"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/JS//" class="article-tag-list-link color3">JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/04/makedown%E6%A1%88%E4%BE%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
   
+
+  
+	
+	
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/12/02/python%E5%9F%BA%E7%A1%80/",
+  owner: 'zxk0nly1',
+  repo: 'zxk0nly1.github.io',
+  oauth: {
+    client_id: '4cee2d3a3fc2cc3e0b6',
+    client_secret: '0bca980e0d4421c0a27c0b1ef0c1e802f5c39b26',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
 
 
           </div>
@@ -816,8 +460,8 @@ $ sudo firewall-cmd --reload    </code></pre><hr>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
