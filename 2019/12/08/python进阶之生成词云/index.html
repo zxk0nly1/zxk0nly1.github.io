@@ -17,7 +17,7 @@
 <meta property="og:description" content="1、词云项目1、对获取的评论数据进行分词12345678import jiebadef cut_info():  with open(&quot;comment.txt&quot;,&quot;r&quot;,encoding=&quot;utf-8&quot;) as f:    text=f.read()    cut_text=&quot; &quot;.join(jieba.cut(text))    with open(&quot;cut_text.txt&quot;,&quot;w&quot;,enco">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;github.com&#x2F;zxk0nly1&#x2F;python&#x2F;blob&#x2F;master&#x2F;day05&#x2F;wordcloud.jpg?raw=true">
-<meta property="og:updated_time" content="2019-12-08T02:23:12.589Z">
+<meta property="og:updated_time" content="2019-12-08T02:26:25.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;github.com&#x2F;zxk0nly1&#x2F;python&#x2F;blob&#x2F;master&#x2F;day05&#x2F;wordcloud.jpg?raw=true">
   
@@ -213,7 +213,7 @@
       
 	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
         <h1 id="1、词云项目"><a href="#1、词云项目" class="headerlink" title="1、词云项目"></a>1、词云项目</h1><h3 id="1、对获取的评论数据进行分词"><a href="#1、对获取的评论数据进行分词" class="headerlink" title="1、对获取的评论数据进行分词"></a>1、对获取的评论数据进行分词</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_info</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">with</span> open(<span class="string">"comment.txt"</span>,<span class="string">"r"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text=f.read()</span><br><span class="line">    cut_text=<span class="string">" "</span>.join(jieba.cut(text))</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"cut_text.txt"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> f:</span><br><span class="line">      f.write(cut_text)</span><br><span class="line">cut_info()</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h3 id="2、绘制词云"><a href="#2、绘制词云" class="headerlink" title="2、绘制词云"></a>2、绘制词云</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#通过wordcloud模块传入词云相对应的参数</span></span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud,ImageColorGenerator,STOPWORDS</span><br><span class="line"><span class="comment">#将图片变为多维数组的模块，实现图片和文字的交互</span></span><br><span class="line"><span class="keyword">from</span> imageio <span class="keyword">import</span> imread</span><br><span class="line"><span class="comment">#使用codecs打开文件，不需要考虑编码格式问题，默认都是用Unicode编码</span></span><br><span class="line"><span class="keyword">import</span> codecs</span><br><span class="line"><span class="comment">#绘制数学统计制图陌路爱，用它来显示和绘制词云</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Darw_pic</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.font_path=<span class="string">"./font/simhei.ttf"</span>  <span class="comment">#设置字体路径</span></span><br><span class="line">    self.image_path=<span class="string">"timg.jpg"</span> <span class="comment">#设置图片路径</span></span><br><span class="line">    self.cut_text=<span class="string">"cut_text.txt"</span> <span class="comment">#设置文本路径</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">get_info</span><span class="params">(self)</span>:</span></span><br><span class="line">    d=path.dirname(__file__) <span class="comment">#获取当前文件的操作路径</span></span><br><span class="line">    image=imread(self.image_path) <span class="comment">#将图片处理为多维数组</span></span><br><span class="line">    text=codecs.open(path.join(d,self.cut_text),<span class="string">"rb"</span>,encoding=<span class="string">"utf-8"</span>).read() <span class="comment">#读取文本</span></span><br><span class="line">数据</span><br><span class="line">    self.draw_wordcloud(image,text) <span class="comment">#调用绘制词云的方法</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">draw_wordcloud</span><span class="params">(self,image,text)</span>:</span></span><br><span class="line">    stopwords=set(STOPWORDS) <span class="comment">#使用默认的屏蔽词</span></span><br><span class="line">    <span class="comment"># 字体路径 图片数组 屏蔽字 背景颜色 最大词数限制 字体最大限制 文本数据</span></span><br><span class="line">    wordcloud=WordCloud(font_path=self.font_path,mask=image,</span><br><span class="line">              stopwords=stopwords,background_color=<span class="string">"white"</span>,</span><br><span class="line">              max_words=<span class="number">2000</span>,max_font_size=<span class="number">200</span>).generate(text)</span><br><span class="line">    image_color=ImageColorGenerator(image) <span class="comment">#让字体颜色随着图片变色改变</span></span><br><span class="line">    wordcloud.to_file(<span class="string">"wordcloud.jpg"</span>) <span class="comment">#给生成的词云命名</span></span><br><span class="line">    plt.imshow(wordcloud.recolor(color_func=image_color)) <span class="comment">#生成词云的颜色</span></span><br><span class="line">    plt.axis(<span class="string">"off"</span>) <span class="comment">#不显示坐标轴</span></span><br><span class="line">    plt.show() <span class="comment">#显示词云</span></span><br><span class="line">   </span><br><span class="line">draw=Darw_pic()</span><br><span class="line">draw.get_info()</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://github.com/zxk0nly1/python/blob/master/day05/wordcloud.jpg?raw=true" alt="wordcloud"></p>
@@ -345,6 +345,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/12/11/pycharm%E7%89%88%E6%9C%AC%E6%BF%80%E6%B4%BB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          pycharm版本激活
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/05/python%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
@@ -515,10 +524,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">blog</a>
               </li>
              
@@ -527,11 +532,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">LAMP</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,15 +540,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">hexo Shell</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,6 +556,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">LAMP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">hexo Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">pyhton</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Linux SSH</a>
               </li>
              
@@ -567,7 +580,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">pyhton</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">pycharm</a>
               </li>
             
             <div class="clearfix"></div>
