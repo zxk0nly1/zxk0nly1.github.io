@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vue/clii安装踩坑</title>
+    <url>/2019/12/12/vue-cli%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91/</url>
+    <content><![CDATA[<h3 id="Vue脚手架搭建"><a href="#Vue脚手架搭建" class="headerlink" title="Vue脚手架搭建"></a>Vue脚手架搭建</h3><h4 id="1-Vue简介"><a href="#1-Vue简介" class="headerlink" title="1 Vue简介"></a>1 Vue简介</h4><h5 id="现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计"><a href="#现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计" class="headerlink" title="现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计"></a>现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计</h5><h4 id="2-安装vue-cli脚手架"><a href="#2-安装vue-cli脚手架" class="headerlink" title="2 安装vue/cli脚手架"></a>2 安装vue/cli脚手架</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install @vue/cli -g</span></span><br></pre></td></tr></table></figure>
+
+<p>如果全局安装过旧版本的vue-cli（1.x或者2.x)需要先卸载旧版的vue-cli(Vue3与旧版本不兼容)</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall vue-cli -g </span></span><br><span class="line">//或者yarn global remove vue-cli</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-fd406123ad261b9f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/939/format/webp" alt="vue-cli"></p>
+<p><u>可以看到我之前的版本是2.9.6，卸载成功后，vue命令便不存在了</u> </p>
+<a id="more"></a>
+
+<p>另外，Vue-Cli 3 需要nodejs的版本&gt;=8.9</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v(查看node版本信息)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-a9d6d36fc8564b44.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/516/format/webp" alt="node"></p>
+<h4 id="3-安装-vue-cli"><a href="#3-安装-vue-cli" class="headerlink" title="3.安装@vue/cli"></a>3.安装@vue/cli</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cnpm install -g @vue/cli </span></span><br><span class="line">//或者yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-3d5dfb1fb27d5689.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/677/format/webp" alt="@vue/cli"></p>
+<h4 id="4-查看Vue版本"><a href="#4-查看Vue版本" class="headerlink" title="4.查看Vue版本"></a>4.查看Vue版本</h4><p><img src="https://upload-images.jianshu.io/upload_images/5814981-97dc60d5a8968aab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/677/format/webp" alt="vue"></p>
+<h4 id="5使用Vue新建项目"><a href="#5使用Vue新建项目" class="headerlink" title="5使用Vue新建项目"></a>5使用Vue新建项目</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue create my-pro</span></span><br><span class="line">//文件名 不支持驼峰（含大写字母）</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认选项后，成功新建项目demo"><a href="#默认选项后，成功新建项目demo" class="headerlink" title="默认选项后，成功新建项目demo"></a>默认选项后，成功新建项目demo</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> my-pro</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm run serve</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-0c45fee0960e693f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/547/format/webp" alt="run"></p>
+<h4 id="6-查看运行结果"><a href="#6-查看运行结果" class="headerlink" title="6 查看运行结果"></a>6 查看运行结果</h4><p><img src="https://upload-images.jianshu.io/upload_images/5814981-e532bc879ad294ef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/767/format/webp" alt="8080"></p>
+<h4 id="7-踩坑实例"><a href="#7-踩坑实例" class="headerlink" title="7 踩坑实例"></a>7 踩坑实例</h4><p>有时会安装@vue/cli出现错误，使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i npm -g (更新npm版本)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm i cnpm --registry=https://registry.npm.taobao.org</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cnpm i -g @vue/cli</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用以上命令更新镜像源，使用淘宝镜像源来安装下载（国内）</strong></p>
+<h4 id="8-拉取2-x模板"><a href="#8-拉取2-x模板" class="headerlink" title="8 拉取2.x模板"></a>8 拉取2.x模板</h4><h5 id="Vue-CLI-3-覆盖了旧版本的vue-命令，如果需要使用旧版本的-vue-init-功能，可以全局安装一个桥接工具："><a href="#Vue-CLI-3-覆盖了旧版本的vue-命令，如果需要使用旧版本的-vue-init-功能，可以全局安装一个桥接工具：" class="headerlink" title="Vue CLI 3 覆盖了旧版本的vue 命令，如果需要使用旧版本的 vue init 功能，可以全局安装一个桥接工具："></a>Vue CLI 3 覆盖了旧版本的<code>vue</code> 命令，如果需要使用旧版本的 <code>vue init</code> 功能，可以全局安装一个桥接工具：</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g @vue/cli-init //`vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vue init webpack my-project</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="9-安装插件"><a href="#9-安装插件" class="headerlink" title="9 安装插件"></a>9 安装插件</h4><h5 id="官方提示：vue-add-的设计意图是为了安装和调用-Vue-CLI-插件。这不意味着替换掉普通的-npm-包。对于这些普通的-npm-包，你仍然需要选用包管理器-！"><a href="#官方提示：vue-add-的设计意图是为了安装和调用-Vue-CLI-插件。这不意味着替换掉普通的-npm-包。对于这些普通的-npm-包，你仍然需要选用包管理器-！" class="headerlink" title="官方提示：vue add 的设计意图是为了安装和调用 Vue CLI 插件。这不意味着替换掉普通的 npm 包。对于这些普通的 npm 包，你仍然需要选用包管理器 ！"></a><strong><em>官方提示：</em></strong><code>vue add</code> 的设计意图是为了安装和调用 Vue CLI 插件。这不意味着替换掉普通的 npm 包。对于这些普通的 npm 包，你仍然需要选用包管理器 ！</h5><p><strong><em>官方警告：</em>我们推荐在运行 <code>vue add</code> 之前将项目的最新状态提交，因为该命令可能调用插件的文件生成器并很有可能更改你现有的文件。</strong> </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue add @vue/eslint </span></span><br><span class="line">//如果不带 @vue 前缀，该命令会换作解析一个 unscoped 的包，你也可以基于一个指定的 scope 使用（eg：vue add @foo/bar）</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-图形化界面"><a href="#10-图形化界面" class="headerlink" title="10 图形化界面"></a>10 图形化界面</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue ui</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-e93d4fca9ff20679.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/549/format/webp" alt="ui"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-b51ecf3e250c645e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/684/format/webp" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-40447e81043f981e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/643/format/webp" alt="img1"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-18a81fa7ca54212b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/643/format/webp" alt="img2"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-4bfb10a6bb59934f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/289/format/webp" alt="img3"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-12ca22daf4d36d3e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/564/format/webp" alt="img4"></p>
+<p><strong><em>安装完成：</em>你可以在这管理（安装、删除）插件、运行并分析你的项目文件</strong> </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/5814981-ff86292f519d23a8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1042/format/webp" alt="img5"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">文章来源：https://my.oschina.net/wangnian/blog/2051369</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>win系统安装nodejs配置</title>
+    <url>/2019/12/12/win%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nodejs%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Node配置"><a href="#Node配置" class="headerlink" title="Node配置"></a>Node配置</h1><ol>
+<li><h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><p>Node.js 安装包及源码下载地址为：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>。 </p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/03/download-page.jpg" alt="nodejs"></p>
+<p><strong>另外，如果没有设置全局目录node_global，那么全局安装的文件将会保存到 C:\Users\computer\AppData\Roaming\npm (computer是自己设置的计算机名字)</strong> </p>
+</li>
+</ol>
+<a id="more"></a>
+
+<ol start="2">
+<li><h4 id="配置node-global和node-cache"><a href="#配置node-global和node-cache" class="headerlink" title="配置node_global和node_cache"></a>配置node_global和node_cache</h4><p>(1). 在node安装目录创建node_global和node_cache文件夹</p>
+<p> <img src="https://img-blog.csdn.net/2018102321082540?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Njb3JwaW9fbWVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="node_global"></p>
+<h4 id="2"><a href="#2" class="headerlink" title="(2) ."></a>(2) .</h4><h5 id="用户变量设置：将用户变量中-PATH-的值改成-D-Program-Files-nodejs-node-global，没有PATH，可以直接添加。"><a href="#用户变量设置：将用户变量中-PATH-的值改成-D-Program-Files-nodejs-node-global，没有PATH，可以直接添加。" class="headerlink" title="用户变量设置：将用户变量中 PATH 的值改成 D:\Program Files\nodejs\node_global，没有PATH，可以直接添加。"></a>用户变量设置：将用户变量中 PATH 的值改成 D:\Program Files\nodejs\node_global，没有PATH，可以直接添加。</h5><h5 id="系统变量设置：添加变量-NODE-PATH-值为：D-Program-Files-nodejs-node-modules"><a href="#系统变量设置：添加变量-NODE-PATH-值为：D-Program-Files-nodejs-node-modules" class="headerlink" title="系统变量设置：添加变量 NODE_PATH  值为：D:\Program Files\nodejs\node_modules"></a>系统变量设置：添加变量 NODE_PATH  值为：D:\Program Files\nodejs\node_modules</h5><p><img src="https://img-blog.csdn.net/20181023211854153?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Njb3JwaW9fbWVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="node_path"></p>
+<h4 id="3-打开cmd"><a href="#3-打开cmd" class="headerlink" title="(3). 打开cmd"></a>(3). 打开cmd</h4><p><strong>npm config set prefix “D:\Program Files\nodejs\node_global”</strong>   </p>
+<p><strong>npm config set cache “D:\Program Files\nodejs\node_cache”</strong></p>
+<p><img src="https://img-blog.csdn.net/20181023211035231?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Njb3JwaW9fbWVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="cmd"></p>
+</li>
+<li><h4 id="使用npm安装模块"><a href="#使用npm安装模块" class="headerlink" title="使用npm安装模块"></a>使用npm安装模块</h4></li>
+</ol>
+<p><strong>执行npm install express -g 后，查看node_global 文件夹</strong> </p>
+<p><img src="https://img-blog.csdn.net/20181023212141580?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Njb3JwaW9fbWVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="express"></p>
+<p><em>有时候用npm拉取包可能会很慢</em>  <strong>可以用淘宝npm镜像代替npm进行拉包</strong> </p>
+<h5 id="执行："><a href="#执行：" class="headerlink" title="执行："></a>执行：</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g cnpm --registry=https://registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>然后就可以用 <u>cnpm install express -g</u> 进行拉包了，和npm一样。</strong> </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>pycharm版本激活</title>
     <url>/2019/12/11/pycharm%E7%89%88%E6%9C%AC%E6%BF%80%E6%B4%BB/</url>
     <content><![CDATA[<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><ol>
@@ -17,7 +107,7 @@
 <p><img src="https://img-blog.csdnimg.cn/20190613155328657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM4MzY5MTI4,size_16,color_FFFFFF,t_70" alt="successRegistry"></p>
 <h3 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h3><h3 id="（1）在激活界面的License-server输入：http-idea-liyang-io；或者：点击help→Register→License-sever-输入http-idea-liyang-io或者http-idea-imsxm-com"><a href="#（1）在激活界面的License-server输入：http-idea-liyang-io；或者：点击help→Register→License-sever-输入http-idea-liyang-io或者http-idea-imsxm-com" class="headerlink" title="（1）在激活界面的License server输入：http://idea.liyang.io；或者：点击help→Register→License sever ,输入http://idea.liyang.io或者http://idea.imsxm.com/"></a>（1）在激活界面的License server输入：<a href="http://idea.liyang.io/" target="_blank" rel="noopener">http://idea.liyang.io</a>；或者：点击help→Register→License sever ,输入<a href="http://idea.liyang.io/" target="_blank" rel="noopener">http://idea.liyang.io</a>或者<a href="http://idea.imsxm.com/" target="_blank" rel="noopener">http://idea.imsxm.com/</a></h3><h3 id="（如果上述激活网址失效，换为这个：-https-jetlicense-nss-im-）"><a href="#（如果上述激活网址失效，换为这个：-https-jetlicense-nss-im-）" class="headerlink" title="（如果上述激活网址失效，换为这个： https://jetlicense.nss.im/ ）"></a>（如果上述激活网址失效，换为这个： <a href="https://jetlicense.nss.im/" target="_blank" rel="noopener">https://jetlicense.nss.im/</a> ）</h3><h3 id="（2）在浏览器的地址栏输入：http-idea-lanyus-com-，该网址，无需修改用户名，点击获取注册码。复制该注册码，粘贴在注册界面的Activation-code的输入框中，点击-ok"><a href="#（2）在浏览器的地址栏输入：http-idea-lanyus-com-，该网址，无需修改用户名，点击获取注册码。复制该注册码，粘贴在注册界面的Activation-code的输入框中，点击-ok" class="headerlink" title="（2）在浏览器的地址栏输入：http://idea.lanyus.com/，该网址，无需修改用户名，点击获取注册码。复制该注册码，粘贴在注册界面的Activation code的输入框中，点击 ok"></a>（2）在浏览器的地址栏输入：<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">http://idea.lanyus.com/</a>，该网址，无需修改用户名，点击获取注册码。复制该注册码，粘贴在注册界面的Activation code的输入框中，点击 ok</h3><h3 id="（3）在License-server输入http-feiyang-li-104"><a href="#（3）在License-server输入http-feiyang-li-104" class="headerlink" title="（3）在License server输入http://feiyang.li:104"></a>（3）在License server输入<a href="http://feiyang.li:104/" target="_blank" rel="noopener">http://feiyang.li:104</a></h3>]]></content>
       <categories>
-        <category>激活教程</category>
+        <category>教程</category>
       </categories>
       <tags>
         <tag>pycharm</tag>
@@ -232,8 +322,8 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>pyhton</tag>
         <tag>爬虫</tag>
+        <tag>pyhton</tag>
       </tags>
   </entry>
   <entry>
