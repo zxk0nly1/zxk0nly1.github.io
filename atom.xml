@@ -147,9 +147,9 @@
       <category term="python" scheme="http://yoursite.com/categories/python/"/>
     
     
-      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="pyhton" scheme="http://yoursite.com/tags/pyhton/"/>
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
