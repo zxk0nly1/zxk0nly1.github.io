@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git配置多个SSH-key</title>
+    <url>/2019/12/15/Git%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AASSH-key/</url>
+    <content><![CDATA[<h1 id="GIT配置多个ssh公钥"><a href="#GIT配置多个ssh公钥" class="headerlink" title="GIT配置多个ssh公钥"></a>GIT配置多个ssh公钥</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1 背景"></a>1 背景</h2><h5 id="当有多个git账号时，比如："><a href="#当有多个git账号时，比如：" class="headerlink" title="当有多个git账号时，比如："></a>当有多个git账号时，比如：</h5><p>a. 一个<strong>gitee</strong>，用于公司内部的工作开发；</p>
+<p> b. 一个<strong>github</strong>，用于自己进行一些开发活动； </p>
+<h2 id="2-解决方法"><a href="#2-解决方法" class="headerlink" title="2 解决方法"></a>2 解决方法</h2><ol>
+<li><h5 id="生成一个公司用的SSH-Key"><a href="#生成一个公司用的SSH-Key" class="headerlink" title="生成一个公司用的SSH-Key"></a>生成一个公司用的SSH-Key</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C <span class="string">'xxxxx@company.com'</span> -f ~/.ssh/gitee_id_rsa生成一个github用的SSH-Key</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="生成一个github用的SSH-Key"><a href="#生成一个github用的SSH-Key" class="headerlink" title="生成一个github用的SSH-Key"></a>生成一个github用的SSH-Key</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C <span class="string">'xxxxx@qq.com'</span> -f ~/.ssh/github_id_rsa</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<a id="more"></a>
+
+<ol start="3">
+<li><h5 id="在-ssh-目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）"><a href="#在-ssh-目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）" class="headerlink" title="在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）"></a>在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitee_id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_id_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="用ssh命令分别测试"><a href="#用ssh命令分别测试" class="headerlink" title="用ssh命令分别测试"></a>用ssh命令分别测试</h5>   <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh -T git@gitee.com</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh -T git@github.com</span></span><br></pre></td></tr></table></figure>
+
+<p>   这里以<strong><em>gitee</em></strong>为例，成功的话会返回下图内容 </p>
+<p>   <img src="https://images.gitee.com/uploads/images/2018/0921/161137_b71ef6be_967230.png" alt="gitee"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh生成公钥</title>
+    <url>/2019/12/15/ssh%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5/</url>
+    <content><![CDATA[<h2 id="SSH公钥"><a href="#SSH公钥" class="headerlink" title="SSH公钥"></a>SSH公钥</h2><h5 id="gitee和github等版本库软件，提供了基于ssh协议的Git服务，在使用ssh协议访问仓库之前，需要先配置好账户-仓库的SSH公钥。"><a href="#gitee和github等版本库软件，提供了基于ssh协议的Git服务，在使用ssh协议访问仓库之前，需要先配置好账户-仓库的SSH公钥。" class="headerlink" title="gitee和github等版本库软件，提供了基于ssh协议的Git服务，在使用ssh协议访问仓库之前，需要先配置好账户/仓库的SSH公钥。"></a>gitee和github等版本库软件，提供了基于ssh协议的Git服务，在使用ssh协议访问仓库之前，需要先配置好账户/仓库的SSH公钥。</h5><h3 id="你可以按如下命令来生成-sshkey"><a href="#你可以按如下命令来生成-sshkey" class="headerlink" title="你可以按如下命令来生成 sshkey:"></a>你可以按如下命令来生成 sshkey:</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "xxxxx@xxxxx.com"  </span><br><span class="line"><span class="meta">#</span><span class="bash"> Generating public/private rsa key pair...</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="按照提示完成三次回车，即可生成-ssh-key。通过查看-ssh-id-rsa-pub-文件内容，获取到你的-public-key"><a href="#按照提示完成三次回车，即可生成-ssh-key。通过查看-ssh-id-rsa-pub-文件内容，获取到你的-public-key" class="headerlink" title="按照提示完成三次回车，即可生成 ssh key。通过查看 ~/.ssh/id_rsa.pub 文件内容，获取到你的 public key"></a>按照提示完成三次回车，即可生成 ssh key。通过查看 <code>~/.ssh/id_rsa.pub</code> 文件内容，获取到你的 public key</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="meta">#</span><span class="bash"> ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images.gitee.com/uploads/images/2018/0814/170141_5aa5bc98_551147.png" alt="ssh"></p>
+<h5 id="复制生成后的-ssh-key，通过仓库主页-「管理」-gt-「部署公钥管理」-gt-「添加部署公钥」-，添加生成的-public-key-添加到仓库中。"><a href="#复制生成后的-ssh-key，通过仓库主页-「管理」-gt-「部署公钥管理」-gt-「添加部署公钥」-，添加生成的-public-key-添加到仓库中。" class="headerlink" title="复制生成后的 ssh key，通过仓库主页 「管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」 ，添加生成的 public key 添加到仓库中。"></a>复制生成后的 ssh key，通过仓库主页 <strong>「<em>管理」-&gt;「部署公钥管理」-&gt;「添加部署公钥」</em></strong> ，添加生成的 public key 添加到仓库中。</h5><p><img src="https://images.gitee.com/uploads/images/2018/0814/233212_29a62378_551147.png" alt="id_rsa.pub"></p>
+<p>添加后，在<strong>终端（Terminal）</strong>中输入  :</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br></pre></td></tr></table></figure>
+
+<p>首次使用需要确认并添加主机到本机SSH可信列表。若返回 </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi XXX! You've successfully authenticated, but Gitee.com does not provide shell access.</span><br></pre></td></tr></table></figure>
+
+<p>内容，则证明添加<strong>成功</strong>。</p>
+<p><img src="https://images.gitee.com/uploads/images/2018/0814/170837_4c5ef029_551147.png" alt="gitee"></p>
+<p><strong>添加成功后，就可以使用SSH协议对仓库进行操作了。</strong>  </p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用node写接口</title>
     <url>/2019/12/12/%E4%BD%BF%E7%94%A8node%E5%86%99%E6%8E%A5%E5%8F%A3/</url>
     <content><![CDATA[<h1 id="node简单接口"><a href="#node简单接口" class="headerlink" title="node简单接口"></a>node简单接口</h1><ol>
@@ -1007,8 +1064,8 @@ phpinfo();
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
         <tag>blog</tag>
+        <tag>markdown</tag>
       </tags>
   </entry>
 </search>
