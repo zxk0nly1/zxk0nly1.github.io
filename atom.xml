@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-27T14:00:48.745Z</updated>
+  <updated>2019-12-30T11:29:43.586Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux服务器远程连接mysql</title>
+    <link href="http://yoursite.com/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/"/>
+    <id>http://yoursite.com/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/</id>
+    <published>2019-12-30T11:20:39.000Z</published>
+    <updated>2019-12-30T11:29:43.586Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、登录数据库mysql"><a href="#1、登录数据库mysql" class="headerlink" title="1、登录数据库mysql"></a>1、登录数据库mysql</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@Centos ~]# mysql -uroot</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and host=<span class="string">'localhost'</span>; </span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br></pre></td></tr></table></figure><h4 id="2、设置远程登录"><a href="#2、设置远程登录" class="headerlink" title="2、设置远程登录"></a>2、设置远程登录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> GRANT ALL PRIVILEGES ON *.* TO root@<span class="string">"%"</span> IDENTIFIED BY <span class="string">'123456'</span> WITH GRANT OPTION;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure><p><img src="https://images2018.cnblogs.com/blog/909171/201803/909171-20180325130427485-1646749538.png" alt="mysql"></p><a id="more"></a><h4 id="3、远程Navicat-或者其他mysql管理工具-访问云服务器的数据库"><a href="#3、远程Navicat-或者其他mysql管理工具-访问云服务器的数据库" class="headerlink" title="3、远程Navicat(或者其他mysql管理工具)访问云服务器的数据库"></a>3、远程Navicat(或者其他mysql管理工具)访问云服务器的数据库</h4><p><img src="https://images2018.cnblogs.com/blog/909171/201803/909171-20180325172145377-665338851.png" alt="navicat"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1、登录数据库mysql&quot;&gt;&lt;a href=&quot;#1、登录数据库mysql&quot; class=&quot;headerlink&quot; title=&quot;1、登录数据库mysql&quot;&gt;&lt;/a&gt;1、登录数据库mysql&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[root@Centos ~]# mysql -uroot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;mysql&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; update user &lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; password=password(&lt;span class=&quot;string&quot;&gt;&#39;123456&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;where&lt;/span&gt; user=&lt;span class=&quot;string&quot;&gt;&#39;root&#39;&lt;/span&gt; and host=&lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;; &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;mysql&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; flush privileges;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;2、设置远程登录&quot;&gt;&lt;a href=&quot;#2、设置远程登录&quot; class=&quot;headerlink&quot; title=&quot;2、设置远程登录&quot;&gt;&lt;/a&gt;2、设置远程登录&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;mysql&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; GRANT ALL PRIVILEGES ON *.* TO root@&lt;span class=&quot;string&quot;&gt;&quot;%&quot;&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;string&quot;&gt;&#39;123456&#39;&lt;/span&gt; WITH GRANT OPTION;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Query OK, 0 rows affected (0.00 sec)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;mysql&amp;gt;&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; flush privileges;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Query OK, 0 rows affected (0.00 sec)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://images2018.cnblogs.com/blog/909171/201803/909171-20180325130427485-1646749538.png&quot; alt=&quot;mysql&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>XMind破解</title>
@@ -582,43 +611,6 @@ $ hexo -v&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>centos7</title>
-    <link href="http://yoursite.com/2019/11/14/centos7/"/>
-    <id>http://yoursite.com/2019/11/14/centos7/</id>
-    <published>2019-11-14T11:02:29.000Z</published>
-    <updated>2019-11-28T15:26:55.939Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="centos7搭建LAMP环境"><a href="#centos7搭建LAMP环境" class="headerlink" title="centos7搭建LAMP环境"></a>centos7搭建LAMP环境</h1><hr><h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><hr><h3 id="1-安装apache"><a href="#1-安装apache" class="headerlink" title="1.安装apache"></a>1.安装apache</h3><hr><h4 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h4><pre><code>$ sudo cat /etc/redhat-release</code></pre><hr><h4 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h4><pre><code>$ sudo yum -y install httpd httpd-devel</code></pre><hr><h4 id="启动apache服务"><a href="#启动apache服务" class="headerlink" title="启动apache服务"></a>启动apache服务</h4><pre><code>$ sudo systemctl httpd start</code></pre><hr><h4 id="设置httpd服务开机启动"><a href="#设置httpd服务开机启动" class="headerlink" title="设置httpd服务开机启动"></a>设置httpd服务开机启动</h4><pre><code>$ sudo systemctl enable httpd</code></pre><hr><h4 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h4><pre><code>$ sudo systemctl status httpd</code></pre><hr><h4 id="防火墙设置开启80端口"><a href="#防火墙设置开启80端口" class="headerlink" title="防火墙设置开启80端口"></a>防火墙设置开启80端口</h4><pre><code>$ sudo firewall-cmd --permanent --zone=public  --add-service=http$ sudo firewall-cmd --permanent --zone=public  --add-service=https$ sudo firewall-cmd --reload    </code></pre><hr><h4 id="确认80端口监听中"><a href="#确认80端口监听中" class="headerlink" title="确认80端口监听中"></a>确认80端口监听中</h4><pre><code>$ ss -tulp | grep httpd</code></pre><hr><h4 id="查服务器IP"><a href="#查服务器IP" class="headerlink" title="查服务器IP"></a>查服务器IP</h4><pre><code>$ ip addr</code></pre><hr><a id="more"></a><h4 id="浏览器登陆"><a href="#浏览器登陆" class="headerlink" title="浏览器登陆"></a>浏览器登陆</h4><hr><p><img src="https://images2015.cnblogs.com/blog/1054216/201707/1054216-20170721173607855-676796079.jpg" alt="img"><br>apache环境搭建成功！</p><hr><h3 id="2-安装mysql"><a href="#2-安装mysql" class="headerlink" title="2.安装mysql"></a>2.安装mysql</h3><hr><h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><pre><code>$ sudo yum install mariadb mariadb-server mariadb-libs mariadb-devel$ sudo rpm -qa | grep mariadb</code></pre><hr><h4 id="开启mysql服务，并设置开机启动，检查mysql状态"><a href="#开启mysql服务，并设置开机启动，检查mysql状态" class="headerlink" title="开启mysql服务，并设置开机启动，检查mysql状态"></a>开启mysql服务，并设置开机启动，检查mysql状态</h4><pre><code>$ sudo systemctl start  mariadb$ sudo systemctl enable  mariadb $ ss -tulp |grep mysqld</code></pre><hr><h4 id="数据库安全设置"><a href="#数据库安全设置" class="headerlink" title="数据库安全设置"></a>数据库安全设置</h4><pre><code>$ sudo mysql_secure_installation (yynyyy)</code></pre><hr><h4 id="登陆数据库测试"><a href="#登陆数据库测试" class="headerlink" title="登陆数据库测试"></a>登陆数据库测试</h4><pre><code>$ mysql -uroot -p(输入设置好的密码)MariaDB [(none)]&gt; show databases;</code></pre><hr><h3 id="3-安装php"><a href="#3-安装php" class="headerlink" title="3.安装php"></a>3.安装php</h3><hr><h4 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h4><pre><code>$ sudo yum -y install php$ sudo rpm -ql php</code></pre><hr><h4 id="连接mysql与php"><a href="#连接mysql与php" class="headerlink" title="连接mysql与php"></a>连接mysql与php</h4><pre><code>$ sudo yum -y install php-mysql$ sudo rpm -ql php-mysql</code></pre><hr><h4 id="安装php常用模块"><a href="#安装php常用模块" class="headerlink" title="安装php常用模块"></a>安装php常用模块</h4><pre><code>$ sudo yum install -y php-gd php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-snmp php-soap curl curl-devel php-bcmath</code></pre><hr><h4 id="测试php"><a href="#测试php" class="headerlink" title="测试php"></a>测试php</h4><pre><code>$ cd /var/www/html$ ls$ pwd$ vi info.php</code></pre><?phpphpinfo();?><h2 id="按esc退出输入，输入’-wq’-保存并退出"><a href="#按esc退出输入，输入’-wq’-保存并退出" class="headerlink" title="(按esc退出输入，输入’:wq’,保存并退出)"></a>(按esc退出输入，输入’:wq’,保存并退出)</h2><h4 id="重启apache服务器"><a href="#重启apache服务器" class="headerlink" title="重启apache服务器"></a>重启apache服务器</h4><pre><code>$ sudo systemctl restart http</code></pre><hr><h4 id="测试PHP"><a href="#测试PHP" class="headerlink" title="测试PHP"></a>测试PHP</h4><pre><code>在自己电脑浏览器输入服务器的ip/info.php(如192.168.190.130/info.php)，你可以看到已经安装的模块；</code></pre><p><img src="https://images2015.cnblogs.com/blog/1054216/201707/1054216-20170725104919468-1062733523.jpg" alt="img"></p><h5 id="至此，你的centos7的Apache-Mysql-Php环境就搭建好了"><a href="#至此，你的centos7的Apache-Mysql-Php环境就搭建好了" class="headerlink" title="至此，你的centos7的Apache+Mysql+Php环境就搭建好了"></a>至此，你的centos7的Apache+Mysql+Php环境就搭建好了</h5>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;centos7搭建LAMP环境&quot;&gt;&lt;a href=&quot;#centos7搭建LAMP环境&quot; class=&quot;headerlink&quot; title=&quot;centos7搭建LAMP环境&quot;&gt;&lt;/a&gt;centos7搭建LAMP环境&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;yum安装&quot;&gt;&lt;a href=&quot;#yum安装&quot; class=&quot;headerlink&quot; title=&quot;yum安装&quot;&gt;&lt;/a&gt;yum安装&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;1-安装apache&quot;&gt;&lt;a href=&quot;#1-安装apache&quot; class=&quot;headerlink&quot; title=&quot;1.安装apache&quot;&gt;&lt;/a&gt;1.安装apache&lt;/h3&gt;&lt;hr&gt;
-&lt;h4 id=&quot;实验环境：&quot;&gt;&lt;a href=&quot;#实验环境：&quot; class=&quot;headerlink&quot; title=&quot;实验环境：&quot;&gt;&lt;/a&gt;实验环境：&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo cat /etc/redhat-release&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;安装apache&quot;&gt;&lt;a href=&quot;#安装apache&quot; class=&quot;headerlink&quot; title=&quot;安装apache&quot;&gt;&lt;/a&gt;安装apache&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo yum -y install httpd httpd-devel&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;启动apache服务&quot;&gt;&lt;a href=&quot;#启动apache服务&quot; class=&quot;headerlink&quot; title=&quot;启动apache服务&quot;&gt;&lt;/a&gt;启动apache服务&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo systemctl httpd start&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;设置httpd服务开机启动&quot;&gt;&lt;a href=&quot;#设置httpd服务开机启动&quot; class=&quot;headerlink&quot; title=&quot;设置httpd服务开机启动&quot;&gt;&lt;/a&gt;设置httpd服务开机启动&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo systemctl enable httpd&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;查看服务状态&quot;&gt;&lt;a href=&quot;#查看服务状态&quot; class=&quot;headerlink&quot; title=&quot;查看服务状态&quot;&gt;&lt;/a&gt;查看服务状态&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo systemctl status httpd&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;防火墙设置开启80端口&quot;&gt;&lt;a href=&quot;#防火墙设置开启80端口&quot; class=&quot;headerlink&quot; title=&quot;防火墙设置开启80端口&quot;&gt;&lt;/a&gt;防火墙设置开启80端口&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ sudo firewall-cmd --permanent --zone=public  --add-service=http
-$ sudo firewall-cmd --permanent --zone=public  --add-service=https
-$ sudo firewall-cmd --reload    &lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;确认80端口监听中&quot;&gt;&lt;a href=&quot;#确认80端口监听中&quot; class=&quot;headerlink&quot; title=&quot;确认80端口监听中&quot;&gt;&lt;/a&gt;确认80端口监听中&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ ss -tulp | grep httpd&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h4 id=&quot;查服务器IP&quot;&gt;&lt;a href=&quot;#查服务器IP&quot; class=&quot;headerlink&quot; title=&quot;查服务器IP&quot;&gt;&lt;/a&gt;查服务器IP&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;$ ip addr&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-    
-    </summary>
-    
-    
-      <category term="OS" scheme="http://yoursite.com/categories/OS/"/>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-      <category term="LAMP" scheme="http://yoursite.com/tags/LAMP/"/>
     
   </entry>
   

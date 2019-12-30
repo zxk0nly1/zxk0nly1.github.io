@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux服务器远程连接mysql</title>
+    <url>/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/</url>
+    <content><![CDATA[<h4 id="1、登录数据库mysql"><a href="#1、登录数据库mysql" class="headerlink" title="1、登录数据库mysql"></a>1、登录数据库mysql</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@Centos ~]# mysql -uroot</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and host=<span class="string">'localhost'</span>; </span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2、设置远程登录"><a href="#2、设置远程登录" class="headerlink" title="2、设置远程登录"></a>2、设置远程登录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> GRANT ALL PRIVILEGES ON *.* TO root@<span class="string">"%"</span> IDENTIFIED BY <span class="string">'123456'</span> WITH GRANT OPTION;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://images2018.cnblogs.com/blog/909171/201803/909171-20180325130427485-1646749538.png" alt="mysql"></p>
+<a id="more"></a>
+
+<h4 id="3、远程Navicat-或者其他mysql管理工具-访问云服务器的数据库"><a href="#3、远程Navicat-或者其他mysql管理工具-访问云服务器的数据库" class="headerlink" title="3、远程Navicat(或者其他mysql管理工具)访问云服务器的数据库"></a>3、远程Navicat(或者其他mysql管理工具)访问云服务器的数据库</h4><p><img src="https://images2018.cnblogs.com/blog/909171/201803/909171-20180325172145377-665338851.png" alt="navicat"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>XMind破解</title>
     <url>/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/</url>
     <content><![CDATA[<figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">破解版软件 链接: https://pan.baidu.com/s/19l0DY5e-SezYzVKlgmhK0Q 密码: 970l</span><br></pre></td></tr></table></figure>
@@ -1074,8 +1094,8 @@ phpinfo();
         <category>JS</category>
       </categories>
       <tags>
-        <tag>JS</tag>
         <tag>markdown</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
