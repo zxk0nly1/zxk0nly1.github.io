@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-30T11:29:43.586Z</updated>
+  <updated>2019-12-30T12:19:57.708Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>eclipse自动补全</title>
+    <link href="http://yoursite.com/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/"/>
+    <id>http://yoursite.com/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</id>
+    <published>2019-12-30T12:08:44.000Z</published>
+    <updated>2019-12-30T12:19:57.708Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、打开Eclipse，点击“Window-Perfences”"><a href="#1、打开Eclipse，点击“Window-Perfences”" class="headerlink" title="1、打开Eclipse，点击“Window - Perfences”;"></a>1、打开Eclipse，点击“Window - Perfences”;</h4><p><img src="https://img-blog.csdn.net/20161217141203508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="perfences"></p><h4 id="2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项"><a href="#2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项" class="headerlink" title="2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;"></a><strong>2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;</strong></h4><p><img src="https://img-blog.csdn.net/20180121205904456?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="editor"></p><a id="more"></a><h4 id="3-在”Auto-Activation-triggers-for-java”选项中，默认触发代码提示的就是”-”这个符号。将”-”后面加入所有的英文大小写字母，更改：-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"><a href="#3-在”Auto-Activation-triggers-for-java”选项中，默认触发代码提示的就是”-”这个符号。将”-”后面加入所有的英文大小写字母，更改：-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" class="headerlink" title="3. 在”Auto Activation triggers for java”选项中，默认触发代码提示的就是”.”这个符号。将”.”后面加入所有的英文大小写字母，更改：.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"></a><strong>3. 在”Auto Activation triggers for java”选项中，默认触发代码提示的就是”.”这个符号。将”.”后面加入所有的英文大小写字母，更改：.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</strong></h4><p><img src="https://img-blog.csdn.net/20180121205938587?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="trigger"></p><h4 id="4-更改完成后就可以使用快捷键，迅速敲代码了。"><a href="#4-更改完成后就可以使用快捷键，迅速敲代码了。" class="headerlink" title="4.更改完成后就可以使用快捷键，迅速敲代码了。"></a><strong>4.更改完成后就可以使用快捷键，迅速敲代码了。</strong></h4><p><img src="https://img-blog.csdn.net/20180121210040250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="quickcode"></p><h4 id="5、其他语言的自动补全，类似，如xml文件自动补全"><a href="#5、其他语言的自动补全，类似，如xml文件自动补全" class="headerlink" title="5、其他语言的自动补全，类似，如xml文件自动补全"></a>5、其他语言的自动补全，类似，如xml文件自动补全</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在最上端的Auto Activation中将Prompt when these characters are inserted后面的文本框中</span><br><span class="line"></span><br><span class="line">的“&lt;=:”替换成“&lt;=:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ”（注意后面还有一</span><br><span class="line"></span><br><span class="line">个空格）</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdn.net/20161217141747218?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="xml"></p><p><img src="https://img-blog.csdn.net/20161217141931406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="quick"></p><h4 id="这样的话我们使用起来就会方便很多。"><a href="#这样的话我们使用起来就会方便很多。" class="headerlink" title="这样的话我们使用起来就会方便很多。"></a><em>这样的话我们使用起来就会方便很多。</em></h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1、打开Eclipse，点击“Window-Perfences”&quot;&gt;&lt;a href=&quot;#1、打开Eclipse，点击“Window-Perfences”&quot; class=&quot;headerlink&quot; title=&quot;1、打开Eclipse，点击“Window - Perfences”;&quot;&gt;&lt;/a&gt;1、打开Eclipse，点击“Window - Perfences”;&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://img-blog.csdn.net/20161217141203508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&quot; alt=&quot;perfences&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项&quot;&gt;&lt;a href=&quot;#2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项&quot; class=&quot;headerlink&quot; title=&quot;2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;&quot;&gt;&lt;/a&gt;&lt;strong&gt;2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://img-blog.csdn.net/20180121205904456?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&quot; alt=&quot;editor&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
+    
+  </entry>
   
   <entry>
     <title>linux服务器远程连接mysql</title>
@@ -578,39 +602,6 @@ The key&amp;apos;s randomart image is:
     
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexoBlog</title>
-    <link href="http://yoursite.com/2019/11/14/hexoBlog/"/>
-    <id>http://yoursite.com/2019/11/14/hexoBlog/</id>
-    <published>2019-11-14T12:35:19.000Z</published>
-    <updated>2019-11-28T15:28:44.672Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h1><hr><h2 id="一、安装-nodejs"><a href="#一、安装-nodejs" class="headerlink" title="一、安装 nodejs"></a>一、安装 nodejs</h2><p>从<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener" title="nodejs">node.js下载页面</a>, 安装一路下一步就ok<br><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-nodejs.png" alt="nodejs" title="nodejs"></p><hr><h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><h2 id="安装完nodejs后，-用npm安装hexo"><a href="#安装完nodejs后，-用npm安装hexo" class="headerlink" title="安装完nodejs后， 用npm安装hexo"></a>安装完nodejs后， 用npm安装hexo</h2><pre><code>$ npm install -g hexo-cli $ hexo -v</code></pre><hr><h2 id><a href="#" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo.png" alt="hexo-v" title="hexo-v"></h2><h2 id="三、使用hexo"><a href="#三、使用hexo" class="headerlink" title="三、使用hexo"></a>三、使用hexo</h2><hr><h3 id="1、用hexo初始化并生成blog"><a href="#1、用hexo初始化并生成blog" class="headerlink" title="1、用hexo初始化并生成blog"></a>1、用hexo初始化并生成blog</h3><hr><pre><code>$ hexo init my_hexo</code></pre><hr><h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/hexo-init-blog.png" alt="my_hexo" title="my_hexo"></h2><a id="more"></a><h3 id="2、安装依赖，然后用hexo-generate，-hexo-g-生成静态页面"><a href="#2、安装依赖，然后用hexo-generate，-hexo-g-生成静态页面" class="headerlink" title="2、安装依赖，然后用hexo generate，(hexo g)生成静态页面"></a>2、安装依赖，然后用hexo generate，(hexo g)生成静态页面</h3><pre><code>$cd my_hexo$ls -l$npm install(这里可能会很慢，所以需要修改一下npm安装源)$npm config set registry https://registry.npm.taobao.org （或者下载cnpm）$ npm install cnpm -g$ cnpm install$ hexo generate //生成静态页面</code></pre><hr><h2 id="-2"><a href="#-2" class="headerlink" title></a><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo-deps.png" alt="hexo-g" title="hexo-g"></h2><h3 id="3、生成静态页面后，可以用hexo-server-或者hexo-s-启动服务器，并通过http-localhost-4000访问"><a href="#3、生成静态页面后，可以用hexo-server-或者hexo-s-启动服务器，并通过http-localhost-4000访问" class="headerlink" title="3、生成静态页面后，可以用hexo server(或者hexo s)启动服务器，并通过http://localhost:4000访问"></a>3、生成静态页面后，可以用hexo server(或者hexo s)启动服务器，并通过<a href="http://localhost:4000访问" target="_blank" rel="noopener">http://localhost:4000访问</a></h3><p><img src="https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/blog-index.png" alt="hexo-s" title="hexo-s"></p><h5 id="至此，hexo博客就部署好了"><a href="#至此，hexo博客就部署好了" class="headerlink" title="至此，hexo博客就部署好了"></a>至此，hexo博客就部署好了</h5><p><em>下一讲，可以换一下hexo默认的主题和如何去写一篇博客</em></p><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;工具介绍&quot;&gt;&lt;a href=&quot;#工具介绍&quot; class=&quot;headerlink&quot; title=&quot;工具介绍&quot;&gt;&lt;/a&gt;工具介绍&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;一、安装-nodejs&quot;&gt;&lt;a href=&quot;#一、安装-nodejs&quot; class=&quot;headerlink&quot; title=&quot;一、安装 nodejs&quot;&gt;&lt;/a&gt;一、安装 nodejs&lt;/h2&gt;&lt;p&gt;从&lt;a href=&quot;https://nodejs.org/en/download/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; title=&quot;nodejs&quot;&gt;node.js下载页面&lt;/a&gt;, 安装一路下一步就ok&lt;br&gt;&lt;img src=&quot;https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-nodejs.png&quot; alt=&quot;nodejs&quot; title=&quot;nodejs&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;二、安装hexo&quot;&gt;&lt;a href=&quot;#二、安装hexo&quot; class=&quot;headerlink&quot; title=&quot;二、安装hexo&quot;&gt;&lt;/a&gt;二、安装hexo&lt;/h2&gt;&lt;h2 id=&quot;安装完nodejs后，-用npm安装hexo&quot;&gt;&lt;a href=&quot;#安装完nodejs后，-用npm安装hexo&quot; class=&quot;headerlink&quot; title=&quot;安装完nodejs后， 用npm安装hexo&quot;&gt;&lt;/a&gt;安装完nodejs后， 用npm安装hexo&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;$ npm install -g hexo-cli 
-$ hexo -v&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;img src=&quot;https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/install-hexo.png&quot; alt=&quot;hexo-v&quot; title=&quot;hexo-v&quot;&gt;&lt;/h2&gt;&lt;h2 id=&quot;三、使用hexo&quot;&gt;&lt;a href=&quot;#三、使用hexo&quot; class=&quot;headerlink&quot; title=&quot;三、使用hexo&quot;&gt;&lt;/a&gt;三、使用hexo&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;1、用hexo初始化并生成blog&quot;&gt;&lt;a href=&quot;#1、用hexo初始化并生成blog&quot; class=&quot;headerlink&quot; title=&quot;1、用hexo初始化并生成blog&quot;&gt;&lt;/a&gt;1、用hexo初始化并生成blog&lt;/h3&gt;&lt;hr&gt;
-&lt;pre&gt;&lt;code&gt;$ hexo init my_hexo&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&quot;-1&quot;&gt;&lt;a href=&quot;#-1&quot; class=&quot;headerlink&quot; title&gt;&lt;/a&gt;&lt;img src=&quot;https://run-zheng.github.io/2018/09/16/use-hexo-gen-blog-deploy-github/hexo-init-blog.png&quot; alt=&quot;my_hexo&quot; title=&quot;my_hexo&quot;&gt;&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
     
   </entry>
   

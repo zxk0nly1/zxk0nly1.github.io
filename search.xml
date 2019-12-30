@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>eclipse自动补全</title>
+    <url>/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</url>
+    <content><![CDATA[<h4 id="1、打开Eclipse，点击“Window-Perfences”"><a href="#1、打开Eclipse，点击“Window-Perfences”" class="headerlink" title="1、打开Eclipse，点击“Window - Perfences”;"></a>1、打开Eclipse，点击“Window - Perfences”;</h4><p><img src="https://img-blog.csdn.net/20161217141203508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="perfences"></p>
+<h4 id="2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项"><a href="#2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项" class="headerlink" title="2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;"></a><strong>2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;</strong></h4><p><img src="https://img-blog.csdn.net/20180121205904456?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="editor"></p>
+<a id="more"></a>
+
+<h4 id="3-在”Auto-Activation-triggers-for-java”选项中，默认触发代码提示的就是”-”这个符号。将”-”后面加入所有的英文大小写字母，更改：-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"><a href="#3-在”Auto-Activation-triggers-for-java”选项中，默认触发代码提示的就是”-”这个符号。将”-”后面加入所有的英文大小写字母，更改：-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" class="headerlink" title="3. 在”Auto Activation triggers for java”选项中，默认触发代码提示的就是”.”这个符号。将”.”后面加入所有的英文大小写字母，更改：.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"></a><strong>3. 在”Auto Activation triggers for java”选项中，默认触发代码提示的就是”.”这个符号。将”.”后面加入所有的英文大小写字母，更改：.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</strong></h4><p><img src="https://img-blog.csdn.net/20180121205938587?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="trigger"></p>
+<h4 id="4-更改完成后就可以使用快捷键，迅速敲代码了。"><a href="#4-更改完成后就可以使用快捷键，迅速敲代码了。" class="headerlink" title="4.更改完成后就可以使用快捷键，迅速敲代码了。"></a><strong>4.更改完成后就可以使用快捷键，迅速敲代码了。</strong></h4><p><img src="https://img-blog.csdn.net/20180121210040250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="quickcode"></p>
+<h4 id="5、其他语言的自动补全，类似，如xml文件自动补全"><a href="#5、其他语言的自动补全，类似，如xml文件自动补全" class="headerlink" title="5、其他语言的自动补全，类似，如xml文件自动补全"></a>5、其他语言的自动补全，类似，如xml文件自动补全</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">在最上端的Auto Activation中将Prompt when these characters are inserted后面的文本框中</span><br><span class="line"></span><br><span class="line">的“&lt;=:”替换成“&lt;=:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ”（注意后面还有一</span><br><span class="line"></span><br><span class="line">个空格）</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdn.net/20161217141747218?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="xml"></p>
+<p><img src="https://img-blog.csdn.net/20161217141931406?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="quick"></p>
+<h4 id="这样的话我们使用起来就会方便很多。"><a href="#这样的话我们使用起来就会方便很多。" class="headerlink" title="这样的话我们使用起来就会方便很多。"></a><em>这样的话我们使用起来就会方便很多。</em></h4>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux服务器远程连接mysql</title>
     <url>/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/</url>
     <content><![CDATA[<h4 id="1、登录数据库mysql"><a href="#1、登录数据库mysql" class="headerlink" title="1、登录数据库mysql"></a>1、登录数据库mysql</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@Centos ~]# mysql -uroot</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and host=<span class="string">'localhost'</span>; </span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br></pre></td></tr></table></figure>
