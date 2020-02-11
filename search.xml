@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>yarn常用命令</title>
+    <url>/2020/02/11/yarn%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="从npm迁移到yarn-常用的命令"><a href="#从npm迁移到yarn-常用的命令" class="headerlink" title="从npm迁移到yarn(常用的命令)"></a>从npm迁移到yarn(常用的命令)</h1><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install =&gt; yarn install</span><br><span class="line"></span><br><span class="line">npm install --save [package] =&gt; yarn add [package]</span><br><span class="line"></span><br><span class="line">npm install --save-dev [package] =&gt; yarn add [package] --dev</span><br><span class="line"></span><br><span class="line">npm install --global [package] =&gt; yarn global add [package]</span><br><span class="line"></span><br><span class="line">npm uninstall --save [package] =&gt; yarn remove [package]</span><br><span class="line"></span><br><span class="line">npm uninstall --save-dev [package] =&gt; yarn remove [package]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="yarn常用命令"><a href="#yarn常用命令" class="headerlink" title="yarn常用命令"></a>yarn常用命令</h1><h4 id="1-yarn-add"><a href="#1-yarn-add" class="headerlink" title="1. yarn add"></a>1. yarn add</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn add [package]@[version]</span><br></pre></td></tr></table></figure>
+
+<h5 id="这将安装您的dependencies中的一个或多个包。"><a href="#这将安装您的dependencies中的一个或多个包。" class="headerlink" title="这将安装您的dependencies中的一个或多个包。"></a>这将安装您的dependencies中的一个或多个包。</h5><p> 用 <code>--dev</code> 或 <code>-D</code> 会在 devDependencies 里安装一个或多个包。 </p>
+<h5 id="yarn-global-add-lt-package…-gt-全局安装依赖。"><a href="#yarn-global-add-lt-package…-gt-全局安装依赖。" class="headerlink" title="yarn global add &lt;package…&gt;全局安装依赖。"></a>yarn global add &lt;package…&gt;全局安装依赖。</h5><p>对于绝大部分包来说，这是个坏习惯，因为它们是隐藏的。</p>
+<p> 最好本地安装你的依赖，这样它们都是明确的，每用你项目的人都能得到同样的依赖。</p>
+<h6 id="注意：yarn-add-global-lt-package…-gt-会变成本地安装，注意顺序。"><a href="#注意：yarn-add-global-lt-package…-gt-会变成本地安装，注意顺序。" class="headerlink" title="注意：yarn add global &lt;package…&gt;会变成本地安装，注意顺序。"></a>注意：yarn add global &lt;package…&gt;会变成本地安装，注意顺序。</h6><h4 id="2-yarn-cache"><a href="#2-yarn-cache" class="headerlink" title="2.yarn cache"></a>2.yarn cache</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn cache dir</span><br></pre></td></tr></table></figure>
+
+<h5 id="运行-yarn-cache-dir-会打印出当前的-yarn-全局缓存在哪里。"><a href="#运行-yarn-cache-dir-会打印出当前的-yarn-全局缓存在哪里。" class="headerlink" title="运行 yarn cache dir 会打印出当前的 yarn 全局缓存在哪里。"></a>运行 yarn cache dir 会打印出当前的 yarn 全局缓存在哪里。</h5><h5 id="yarn-cache-list-–pattern-将列出匹配指定模式的已缓存的包。"><a href="#yarn-cache-list-–pattern-将列出匹配指定模式的已缓存的包。" class="headerlink" title="yarn cache list –pattern  将列出匹配指定模式的已缓存的包。"></a>yarn cache list –pattern <pattern> 将列出匹配指定模式的已缓存的包。</pattern></h5><h6 id="示例：yarn-cache-list-–pattern-“gulp-match-newer-”"><a href="#示例：yarn-cache-list-–pattern-“gulp-match-newer-”" class="headerlink" title="示例：yarn cache list –pattern “gulp-(match|newer)”"></a>示例：yarn cache list –pattern “gulp-(match|newer)”</h6><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn cache clean</span><br></pre></td></tr></table></figure>
+
+<h5 id="运行此命令将清除全局缓存。-将在下次运行-yarn-或-yarn-install-时重新填充。"><a href="#运行此命令将清除全局缓存。-将在下次运行-yarn-或-yarn-install-时重新填充。" class="headerlink" title="运行此命令将清除全局缓存。 将在下次运行 yarn 或 yarn install 时重新填充。"></a>运行此命令将清除全局缓存。 将在下次运行 yarn 或 yarn install 时重新填充。</h5><h4 id="3-yarn-list"><a href="#3-yarn-list" class="headerlink" title="3.yarn list"></a>3.yarn list</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn list [--depth] [--pattern]</span><br></pre></td></tr></table></figure>
+
+<h5 id="默认情况下，所有包和它们的依赖会被显示。"><a href="#默认情况下，所有包和它们的依赖会被显示。" class="headerlink" title="默认情况下，所有包和它们的依赖会被显示。"></a>默认情况下，所有包和它们的依赖会被显示。</h5><p>要限制依赖的深度，你可以给 list 命令添加一个标志 –depth 所需的深度。 </p>
+<h6 id="示例-yarn-list-–depth-0"><a href="#示例-yarn-list-–depth-0" class="headerlink" title="示例;yarn list –depth=0"></a>示例;yarn list –depth=0</h6><h4 id="4-yarn-remove"><a href="#4-yarn-remove" class="headerlink" title="4.yarn remove"></a>4.yarn remove</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn remove &lt;package...&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 运行 <code>yarn remove foo</code> 会从你的直接依赖里移除名为 <code>foo</code> 的包，在此期间会更新你的 <code>package.json</code> 和 </p>
+<p><code>yarn.lock</code> 文件。</p>
+<h4 id="5-yarn-run"><a href="#5-yarn-run" class="headerlink" title="5.yarn run"></a>5.yarn run</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn run script</span><br></pre></td></tr></table></figure>
+
+<p> 如果你已经在你的包里定义了 <code>scripts</code>，这个命令会运行指定的 <code>[script]</code>。</p>
+<p>例如： 运行这个命令会执行你的 <code>package.json</code> 里名为 <code>&quot;test&quot;</code> 的脚本。</p>
+<h4 id="6-yarn-upgrade"><a href="#6-yarn-upgrade" class="headerlink" title="6.yarn upgrade"></a>6.yarn upgrade</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn upgrade [package | package@tag | package@version | @scope/]... --ignore-engines</span><br></pre></td></tr></table></figure>
+
+<p>  可以选择指定一个或多个包名称。指定包名称时，将只升级这些包。未指定包名称时，将升级所有依赖项。</p>
+<h5 id="查看npm上已经全局安装的命令"><a href="#查看npm上已经全局安装的命令" class="headerlink" title="查看npm上已经全局安装的命令"></a>查看npm上已经全局安装的命令</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list -g --depth=0</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看yarn-全局安装的根目录"><a href="#查看yarn-全局安装的根目录" class="headerlink" title="查看yarn 全局安装的根目录"></a>查看yarn 全局安装的根目录</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn global bin</span><br><span class="line"></span><br><span class="line">C:\Users\WIN7\AppData\Local\Yarn\bin</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看npm-全局安装的根目录"><a href="#查看npm-全局安装的根目录" class="headerlink" title="查看npm 全局安装的根目录"></a>查看npm 全局安装的根目录</h5><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm bin</span><br></pre></td></tr></table></figure>
+
+<h5 id="yarn的安装"><a href="#yarn的安装" class="headerlink" title="yarn的安装"></a>yarn的安装</h5><p>yarn windows 安装 <strong>choco install yarn</strong> 或者 <strong>scoop install yarn</strong> 或者下载<strong>安装包</strong></p>
+<h5 id="yarn指定淘宝源"><a href="#yarn指定淘宝源" class="headerlink" title="yarn指定淘宝源 :"></a>yarn指定淘宝源 :</h5><h6 id="yarn-config-set-registry-http-registry-npm-taobao-org"><a href="#yarn-config-set-registry-http-registry-npm-taobao-org" class="headerlink" title="yarn config set registry http://registry.npm.taobao.org"></a>yarn config set registry <a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a></h6>]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>yarn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>eclipse自动补全</title>
     <url>/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/</url>
     <content><![CDATA[<h4 id="1、打开Eclipse，点击“Window-Perfences”"><a href="#1、打开Eclipse，点击“Window-Perfences”" class="headerlink" title="1、打开Eclipse，点击“Window - Perfences”;"></a>1、打开Eclipse，点击“Window - Perfences”;</h4><p><img src="https://img-blog.csdn.net/20161217141203508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="perfences"></p>
