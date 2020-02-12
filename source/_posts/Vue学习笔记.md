@@ -1,8 +1,10 @@
 ---
 title: Vue学习笔记
 date: 2019-11-19 22:09:17
-tags: vue
-category: vue
+tags: 
+	- vue
+category: 
+	- vue
 ---
 ## vue学习笔记
 ### 开篇语
