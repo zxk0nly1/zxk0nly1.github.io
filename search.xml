@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Twilio的node案例</title>
+    <url>/2020/02/14/Twilio%E7%9A%84node%E6%A1%88%E4%BE%8B/</url>
+    <content><![CDATA[<h3 id="Twilio-Node-测试"><a href="#Twilio-Node-测试" class="headerlink" title="Twilio + Node 测试"></a>Twilio + Node 测试</h3><p><strong>目的：</strong>使用 twilio 给你的手机发短信</p>
+<h5 id="Twilio是一个位于加利福尼亚的云通信-PaaS-公司。Twilio-允许开发者通过使用它提供的-API-进行编程来接电话，收发短信等。"><a href="#Twilio是一个位于加利福尼亚的云通信-PaaS-公司。Twilio-允许开发者通过使用它提供的-API-进行编程来接电话，收发短信等。" class="headerlink" title="Twilio是一个位于加利福尼亚的云通信 (PaaS) 公司。Twilio 允许开发者通过使用它提供的 API 进行编程来接电话，收发短信等。"></a><code>Twilio</code>是一个位于加利福尼亚的云通信 (PaaS) 公司。Twilio 允许开发者通过使用它提供的 API 进行编程来接电话，收发短信等。</h5><h6 id="先来看一下效果图"><a href="#先来看一下效果图" class="headerlink" title="先来看一下效果图"></a>先来看一下效果图</h6><p><img src="https://img-blog.csdn.net/20161001223207263" alt="sms"></p>
+<p>再来看一下代码，是不是很少啊 </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> twilio.rest <span class="keyword">import</span> TwilioRestClient</span><br><span class="line"></span><br><span class="line"># 下面认证信息的值在你的 twilio 账户里可以找到</span><br><span class="line">account_sid = <span class="string">"ACXXXXXXXXXXXXXXXXX"</span></span><br><span class="line">auth_token = <span class="string">"YYYYYYYYYYYYYYYYYY"</span></span><br><span class="line">client = TwilioRestClient(account_sid, auth_token)</span><br><span class="line"></span><br><span class="line">message = client.messages.create(to="+8615912345678",  # 区号+你的手机号码</span><br><span class="line">                                 from_="+15555555555",  # 你的 twilio 电话号码</span><br><span class="line">                                 body=<span class="string">"Do you know who I am ?"</span>)</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h1 id="一、安装-twilio"><a href="#一、安装-twilio" class="headerlink" title="一、安装 twilio"></a>一、安装 twilio</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm install twilio --save</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、注册-twilio"><a href="#二、注册-twilio" class="headerlink" title="二、注册 twilio"></a>二、注册 twilio</h1><h3 id="2-1-打开网址-https-www-twilio-com"><a href="#2-1-打开网址-https-www-twilio-com" class="headerlink" title="2.1. 打开网址 https://www.twilio.com"></a>2.1. 打开网址 <a href="https://www.twilio.com/" target="_blank" rel="noopener">https://www.twilio.com</a></h3><h5 id="选择Get-a-free-API-key"><a href="#选择Get-a-free-API-key" class="headerlink" title="选择Get a free API key"></a>选择<code>Get a free API key</code></h5><p><img src="https://img-blog.csdn.net/20161001224252482" alt="twilio"></p>
+<h3 id="2-2-注册信息中，公司名称是可选的，其他的填写上"><a href="#2-2-注册信息中，公司名称是可选的，其他的填写上" class="headerlink" title="2.2. 注册信息中，公司名称是可选的，其他的填写上"></a>2.2. 注册信息中，公司名称是可选的，其他的填写上</h3><p><img src="https://img-blog.csdn.net/20161001224440869" alt="register"></p>
+<h2 id="2-3-验证部分"><a href="#2-3-验证部分" class="headerlink" title="2.3. 验证部分"></a>2.3. 验证部分</h2><h6 id="填写你的手机号后，可以通过短信验证，也可以选择call-you-insteaded进行电话验证。"><a href="#填写你的手机号后，可以通过短信验证，也可以选择call-you-insteaded进行电话验证。" class="headerlink" title="填写你的手机号后，可以通过短信验证，也可以选择call you insteaded进行电话验证。"></a>填写你的手机号后，可以通过<code>短信</code>验证，也可以选择<code>call you insteaded</code>进行电话验证。</h6><p><img src="https://img-blog.csdn.net/20161001224642339" alt="phone"></p>
+<h3 id="三、使用"><a href="#三、使用" class="headerlink" title="三、使用"></a>三、使用</h3><p>注册成功后，就来到了控制台面板。</p>
+<h5 id="记下ACCOUNT-SID和AUTH-TOKEN，程序里面要用到。"><a href="#记下ACCOUNT-SID和AUTH-TOKEN，程序里面要用到。" class="headerlink" title="记下ACCOUNT SID和AUTH TOKEN，程序里面要用到。"></a>记下<code>ACCOUNT SID</code>和<code>AUTH TOKEN</code>，程序里面要用到。</h5><h6 id="然后Get-Started，会获得你的-twilio-电话号码。"><a href="#然后Get-Started，会获得你的-twilio-电话号码。" class="headerlink" title="然后Get Started，会获得你的 twilio 电话号码。"></a>然后<code>Get Started</code>，会获得你的 twilio 电话号码。</h6><p><img src="https://img-blog.csdn.net/20161001224725121" alt="start"></p>
+<p>按照代码中注释部分填写你对应的值和手机号等等，然后运行看看吧~</p>
+<p>你可以用 <strong>twilio</strong> 打电话，也可以用你的手机给 <strong>twilio</strong> 发短信呢。</p>
+<h5 id="比较实用的场景："><a href="#比较实用的场景：" class="headerlink" title="比较实用的场景："></a>比较实用的场景：</h5><ol>
+<li>监控你服务器的情况，如果程序或服务器发生什么事情，可以及时短信通知你。</li>
+<li>写一个报警程序，结合传感器，监控家里的情况然后通知你。</li>
+</ol>
+<h3 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h3><h5 id="https-www-twilio-com-docs"><a href="#https-www-twilio-com-docs" class="headerlink" title="https://www.twilio.com/docs/"></a><a href="https://www.twilio.com/docs/" target="_blank" rel="noopener">https://www.twilio.com/docs/</a></h5><p>P.S. 说句题外话，在技术翻天覆地的今天，物联网是个大趋势。</p>
+<p>使用手机远程控制家里的电器也早已不再是科幻电影里面的场景了，</p>
+<p>在回家的路上下达指令，提前把热水烧好，把空调打开。想想多美好 ^_^</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>twilio</tag>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Window与Linux的区别</title>
     <url>/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h3 id="文件目录操作"><a href="#文件目录操作" class="headerlink" title="文件目录操作"></a>文件目录操作</h3><table>
