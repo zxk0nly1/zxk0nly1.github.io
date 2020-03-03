@@ -6,14 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Blog</title>
+  <title>node后端接口案例 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="用node写后台接口  –后端篇懒人请看这：https:&#x2F;&#x2F;github.com&#x2F;zxk0nly1&#x2F;learn_javascript&#x2F;tree&#x2F;master&#x2F;samples&#x2F;node&#x2F;web&#x2F;express  第一步 先下载express*- npm install express  -S引入express  创建服务器123456const express = require(&amp;apos;express&amp;apos;">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node后端接口案例">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;04&#x2F;node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B&#x2F;index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="用node写后台接口  –后端篇懒人请看这：https:&#x2F;&#x2F;github.com&#x2F;zxk0nly1&#x2F;learn_javascript&#x2F;tree&#x2F;master&#x2F;samples&#x2F;node&#x2F;web&#x2F;express  第一步 先下载express*- npm install express  -S引入express  创建服务器123456const express = require(&amp;apos;express&amp;apos;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904194937622?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904201027382?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904201410963?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904204144268?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;2018090420490614?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180905094932632?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180905095048755?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;2018090509512235?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904212745189?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904212957686?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904213225954?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
+<meta property="og:updated_time" content="2020-03-03T17:37:19.615Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180904194937622?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -158,54 +174,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-node后端接口案例" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-02-12T13:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/">Window与Linux的区别</a>
+    <h1 class="article-title" itemprop="name">
+      node后端接口案例
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-03-03T17:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">946字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
           
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h1 id="用node写后台接口-–后端篇"><a href="#用node写后台接口-–后端篇" class="headerlink" title="用node写后台接口  –后端篇"></a>用node写后台接口  –后端篇</h1><p>懒人请看这：<a href="https://github.com/zxk0nly1/learn_javascript/tree/master/samples/node/web/express" target="_blank" rel="noopener">https://github.com/zxk0nly1/learn_javascript/tree/master/samples/node/web/express</a> </p>
+<h1 id="第一步-先下载express"><a href="#第一步-先下载express" class="headerlink" title="第一步 先下载express"></a>第一步 先下载express</h1><h3 id="npm-install-express-S"><a href="#npm-install-express-S" class="headerlink" title="*- npm install express  -S"></a>*- npm install express  -S</h3><h1 id="引入express-创建服务器"><a href="#引入express-创建服务器" class="headerlink" title="引入express  创建服务器"></a>引入express  创建服务器</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const express = require('express')</span><br><span class="line">const app = express()</span><br><span class="line">app.listen(5000, ()=&gt;&#123;</span><br><span class="line">    // 打印一下</span><br><span class="line">    console.log('http://127.0.0.1:5000')</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二步-连接数据库"><a href="#第二步-连接数据库" class="headerlink" title="第二步 连接数据库"></a>第二步 连接数据库</h1><h3 id="连接数据库需要下载-mysql"><a href="#连接数据库需要下载-mysql" class="headerlink" title="连接数据库需要下载  mysql"></a>连接数据库需要下载  <strong>mysql</strong></h3><h3 id="npm-install-mysql-S"><a href="#npm-install-mysql-S" class="headerlink" title="- npm install mysql -S -"></a>- <em>npm install</em> <strong>mysql</strong> -S <strong>-</strong></h3><h3 id="然后引入mysql-另外req-body需要对表单数据进行解析-所以还需引入body-parser"><a href="#然后引入mysql-另外req-body需要对表单数据进行解析-所以还需引入body-parser" class="headerlink" title="然后引入mysql  另外req.body需要对表单数据进行解析 所以还需引入body-parser"></a>然后引入mysql  另外req.body需要对表单数据进行解析 所以还需引入body-parser</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 创建数据库连接</span><br><span class="line">const mysql = require('mysql')</span><br><span class="line">const conn = mysql.createConnection(&#123;</span><br><span class="line">    host:'localhost',</span><br><span class="line">    user:'root',</span><br><span class="line">    password:'',</span><br><span class="line">    database:'test'</span><br><span class="line">&#125;)</span><br><span class="line">// 祖册 解析表单的body-parser</span><br><span class="line">const bodyParser = require('body-parser')</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended:false&#125;))</span><br></pre></td></tr></table></figure>
+
+<h3 id="接下来就开始做接口了"><a href="#接下来就开始做接口了" class="headerlink" title="接下来就开始做接口了"></a>接下来就开始做接口了</h3><h3 id="先获取数据"><a href="#先获取数据" class="headerlink" title="先获取数据"></a>先获取数据</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 获取所有的数据</span><br><span class="line">app.get('/api/getheros',(req,res) =&gt; &#123;</span><br><span class="line">    // 定义SQL语句</span><br><span class="line">    const sqlStr = 'select * from text where isdel=0'</span><br><span class="line">    conn.query(sqlStr,(err,results) =&gt; &#123;</span><br><span class="line">        console.log(results)</span><br><span class="line">        if(err) return res.json(&#123;err_code:1,message:'获取失败',affectedRows:0&#125;)</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            err_code:0,message:results,affectedRows:0</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>字码完后 先运行看看</p>
+<p> <img src="https://img-blog.csdn.net/20180904194937622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="node"></p>
+<p>在<strong>Postman</strong>(推荐)或者浏览器输入API接口 （<a href="http://127.0.0.1:5000/api/getheros" target="_blank" rel="noopener">http://127.0.0.1:5000/api/getheros</a>)</p>
+<p><img src="https://img-blog.csdn.net/20180904201027382?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="getheros"></p>
+<h3 id="欧了，我们第一步-获取数据-也算完成了-喝杯茶"><a href="#欧了，我们第一步-获取数据-也算完成了-喝杯茶" class="headerlink" title="欧了，我们第一步 获取数据 也算完成了  喝杯茶~"></a>欧了，我们第一步 获取数据 也算完成了  喝杯茶<del>~</del></h3><h3 id="OK-茶喝完了我们继续"><a href="#OK-茶喝完了我们继续" class="headerlink" title="OK 茶喝完了我们继续"></a>OK 茶喝完了我们继续</h3><a id="more"></a>
+
+<h3 id="接下来我们要做的是根据ID获取对应ID的数据"><a href="#接下来我们要做的是根据ID获取对应ID的数据" class="headerlink" title="接下来我们要做的是根据ID获取对应ID的数据"></a>接下来我们要做的是根据ID获取对应ID的数据</h3><h3 id="不多比比-看代码"><a href="#不多比比-看代码" class="headerlink" title="不多比比 看代码"></a>不多比比 看代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据ID 获取相关数据</span></span><br><span class="line">app.get(<span class="string">'/api/gethero'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> id = req.query.id</span><br><span class="line">    <span class="keyword">const</span> sqlStr = <span class="string">'select * from text where id = ?'</span> </span><br><span class="line">    conn.query(sqlStr,id,(err,results) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'获取数据失败'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        <span class="keyword">if</span>(results.length !== <span class="number">1</span>) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'数据不存在'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            err_code:<span class="number">0</span>,</span><br><span class="line">            message:results[<span class="number">0</span>],</span><br><span class="line">            affectedRows:<span class="number">0</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;）</span><br></pre></td></tr></table></figure>
+
+<h3 id="我们再来试一下-比如我们传一个-id-1"><a href="#我们再来试一下-比如我们传一个-id-1" class="headerlink" title="我们再来试一下 比如我们传一个 id=1"></a>我们再来试一下 比如我们传一个 id=1</h3><p><img src="https://img-blog.csdn.net/20180904201410963?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="id"></p>
+<h3 id="哎呀呀-也是非常顺利呀-对应的数据获取到了-OK-缓一缓"><a href="#哎呀呀-也是非常顺利呀-对应的数据获取到了-OK-缓一缓" class="headerlink" title="哎呀呀 也是非常顺利呀 对应的数据获取到了 OK 缓一缓"></a>哎呀呀 也是非常顺利呀 对应的数据获取到了 OK 缓一缓</h3><p>接下来我们做删除 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据ID 删除数据</span></span><br><span class="line">app.get(<span class="string">'/api/delhero'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> id = req.query.id</span><br><span class="line">    <span class="keyword">const</span> sqlStr = <span class="string">'update text set isdel = 1 where id=?'</span></span><br><span class="line">    conn.query(sqlStr,id,(err,results) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'删除英雄失败'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        <span class="keyword">if</span>(results.affectedRows !== <span class="number">1</span>) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'删除英雄失败'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        res.json(&#123;<span class="attr">err_code</span>:<span class="number">0</span>,<span class="attr">message</span>:<span class="string">'删除英雄成功'</span>,<span class="attr">affectedRows</span>:results.affectedRows&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdn.net/20180904204144268?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="del"></p>
+<h3 id="OK-删除成功-我们在看看本地数据库-里"><a href="#OK-删除成功-我们在看看本地数据库-里" class="headerlink" title="OK 删除成功 我们在看看本地数据库 里"></a>OK 删除成功 我们在看看本地数据库 里</h3><p><img src="https://img-blog.csdn.net/2018090420490614?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="delmysql"></p>
+<h3 id="欧了-数据库里面变样了-删除成功"><a href="#欧了-数据库里面变样了-删除成功" class="headerlink" title="欧了  数据库里面变样了 删除成功"></a>欧了  数据库里面变样了 删除成功</h3><h3 id="然后我们再来完成添加的功能-看代码"><a href="#然后我们再来完成添加的功能-看代码" class="headerlink" title="然后我们再来完成添加的功能 看代码"></a>然后我们再来完成添加的功能 看代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加数据</span></span><br><span class="line">app.post(<span class="string">'/api/addhero'</span>,(req,res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> hero = req.body</span><br><span class="line">    <span class="built_in">console</span>.log(hero)</span><br><span class="line">    <span class="keyword">const</span> sqlStr = <span class="string">'insert into text set ?'</span></span><br><span class="line">    conn.query(sqlStr,hero,(err,results) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(err) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'添加失败'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        <span class="keyword">if</span>(results.affectedRows !== <span class="number">1</span>) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'添加失败'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">        res.json(&#123;<span class="attr">err_code</span>:<span class="number">0</span>,<span class="attr">message</span>:<span class="string">'添加成功'</span>,<span class="attr">affectedRows</span>:results.affectedRows&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="写入数据-我们可以看到再次成功了"><a href="#写入数据-我们可以看到再次成功了" class="headerlink" title="写入数据 我们可以看到再次成功了"></a>写入数据 我们可以看到再次成功了</h3><p><img src="https://img-blog.csdn.net/20180905094932632?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="add"></p>
+<h3 id="可以看到-数据库里面的数据也添加成功了"><a href="#可以看到-数据库里面的数据也添加成功了" class="headerlink" title="可以看到 数据库里面的数据也添加成功了"></a>可以看到 数据库里面的数据也添加成功了</h3><p><img src="https://img-blog.csdn.net/20180905095048755?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="addmysql"></p>
+<p><img src="https://img-blog.csdn.net/2018090509512235?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="addmysql1"></p>
+<h3 id="还有最后一个-修改的功能-需要获得修改后的数据"><a href="#还有最后一个-修改的功能-需要获得修改后的数据" class="headerlink" title="还有最后一个  修改的功能  需要获得修改后的数据"></a>还有最后一个  修改的功能  需要获得修改后的数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">'/api/updatehero'</span>,(req,res) =&gt; &#123;</span><br><span class="line">     <span class="keyword">const</span> sqlStr = <span class="string">'update text set ? where id = ?'</span></span><br><span class="line">     conn.query(sqlStr,[req.body,req.body.id],(err,results) =&gt; &#123;</span><br><span class="line">         <span class="keyword">if</span>(err) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'更新英雄失败'</span>,<span class="attr">affevtedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">         <span class="comment">//影响行数不等于1</span></span><br><span class="line">         <span class="keyword">if</span>(results.affectedRows !== <span class="number">1</span>) <span class="keyword">return</span> res.json(&#123;<span class="attr">err_code</span>:<span class="number">1</span>,<span class="attr">message</span>:<span class="string">'更新的英雄不存在'</span>,<span class="attr">affectedRows</span>:<span class="number">0</span>&#125;)</span><br><span class="line">         res.json(&#123;<span class="attr">err_code</span>:<span class="number">0</span>,<span class="attr">message</span>:<span class="string">'更新成功'</span>,<span class="attr">affectedRows</span>:results.affectedRows&#125;)</span><br><span class="line">     &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="我们可以看到-我们修改的id为3-下面一看得到-更新成功"><a href="#我们可以看到-我们修改的id为3-下面一看得到-更新成功" class="headerlink" title="我们可以看到 我们修改的id为3  下面一看得到 更新成功"></a>我们可以看到 我们修改的id为3  下面一看得到 更新成功</h3><p><img src="https://img-blog.csdn.net/20180904212745189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="update"></p>
+<h3 id="再来看看数据库里的数据-这是更新前的"><a href="#再来看看数据库里的数据-这是更新前的" class="headerlink" title="再来看看数据库里的数据 这是更新前的"></a>再来看看数据库里的数据 这是更新前的</h3><p><img src="https://img-blog.csdn.net/20180904212957686?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="update1"></p>
+<h3 id="更新后如下"><a href="#更新后如下" class="headerlink" title="更新后如下"></a>更新后如下</h3><p><img src="https://img-blog.csdn.net/20180904213225954?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="update2"></p>
+<h3 id="美滋滋-OKOKOK-追后一步搞完鸟-GG"><a href="#美滋滋-OKOKOK-追后一步搞完鸟-GG" class="headerlink" title="美滋滋  OKOKOK  追后一步搞完鸟  GG"></a>美滋滋  OKOKOK  追后一步搞完鸟  GG</h3><h3 id="OK-今天我们就做到这里了-后台管理系统的接口差不多就这么多-本宝宝也是刚入手-有什么错的地方-不全的地方-谢谢各位大牛补充"><a href="#OK-今天我们就做到这里了-后台管理系统的接口差不多就这么多-本宝宝也是刚入手-有什么错的地方-不全的地方-谢谢各位大牛补充" class="headerlink" title="OK 今天我们就做到这里了 后台管理系统的接口差不多就这么多 本宝宝也是刚入手 有什么错的地方 不全的地方 谢谢各位大牛补充"></a>OK 今天我们就做到这里了 后台管理系统的接口差不多就这么多 本宝宝也是刚入手 有什么错的地方 不全的地方 谢谢各位大牛补充</h3>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">dos</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">shell</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -218,243 +316,135 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2020/02/11/yarn%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-02-11T14:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/11/yarn%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">yarn常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">yarn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" class="archive-article-date">
-  	<time datetime="2019-12-30T12:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/">eclipse自动补全</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
 
-<a href="/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/" class="archive-article-date">
-  	<time datetime="2019-12-30T11:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
-</a>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/03/gulp%E6%89%93%E5%8C%85HTML-CSS-JS%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp打包HTML+CSS+JS文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/">linux服务器远程连接mysql</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用node写后台接口-–后端篇"><span class="toc-number">1.</span> <span class="toc-text">用node写后台接口  –后端篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第一步-先下载express"><span class="toc-number">2.</span> <span class="toc-text">第一步 先下载express</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-install-express-S"><span class="toc-number">2.0.1.</span> <span class="toc-text">*- npm install express  -S</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#引入express-创建服务器"><span class="toc-number">3.</span> <span class="toc-text">引入express  创建服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第二步-连接数据库"><span class="toc-number">4.</span> <span class="toc-text">第二步 连接数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#连接数据库需要下载-mysql"><span class="toc-number">4.0.1.</span> <span class="toc-text">连接数据库需要下载  mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-install-mysql-S"><span class="toc-number">4.0.2.</span> <span class="toc-text">- npm install mysql -S -</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后引入mysql-另外req-body需要对表单数据进行解析-所以还需引入body-parser"><span class="toc-number">4.0.3.</span> <span class="toc-text">然后引入mysql  另外req.body需要对表单数据进行解析 所以还需引入body-parser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接下来就开始做接口了"><span class="toc-number">4.0.4.</span> <span class="toc-text">接下来就开始做接口了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#先获取数据"><span class="toc-number">4.0.5.</span> <span class="toc-text">先获取数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#欧了，我们第一步-获取数据-也算完成了-喝杯茶"><span class="toc-number">4.0.6.</span> <span class="toc-text">欧了，我们第一步 获取数据 也算完成了  喝杯茶~</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OK-茶喝完了我们继续"><span class="toc-number">4.0.7.</span> <span class="toc-text">OK 茶喝完了我们继续</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接下来我们要做的是根据ID获取对应ID的数据"><span class="toc-number">4.0.8.</span> <span class="toc-text">接下来我们要做的是根据ID获取对应ID的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不多比比-看代码"><span class="toc-number">4.0.9.</span> <span class="toc-text">不多比比 看代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们再来试一下-比如我们传一个-id-1"><span class="toc-number">4.0.10.</span> <span class="toc-text">我们再来试一下 比如我们传一个 id=1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哎呀呀-也是非常顺利呀-对应的数据获取到了-OK-缓一缓"><span class="toc-number">4.0.11.</span> <span class="toc-text">哎呀呀 也是非常顺利呀 对应的数据获取到了 OK 缓一缓</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OK-删除成功-我们在看看本地数据库-里"><span class="toc-number">4.0.12.</span> <span class="toc-text">OK 删除成功 我们在看看本地数据库 里</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#欧了-数据库里面变样了-删除成功"><span class="toc-number">4.0.13.</span> <span class="toc-text">欧了  数据库里面变样了 删除成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#然后我们再来完成添加的功能-看代码"><span class="toc-number">4.0.14.</span> <span class="toc-text">然后我们再来完成添加的功能 看代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写入数据-我们可以看到再次成功了"><span class="toc-number">4.0.15.</span> <span class="toc-text">写入数据 我们可以看到再次成功了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以看到-数据库里面的数据也添加成功了"><span class="toc-number">4.0.16.</span> <span class="toc-text">可以看到 数据库里面的数据也添加成功了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#还有最后一个-修改的功能-需要获得修改后的数据"><span class="toc-number">4.0.17.</span> <span class="toc-text">还有最后一个  修改的功能  需要获得修改后的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#我们可以看到-我们修改的id为3-下面一看得到-更新成功"><span class="toc-number">4.0.18.</span> <span class="toc-text">我们可以看到 我们修改的id为3  下面一看得到 更新成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再来看看数据库里的数据-这是更新前的"><span class="toc-number">4.0.19.</span> <span class="toc-text">再来看看数据库里的数据 这是更新前的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新后如下"><span class="toc-number">4.0.20.</span> <span class="toc-text">更新后如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#美滋滋-OKOKOK-追后一步搞完鸟-GG"><span class="toc-number">4.0.21.</span> <span class="toc-text">美滋滋  OKOKOK  追后一步搞完鸟  GG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OK-今天我们就做到这里了-后台管理系统的接口差不多就这么多-本宝宝也是刚入手-有什么错的地方-不全的地方-谢谢各位大牛补充"><span class="toc-number">4.0.22.</span> <span class="toc-text">OK 今天我们就做到这里了 后台管理系统的接口差不多就这么多 本宝宝也是刚入手 有什么错的地方 不全的地方 谢谢各位大牛补充</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2019-12-27T13:48:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/">XMind破解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">XMind</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">思维导图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo;</a>
-    </nav>
   
+	
+	
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/",
+  owner: 'zxk0nly1',
+  repo: 'zxk0nly1.github.io',
+  oauth: {
+    client_id: '4cee2d3a3fc2cc3e0b6',
+    client_secret: '0bca980e0d4421c0a27c0b1ef0c1e802f5c39b26',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
 
 
           </div>
@@ -483,8 +473,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

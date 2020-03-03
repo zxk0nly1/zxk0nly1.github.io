@@ -160,6 +160,125 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-node后端接口案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/">node后端接口案例</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-03-03T17:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">946字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">4分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="用node写后台接口-–后端篇"><a href="#用node写后台接口-–后端篇" class="headerlink" title="用node写后台接口  –后端篇"></a>用node写后台接口  –后端篇</h1><p>懒人请看这：<a href="https://github.com/zxk0nly1/learn_javascript/tree/master/samples/node/web/express" target="_blank" rel="noopener">https://github.com/zxk0nly1/learn_javascript/tree/master/samples/node/web/express</a> </p>
+<h1 id="第一步-先下载express"><a href="#第一步-先下载express" class="headerlink" title="第一步 先下载express"></a>第一步 先下载express</h1><h3 id="npm-install-express-S"><a href="#npm-install-express-S" class="headerlink" title="*- npm install express  -S"></a>*- npm install express  -S</h3><h1 id="引入express-创建服务器"><a href="#引入express-创建服务器" class="headerlink" title="引入express  创建服务器"></a>引入express  创建服务器</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const express = require('express')</span><br><span class="line">const app = express()</span><br><span class="line">app.listen(5000, ()=&gt;&#123;</span><br><span class="line">    // 打印一下</span><br><span class="line">    console.log('http://127.0.0.1:5000')</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二步-连接数据库"><a href="#第二步-连接数据库" class="headerlink" title="第二步 连接数据库"></a>第二步 连接数据库</h1><h3 id="连接数据库需要下载-mysql"><a href="#连接数据库需要下载-mysql" class="headerlink" title="连接数据库需要下载  mysql"></a>连接数据库需要下载  <strong>mysql</strong></h3><h3 id="npm-install-mysql-S"><a href="#npm-install-mysql-S" class="headerlink" title="- npm install mysql -S -"></a>- <em>npm install</em> <strong>mysql</strong> -S <strong>-</strong></h3><h3 id="然后引入mysql-另外req-body需要对表单数据进行解析-所以还需引入body-parser"><a href="#然后引入mysql-另外req-body需要对表单数据进行解析-所以还需引入body-parser" class="headerlink" title="然后引入mysql  另外req.body需要对表单数据进行解析 所以还需引入body-parser"></a>然后引入mysql  另外req.body需要对表单数据进行解析 所以还需引入body-parser</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 创建数据库连接</span><br><span class="line">const mysql = require('mysql')</span><br><span class="line">const conn = mysql.createConnection(&#123;</span><br><span class="line">    host:'localhost',</span><br><span class="line">    user:'root',</span><br><span class="line">    password:'',</span><br><span class="line">    database:'test'</span><br><span class="line">&#125;)</span><br><span class="line">// 祖册 解析表单的body-parser</span><br><span class="line">const bodyParser = require('body-parser')</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended:false&#125;))</span><br></pre></td></tr></table></figure>
+
+<h3 id="接下来就开始做接口了"><a href="#接下来就开始做接口了" class="headerlink" title="接下来就开始做接口了"></a>接下来就开始做接口了</h3><h3 id="先获取数据"><a href="#先获取数据" class="headerlink" title="先获取数据"></a>先获取数据</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 获取所有的数据</span><br><span class="line">app.get('/api/getheros',(req,res) =&gt; &#123;</span><br><span class="line">    // 定义SQL语句</span><br><span class="line">    const sqlStr = 'select * from text where isdel=0'</span><br><span class="line">    conn.query(sqlStr,(err,results) =&gt; &#123;</span><br><span class="line">        console.log(results)</span><br><span class="line">        if(err) return res.json(&#123;err_code:1,message:'获取失败',affectedRows:0&#125;)</span><br><span class="line">        res.json(&#123;</span><br><span class="line">            err_code:0,message:results,affectedRows:0</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>字码完后 先运行看看</p>
+<p> <img src="https://img-blog.csdn.net/20180904194937622?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="node"></p>
+<p>在<strong>Postman</strong>(推荐)或者浏览器输入API接口 （<a href="http://127.0.0.1:5000/api/getheros" target="_blank" rel="noopener">http://127.0.0.1:5000/api/getheros</a>)</p>
+<p><img src="https://img-blog.csdn.net/20180904201027382?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1hsNDI3Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="getheros"></p>
+<h3 id="欧了，我们第一步-获取数据-也算完成了-喝杯茶"><a href="#欧了，我们第一步-获取数据-也算完成了-喝杯茶" class="headerlink" title="欧了，我们第一步 获取数据 也算完成了  喝杯茶~"></a>欧了，我们第一步 获取数据 也算完成了  喝杯茶<del>~</del></h3><h3 id="OK-茶喝完了我们继续"><a href="#OK-茶喝完了我们继续" class="headerlink" title="OK 茶喝完了我们继续"></a>OK 茶喝完了我们继续</h3>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/04/node%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E6%A1%88%E4%BE%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-gulp打包HTML-CSS-JS文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -661,194 +780,9 @@
 
 
   
-    <article id="post-Window与Linux区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/">Window与Linux的区别</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2020-02-12T13:08:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">615字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="文件目录操作"><a href="#文件目录操作" class="headerlink" title="文件目录操作"></a>文件目录操作</h3><table>
-<thead>
-<tr>
-<th align="left">Command</th>
-<th align="left">Linux</th>
-<th align="left">Windows</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">批处理</td>
-<td align="left">.sh</td>
-<td align="left">.bat</td>
-</tr>
-<tr>
-<td align="left">帮助</td>
-<td align="left">cmd –help /-h</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">列出目录文件</td>
-<td align="left">ls / ls -l</td>
-<td align="left">dir</td>
-</tr>
-<tr>
-<td align="left">改变当前目录</td>
-<td align="left">cd</td>
-<td align="left">cd</td>
-</tr>
-<tr>
-<td align="left">进入父级目录</td>
-<td align="left">cd ..</td>
-<td align="left">cd ..</td>
-</tr>
-<tr>
-<td align="left">进入根目录</td>
-<td align="left">cd  /</td>
-<td align="left">cd /</td>
-</tr>
-<tr>
-<td align="left">复制</td>
-<td align="left">cp</td>
-<td align="left">copy</td>
-</tr>
-<tr>
-<td align="left">删除</td>
-<td align="left">rm</td>
-<td align="left">del</td>
-</tr>
-<tr>
-<td align="left">新建目录</td>
-<td align="left">mkdir</td>
-<td align="left">md</td>
-</tr>
-<tr>
-<td align="left">新建文件</td>
-<td align="left">touch fileName</td>
-<td align="left">type nul&gt;fileName</td>
-</tr>
-<tr>
-<td align="left">删除目录</td>
-<td align="left">rmdir folderName</td>
-<td align="left">rmdir folderName</td>
-</tr>
-<tr>
-<td align="left">设置目录文件所有者</td>
-<td align="left">chown user.group file</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">设置目录文件权限</td>
-<td align="left">chmod u+rwx fileName</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">dos</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/12/Window%E4%B8%8ELinux%E5%8C%BA%E5%88%AB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -957,19 +891,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">twilio</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1053,6 +987,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Node</a>
               </li>
              
@@ -1062,10 +1000,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>
