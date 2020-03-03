@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-14T10:07:52.142Z</updated>
+  <updated>2020-03-03T10:08:47.367Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack使用简介</title>
+    <link href="http://yoursite.com/2020/03/03/webpack%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2020/03/03/webpack%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-03-03T10:07:50.000Z</published>
+    <updated>2020-03-03T10:08:47.367Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="webpack-打包程序小案例"><a href="#webpack-打包程序小案例" class="headerlink" title="webpack 打包程序小案例"></a>webpack 打包程序小案例</h3><h3 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br></pre></td></tr></table></figure><h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo &amp;&amp; cd demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install webpack --save-dev</span><br><span class="line">touch src/index.js</span><br><span class="line">touch src/Greeter.js</span><br><span class="line">touch public/index.html</span><br><span class="line">touch webpack.config.js</span><br></pre></td></tr></table></figure><h3 id="写入项目"><a href="#写入项目" class="headerlink" title="写入项目"></a>写入项目</h3><h5 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/index.js'</span>),</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">        filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">'development'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="src-index-js"><a href="#src-index-js" class="headerlink" title="src/index.js"></a>src/index.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> greet = <span class="built_in">require</span>(<span class="string">'./Greeter.js'</span>);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#root"</span>).appendChild(greet());</span><br></pre></td></tr></table></figure><h5 id="src-Greeter-js"><a href="#src-Greeter-js" class="headerlink" title="src/Greeter.js"></a>src/Greeter.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> greet = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    greet.textContent = <span class="string">"Hi there and greeting!"</span>;</span><br><span class="line">    <span class="keyword">return</span> greet;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h5 id="public-index-html"><a href="#public-index-html" class="headerlink" title="public/index.html"></a>public/index.html</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../dist/bundle.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h5 id="insert-into-package-json"><a href="#insert-into-package-json" class="headerlink" title="insert into package.json"></a>insert into package.json</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">        "dev": "webpack --mode development",</span><br><span class="line">        "build": "webpack --mode production"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="报错调试"><a href="#报错调试" class="headerlink" title="报错调试"></a>报错调试</h5><p><img src="https://upload-images.jianshu.io/upload_images/3675862-2718b7df4c33577d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/638/format/webp" alt="error1"></p><p>这是因为<strong>webpack</strong>版本过高导致的结果，使用下面的命令进行打包，可以解决</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">webpack ./src/index.js -o ./dist/bundle.js</span><br><span class="line">(或)webpack</span><br></pre></td></tr></table></figure><p>其中 <strong>bundle.js</strong>是打包后生成的文件的文件名 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;webpack-打包程序小案例&quot;&gt;&lt;a href=&quot;#webpack-打包程序小案例&quot; class=&quot;headerlink&quot; title=&quot;webpack 打包程序小案例&quot;&gt;&lt;/a&gt;webpack 打包程序小案例&lt;/h3&gt;&lt;h3 id=&quot;安装webpack&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gulp使用简介</title>
+    <link href="http://yoursite.com/2020/03/03/gulp%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2020/03/03/gulp%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-03-03T10:06:09.000Z</published>
+    <updated>2020-03-03T10:07:27.195Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="检查-node、npm-和-npx-是否正确安装"><a href="#检查-node、npm-和-npx-是否正确安装" class="headerlink" title="检查 node、npm 和 npx 是否正确安装"></a>检查 node、npm 和 npx 是否正确安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node --version</span><br><span class="line">npm --version</span><br><span class="line">npx --version</span><br></pre></td></tr></table></figure><h2 id="安装-gulp-命令行工具"><a href="#安装-gulp-命令行工具" class="headerlink" title="安装 gulp 命令行工具"></a>安装 gulp 命令行工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br></pre></td></tr></table></figure><h2 id="创建项目目录并进入"><a href="#创建项目目录并进入" class="headerlink" title="创建项目目录并进入"></a>创建项目目录并进入</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx mkdirp demo &amp;&amp; cd demo</span><br></pre></td></tr></table></figure><h2 id="在项目目录下创建-package-json-文件"><a href="#在项目目录下创建-package-json-文件" class="headerlink" title="在项目目录下创建 package.json 文件"></a>在项目目录下创建 package.json 文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure><p>上述命令将指引你设置项目名、版本、描述信息等 </p><h2 id="安装-gulp，作为开发时依赖项"><a href="#安装-gulp，作为开发时依赖项" class="headerlink" title="安装 gulp，作为开发时依赖项"></a>安装 gulp，作为开发时依赖项</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure><h2 id="检查-gulp-版本"><a href="#检查-gulp-版本" class="headerlink" title="检查 gulp 版本"></a>检查 gulp 版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp --version</span><br></pre></td></tr></table></figure><p>确保输出与下面的屏幕截图匹配，否则你可能需要执行本指南中的上述步骤。 </p><p><img src="https://gulpjs.com/img/docs-gulp-version-command.png" alt="gulp--version"></p><h2 id="创建-gulpfile-文件"><a href="#创建-gulpfile-文件" class="headerlink" title="创建 gulpfile 文件"></a>创建 gulpfile 文件</h2><p>利用任何文本编辑器在项目大的根目录下创建一个名为 gulpfile.js 的文件，并在文件中输入以下内容： </p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defaultTask</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// place code for your default task here</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = defaultTask</span><br></pre></td></tr></table></figure><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>在项目根目录下执行 gulp 命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure><p>如需运行多个任务（task），可以执行 <code>gulp &lt;task&gt; &lt;othertask&gt;</code>。</p><h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p>默认任务（task）将执行，因为任务为空，因此没有实际动作。</p><p><img src="https://gulpjs.com/img/docs-gulp-command.png" alt="task"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;检查-node、npm-和-npx-是否正确安装&quot;&gt;&lt;a href=&quot;#检查-node、npm-和-npx-是否正确安装&quot; class=&quot;headerlink&quot; title=&quot;检查 node、npm 和 npx 是否正确安装&quot;&gt;&lt;/a&gt;检查 node、npm 和 
+      
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
+    
+  </entry>
   
   <entry>
     <title>Twilio的node案例</title>
@@ -569,69 +621,6 @@
     
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔</title>
-    <link href="http://yoursite.com/2019/11/29/%E9%9A%8F%E7%AC%94/"/>
-    <id>http://yoursite.com/2019/11/29/%E9%9A%8F%E7%AC%94/</id>
-    <published>2019-11-28T17:15:00.000Z</published>
-    <updated>2020-02-14T10:14:54.256Z</updated>
-    
-    <content type="html"><![CDATA[<p>桎梏樊笼，让人感到窒息,天天繁重的功课压迫这着我脆弱疲惫的心。</p><p>尽管现在的生活枯燥无聊，尽管说现在每日学习到凌晨。</p><p>难免有压力，难免有困惑。但，无病呻吟，也不可取。唯有向上，唯有坚持。</p><p>这是我们毕业生的必然选择。老师不是说过吗，“有压力才有动力，既然改变不了什么，那就学着适应它。”</p><p>在每日两点一线的生活中，也不乏的向上的奋斗。我想我就像一颗埋在土里的种。</p><p>早晚会噗的冲破束缚住我的壳，长成一棵参天的大树。不论多高，天空永远是我的目标。</p><p>马云说过：“不吃苦，你要青春干嘛？”是的，我们在正值青春的大好年华里，不吃点苦，不去顽强拼搏，生活有何意义？</p><p>我不想在最能吃苦的日子里选择安逸，那么就去拼一拼吧，不就是考试吗，努力一定能考出真实自己！</p><p>加油吧！冲破囚牢，突破自己，方能化茧成蝶！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;桎梏樊笼，让人感到窒息,天天繁重的功课压迫这着我脆弱疲惫的心。&lt;/p&gt;
-&lt;p&gt;尽管现在的生活枯燥无聊，尽管说现在每日学习到凌晨。&lt;/p&gt;
-&lt;p&gt;难免有压力，难免有困惑。但，无病呻吟，也不可取。唯有向上，唯有坚持。&lt;/p&gt;
-&lt;p&gt;这是我们毕业生的必然选择。老师不是说过吗，“有
-      
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="心得" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/%E5%BF%83%E5%BE%97/"/>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/11/21/hello-world/"/>
-    <id>http://yoursite.com/2019/11/21/hello-world/</id>
-    <published>2019-11-21T05:14:19.669Z</published>
-    <updated>2019-11-28T15:27:36.409Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
-    
-    
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   

@@ -160,6 +160,265 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-webpack使用简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/03/webpack%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">webpack使用简介</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/03/03/webpack%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="archive-article-date">
+  	<time datetime="2020-03-03T10:07:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">254字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h3 id="webpack-打包程序小案例"><a href="#webpack-打包程序小案例" class="headerlink" title="webpack 打包程序小案例"></a>webpack 打包程序小案例</h3><h3 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo &amp;&amp; cd demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install webpack --save-dev</span><br><span class="line">touch src/index.js</span><br><span class="line">touch src/Greeter.js</span><br><span class="line">touch public/index.html</span><br><span class="line">touch webpack.config.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="写入项目"><a href="#写入项目" class="headerlink" title="写入项目"></a>写入项目</h3><h5 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: path.join(__dirname, <span class="string">'./src/index.js'</span>),</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.join(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">        filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">'development'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="src-index-js"><a href="#src-index-js" class="headerlink" title="src/index.js"></a>src/index.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> greet = <span class="built_in">require</span>(<span class="string">'./Greeter.js'</span>);</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#root"</span>).appendChild(greet());</span><br></pre></td></tr></table></figure>
+
+<h5 id="src-Greeter-js"><a href="#src-Greeter-js" class="headerlink" title="src/Greeter.js"></a>src/Greeter.js</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> greet = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    greet.textContent = <span class="string">"Hi there and greeting!"</span>;</span><br><span class="line">    <span class="keyword">return</span> greet;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="public-index-html"><a href="#public-index-html" class="headerlink" title="public/index.html"></a>public/index.html</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../dist/bundle.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="insert-into-package-json"><a href="#insert-into-package-json" class="headerlink" title="insert into package.json"></a>insert into package.json</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">        "dev": "webpack --mode development",</span><br><span class="line">        "build": "webpack --mode production"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="报错调试"><a href="#报错调试" class="headerlink" title="报错调试"></a>报错调试</h5><p><img src="https://upload-images.jianshu.io/upload_images/3675862-2718b7df4c33577d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/638/format/webp" alt="error1"></p>
+<p>这是因为<strong>webpack</strong>版本过高导致的结果，使用下面的命令进行打包，可以解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">webpack ./src/index.js -o ./dist/bundle.js</span><br><span class="line">(或)webpack</span><br></pre></td></tr></table></figure>
+
+<p>其中 <strong>bundle.js</strong>是打包后生成的文件的文件名 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/03/webpack%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
+    <article id="post-gulp使用简介" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/03/gulp%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">gulp使用简介</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/03/03/gulp%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="archive-article-date">
+  	<time datetime="2020-03-03T10:06:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">256字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  <div id="busuanzi_container_page_pv" style="font-size:16px;color:rgb(153,153,153);line-height:1.8em;">总阅读量<span id="busuanzi_value_page_pv"></span>次</div>
+        <h2 id="检查-node、npm-和-npx-是否正确安装"><a href="#检查-node、npm-和-npx-是否正确安装" class="headerlink" title="检查 node、npm 和 npx 是否正确安装"></a>检查 node、npm 和 npx 是否正确安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node --version</span><br><span class="line">npm --version</span><br><span class="line">npx --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-gulp-命令行工具"><a href="#安装-gulp-命令行工具" class="headerlink" title="安装 gulp 命令行工具"></a>安装 gulp 命令行工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建项目目录并进入"><a href="#创建项目目录并进入" class="headerlink" title="创建项目目录并进入"></a>创建项目目录并进入</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx mkdirp demo &amp;&amp; cd demo</span><br></pre></td></tr></table></figure>
+
+<h2 id="在项目目录下创建-package-json-文件"><a href="#在项目目录下创建-package-json-文件" class="headerlink" title="在项目目录下创建 package.json 文件"></a>在项目目录下创建 package.json 文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+
+<p>上述命令将指引你设置项目名、版本、描述信息等 </p>
+<h2 id="安装-gulp，作为开发时依赖项"><a href="#安装-gulp，作为开发时依赖项" class="headerlink" title="安装 gulp，作为开发时依赖项"></a>安装 gulp，作为开发时依赖项</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
+
+<h2 id="检查-gulp-版本"><a href="#检查-gulp-版本" class="headerlink" title="检查 gulp 版本"></a>检查 gulp 版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp --version</span><br></pre></td></tr></table></figure>
+
+<p>确保输出与下面的屏幕截图匹配，否则你可能需要执行本指南中的上述步骤。 </p>
+<p><img src="https://gulpjs.com/img/docs-gulp-version-command.png" alt="gulp--version"></p>
+<h2 id="创建-gulpfile-文件"><a href="#创建-gulpfile-文件" class="headerlink" title="创建 gulpfile 文件"></a>创建 gulpfile 文件</h2><p>利用任何文本编辑器在项目大的根目录下创建一个名为 gulpfile.js 的文件，并在文件中输入以下内容： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defaultTask</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// place code for your default task here</span></span><br><span class="line">  cb();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.default = defaultTask</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>在项目根目录下执行 gulp 命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+
+<p>如需运行多个任务（task），可以执行 <code>gulp &lt;task&gt; &lt;othertask&gt;</code>。</p>
+<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p>默认任务（task）将执行，因为任务为空，因此没有实际动作。</p>
+<p><img src="https://gulpjs.com/img/docs-gulp-command.png" alt="task"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/03/gulp%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Twilio的node案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -568,231 +827,6 @@
 
 
   
-    <article id="post-eclipse自动补全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/">eclipse自动补全</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" class="archive-article-date">
-  	<time datetime="2019-12-30T12:08:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">171字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、打开Eclipse，点击“Window-Perfences”"><a href="#1、打开Eclipse，点击“Window-Perfences”" class="headerlink" title="1、打开Eclipse，点击“Window - Perfences”;"></a>1、打开Eclipse，点击“Window - Perfences”;</h4><p><img src="https://img-blog.csdn.net/20161217141203508?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZXJsaWFuMTk5Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="perfences"></p>
-<h4 id="2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项"><a href="#2-在目录树上选择”Java——Editor——Content-Assist”，在右侧的”Auto-Activation”找到”Auto-Activation-triggers-for-java”选项" class="headerlink" title="2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;"></a><strong>2. 在目录树上选择”Java——Editor——Content Assist”，在右侧的”Auto-Activation”找到”Auto Activation triggers for java”选项;</strong></h4><p><img src="https://img-blog.csdn.net/20180121205904456?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2hhdW5fR3Vv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="editor"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/30/eclipse%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
-    <article id="post-linux服务器远程连接mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/">linux服务器远程连接mysql</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/" class="archive-article-date">
-  	<time datetime="2019-12-30T11:20:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-30</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">92字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1、登录数据库mysql"><a href="#1、登录数据库mysql" class="headerlink" title="1、登录数据库mysql"></a>1、登录数据库mysql</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@Centos ~]# mysql -uroot</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> update user <span class="built_in">set</span> password=password(<span class="string">'123456'</span>) <span class="built_in">where</span> user=<span class="string">'root'</span> and host=<span class="string">'localhost'</span>; </span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2、设置远程登录"><a href="#2、设置远程登录" class="headerlink" title="2、设置远程登录"></a>2、设置远程登录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> GRANT ALL PRIVILEGES ON *.* TO root@<span class="string">"%"</span> IDENTIFIED BY <span class="string">'123456'</span> WITH GRANT OPTION;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://images2018.cnblogs.com/blog/909171/201803/909171-20180325130427485-1646749538.png" alt="mysql"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/30/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -900,31 +934,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">dos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">XMind</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">思维导图</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,6 +950,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">dos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">linux</a>
               </li>
              
@@ -944,11 +974,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,11 +982,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">hexo Shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">XMind</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">思维导图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,10 +1014,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">python</a>
               </li>
              
@@ -984,11 +1022,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">pyhton</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Linux SSH</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -996,7 +1034,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ssh</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">pyhton</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Linux SSH</a>
               </li>
              
               <li class="article-tag-list-item">
