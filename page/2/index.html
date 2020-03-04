@@ -160,6 +160,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Twilio的node案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/14/Twilio%E7%9A%84node%E6%A1%88%E4%BE%8B/">Twilio的node案例</a>
+    </h1>
+  
+
+        
+        
+
+<a href="/2020/02/14/Twilio%E7%9A%84node%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-02-14T09:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
+</a>
+		
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">480字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+          
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Twilio-Node-测试"><a href="#Twilio-Node-测试" class="headerlink" title="Twilio + Node 测试"></a>Twilio + Node 测试</h3><p><strong>目的：</strong>使用 twilio 给你的手机发短信</p>
+<h5 id="Twilio是一个位于加利福尼亚的云通信-PaaS-公司。Twilio-允许开发者通过使用它提供的-API-进行编程来接电话，收发短信等。"><a href="#Twilio是一个位于加利福尼亚的云通信-PaaS-公司。Twilio-允许开发者通过使用它提供的-API-进行编程来接电话，收发短信等。" class="headerlink" title="Twilio是一个位于加利福尼亚的云通信 (PaaS) 公司。Twilio 允许开发者通过使用它提供的 API 进行编程来接电话，收发短信等。"></a><code>Twilio</code>是一个位于加利福尼亚的云通信 (PaaS) 公司。Twilio 允许开发者通过使用它提供的 API 进行编程来接电话，收发短信等。</h5><h6 id="先来看一下效果图"><a href="#先来看一下效果图" class="headerlink" title="先来看一下效果图"></a>先来看一下效果图</h6><p><img src="https://img-blog.csdn.net/20161001223207263" alt="sms"></p>
+<p>再来看一下代码，是不是很少啊 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> twilio.rest <span class="keyword">import</span> TwilioRestClient</span><br><span class="line"></span><br><span class="line"># 下面认证信息的值在你的 twilio 账户里可以找到</span><br><span class="line">account_sid = <span class="string">"ACXXXXXXXXXXXXXXXXX"</span></span><br><span class="line">auth_token = <span class="string">"YYYYYYYYYYYYYYYYYY"</span></span><br><span class="line">client = TwilioRestClient(account_sid, auth_token)</span><br><span class="line"></span><br><span class="line">message = client.messages.create(to="+8615912345678",  # 区号+你的手机号码</span><br><span class="line">                                 from_="+15555555555",  # 你的 twilio 电话号码</span><br><span class="line">                                 body=<span class="string">"Do you know who I am ?"</span>)</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">twilio</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/14/Twilio%E7%9A%84node%E6%A1%88%E4%BE%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  
     <article id="post-Window与Linux区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -678,121 +793,6 @@
 
 
   
-    <article id="post-XMind破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/">XMind破解</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2019-12-27T13:48:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-		
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">254字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-          
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">破解版软件 链接: https://pan.baidu.com/s/19l0DY5e-SezYzVKlgmhK0Q 密码: 970l</span><br></pre></td></tr></table></figure>
-
-<h4 id="1、首先下载网盘中的破解版压缩包，解压缩后，双击里面的xmind-8-update7-Windows-exe开始安装，点击Next。"><a href="#1、首先下载网盘中的破解版压缩包，解压缩后，双击里面的xmind-8-update7-Windows-exe开始安装，点击Next。" class="headerlink" title="1、首先下载网盘中的破解版压缩包，解压缩后，双击里面的xmind-8-update7-Windows.exe开始安装，点击Next。"></a>1、首先下载网盘中的破解版压缩包，解压缩后，双击里面的xmind-8-update7-Windows.exe开始安装，点击Next。</h4><p><img src="https://img-blog.csdnimg.cn/20190325131518991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0phbWVsX0xpVG9v,size_16,color_FFFFFF,t_70" alt="xmind"></p>
-<h4 id="2、勾选“I-accept-the-agreement”，点击Next"><a href="#2、勾选“I-accept-the-agreement”，点击Next" class="headerlink" title="2、勾选“I accept the agreement”，点击Next"></a>2、勾选“I accept the agreement”，点击Next</h4><p><img src="https://img-blog.csdnimg.cn/2019032513154125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0phbWVsX0xpVG9v,size_16,color_FFFFFF,t_70" alt="accept"></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">XMind</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">思维导图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/27/XMind%E7%A0%B4%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -904,11 +904,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Koa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">twilio</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">dos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -924,11 +936,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">dos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -937,10 +945,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">思维导图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,15 +976,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">pycharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1000,7 +1004,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,11 +1012,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">yarn</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">yarn</a>
               </li>
             
             <div class="clearfix"></div>
