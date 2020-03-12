@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>EJS学习入门</title>
+    <url>/2020/03/13/EJS%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h2 id="EJS之生成网页案例"><a href="#EJS之生成网页案例" class="headerlink" title="EJS之生成网页案例"></a>EJS之生成网页案例</h2><ol>
+<li><p>关于EJS</p>
+<p><strong>EJS</strong>是一种嵌入式的<strong>JavaScript</strong>的模板引擎</p>
+</li>
+</ol>
+<p>“E” 代表什么？可以表示 “可嵌入（Embedded）”，也可以是“高效（Effective）”、“优雅（Elegant）”或者是“简单（Easy）”。EJS 是一套简单的模板语言，帮你利用普通的 JavaScript 代码生成 HTML 页面。EJS 没有如何组织内容的教条；也没有再造一套迭代和控制流语法；有的只是普通的 JavaScript 代码而已。 </p>
+<ol>
+<li><h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><ul>
+<li><p>快速编译与绘制输出</p>
+</li>
+<li><p>简洁的模板标签：&lt;% %&gt;</p>
+</li>
+<li><p>自定义分割符（例如：用 <? ?> 替换 &lt;% %&gt;）</p>
+</li>
+<li><p>引入模板片段</p>
+</li>
+<li><p>同时支持服务器端和浏览器 JS 环境</p>
+</li>
+<li><p>JavaScript 中间结果静态缓存</p>
+</li>
+<li><p>模板静态缓存</p>
+</li>
+<li><p>兼容 <a href="http://expressjs.com/" target="_blank" rel="noopener">Express</a> 视图系统</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><h4 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h4></li>
+</ol>
+<p>安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">利用 NPM 安装 EJS 很简单。</span><br><span class="line">$ npm install ejs</span><br></pre></td></tr></table></figure>
+
+<p>用法</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">将模板字符串和一些数据作为参数传递给 EJS，Duang，HTML 出来了.</span><br><span class="line">let ejs = require(<span class="string">'ejs'</span>),</span><br><span class="line">    people = [<span class="string">'geddy'</span>, <span class="string">'neil'</span>, <span class="string">'alex'</span>],</span><br><span class="line">    html = ejs.render(<span class="string">'&lt;%= people.join(", "); %&gt;'</span>, &#123;people: people&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>支持</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">从这里下载 最新的浏览器版本，然后引入页面即可。</span><br><span class="line">&lt;script src=<span class="string">"ejs.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  let people = [<span class="string">'geddy'</span>, <span class="string">'neil'</span>, <span class="string">'alex'</span>],</span><br><span class="line">      html = ejs.render(<span class="string">'&lt;%= people.join(", "); %&gt;'</span>, &#123;people: people&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>文档示例</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (user) &#123; %&gt;</span><br><span class="line">  &lt;h2&gt;&lt;%= user.name %&gt;&lt;/h2&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>示例用法</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">let template = ejs.compile(str, options);</span><br><span class="line">template(<span class="keyword">data</span>);</span><br><span class="line">// =&gt; 输出渲染后的 HTML 字符串</span><br><span class="line"></span><br><span class="line">ejs.render(str, <span class="keyword">data</span>, options);</span><br><span class="line">// =&gt; 输出渲染后的 HTML 字符串</span><br><span class="line"></span><br><span class="line">ejs.renderFile(filename, <span class="keyword">data</span>, options, <span class="keyword">function</span>(err, str)&#123;</span><br><span class="line">    // str =&gt; 输出渲染后的 HTML 字符串</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li><code>cache</code> 缓存编译后的函数，需要指定 <code>filename</code></li>
+<li><code>filename</code> 被 <code>cache</code> 参数用做键值，同时也用于 include 语句</li>
+<li><code>context</code> 函数执行时的上下文环境</li>
+<li><code>compileDebug</code> 当值为 <code>false</code> 时不编译调试语句</li>
+<li><code>client</code> 返回独立的编译后的函数</li>
+<li><code>delimiter</code> 放在角括号中的字符，用于标记标签的开与闭</li>
+<li><code>debug</code> 将生成的函数体输出</li>
+<li><code>_with</code> 是否使用 <code>with() {}</code> 结构。如果值为 <code>false</code>，所有局部数据将存储在 <code>locals</code> 对象上。</li>
+<li><code>localsName</code> 如果不使用 <code>with</code> ，localsName 将作为存储局部变量的对象的名称。默认名称是 <code>locals</code></li>
+<li><code>rmWhitespace</code> 删除所有可安全删除的空白字符，包括开始与结尾处的空格。对于所有标签来说，它提供了一个更安全版本的 <code>-%&gt;</code> 标签（在一行的中间并不会剔除标签后面的换行符)。</li>
+<li><code>escape</code> 为 <code>&lt;%=</code> 结构设置对应的转义（escape）函数。它被用于输出结果以及在生成的客户端函数中通过 <code>.toString()</code> 输出。(默认转义 XML)。</li>
+<li><code>outputFunctionName</code> 设置为代表函数名的字符串（例如 <code>&#39;echo&#39;</code> 或 <code>&#39;print&#39;</code>）时，将输出脚本标签之间应该输出的内容。</li>
+<li><code>async</code> 当值为 <code>true</code> 时，EJS 将使用异步函数进行渲染。（依赖于 JS 运行环境对 async/await 是否支持）</li>
+</ul>
+<h3 id="标签含义"><a href="#标签含义" class="headerlink" title="标签含义"></a>标签含义</h3><ul>
+<li><code>&lt;%</code> ‘脚本’ 标签，用于流程控制，无输出。</li>
+<li><code>&lt;%_</code> 删除其前面的空格符</li>
+<li><code>&lt;%=</code> 输出数据到模板（输出是转义 HTML 标签）</li>
+<li><code>&lt;%-</code> 输出非转义的数据到模板</li>
+<li><code>&lt;%#</code> 注释标签，不执行、不输出内容</li>
+<li><code>&lt;%%</code> 输出字符串 ‘&lt;%’</li>
+<li><code>%&gt;</code> 一般结束标签</li>
+<li><code>-%&gt;</code> 删除紧随其后的换行符</li>
+<li><code>_%&gt;</code> 将结束标签后面的空格符删除</li>
+</ul>
+<h3 id="包含（include）"><a href="#包含（include）" class="headerlink" title="包含（include）"></a>包含（include）</h3><p>通过 <code>include</code> 指令将相对于模板路径中的模板片段包含进来。(需要提供 ‘filename’ 参数。) 例如，如果存在 “./views/users.ejs” 和 “./views/user/show.ejs” 两个模板文件，你可以通过 <code>&lt;%- include(&#39;user/show&#39;); %&gt;</code> 代码包含后者。</p>
+<p>你可能需要能够输出原始内容的标签 (<code>&lt;%-</code>) 用于 include 指令，避免对输出的 HTML 代码做转义处理。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;% users.forEach(function(user)&#123; %&gt;</span><br><span class="line">    &lt;%- include(&apos;user/show&apos;, &#123;user: user&#125;); %&gt;</span><br><span class="line">  &lt;% &#125;); %&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义分隔符"><a href="#自定义分隔符" class="headerlink" title="自定义分隔符"></a>自定义分隔符</h3><p>可针对单个模板或全局使用自定义分隔符：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ejs = require(&apos;ejs&apos;),</span><br><span class="line">    users = [&apos;geddy&apos;, &apos;neil&apos;, &apos;alex&apos;];</span><br><span class="line"></span><br><span class="line">// 单个模板文件</span><br><span class="line">ejs.render(&apos;&lt;?= users.join(&quot; | &quot;); ?&gt;&apos;, &#123;users: users&#125;,</span><br><span class="line">    &#123;delimiter: &apos;?&apos;&#125;);</span><br><span class="line">// =&gt; &apos;geddy | neil | alex&apos;</span><br><span class="line"></span><br><span class="line">// 全局</span><br><span class="line">ejs.delimiter = &apos;$&apos;;</span><br><span class="line">ejs.render(&apos;&lt;$= users.join(&quot; | &quot;); $&gt;&apos;, &#123;users: users&#125;);</span><br><span class="line">// =&gt; &apos;geddy | neil | alex&apos;</span><br></pre></td></tr></table></figure>
+
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><p>EJS 附带了一个基本的进程内缓存，用于缓在渲染模板过程中所生成的临时 JavaScript 函数。 通过 Node 的 <code>lru-cache</code> 库可以很容易地加入 LRU 缓存：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ejs = require(&apos;ejs&apos;),</span><br><span class="line">    LRU = require(&apos;lru-cache&apos;);</span><br><span class="line">ejs.cache = LRU(100); // 具有 100 条内容限制的 LRU 缓存</span><br></pre></td></tr></table></figure>
+
+<p>如果要清除 EJS 缓存，调用 <code>ejs.clearCache</code> 即可。如果你正在使用的是 LRU 缓存并且需要设置不同的限额，则只需要将 <code>ejs.cache</code> 重置为 一个新的 LRU 实例即可。</p>
+<h3 id="自定义文件加载器"><a href="#自定义文件加载器" class="headerlink" title="自定义文件加载器"></a>自定义文件加载器</h3><p>默认的文件加载器是 <code>fs.readFileSync</code>，如果你想要的自定义它, 设置<code>ejs.fileLoader</code> 即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ejs = require(&apos;ejs&apos;);</span><br><span class="line">let myFileLoader = function (filePath) &#123;</span><br><span class="line">  return &apos;myFileLoader: &apos; + fs.readFileSync(filePath);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ejs.fileLoader = myFileLoad;</span><br></pre></td></tr></table></figure>
+
+<p>使用此功能，您可以在读取模板之前对其进行预处理。</p>
+<h3 id="布局（Layouts）"><a href="#布局（Layouts）" class="headerlink" title="布局（Layouts）"></a>布局（Layouts）</h3><p>EJS 并未对块（blocks）提供专门的支持，但是可以通过 包含页眉和页脚来实现布局，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%- include(&apos;header&apos;); -%&gt;</span><br><span class="line">&lt;h1&gt;</span><br><span class="line">  Title</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">  My page</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;%- include(&apos;footer&apos;); -%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="客户端支持"><a href="#客户端支持" class="headerlink" title="客户端支持"></a>客户端支持</h3><p>从<a href="https://github.com/mde/ejs/releases/latest" target="_blank" rel="noopener">latest release</a> 链接下载 <code>./ejs.js</code> 或 <code>./ejs.min.js</code> 文件。或者，你可以 clone 这个仓库并 通过执行 <code>jake build</code> 自己编译（或者执行 <code>$(npm bin)/jake build</code>，如果 jake 不是安装在全局环境的话）。</p>
+<p>在页面中包含上面的任意一个文件，然后 <code>ejs</code> 就全局可用了</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;output&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;ejs.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  let people = [&apos;geddy&apos;, &apos;neil&apos;, &apos;alex&apos;],</span><br><span class="line">      html = ejs.render(&apos;&lt;%= people.join(&quot;, &quot;); %&gt;&apos;, &#123;people: people&#125;);</span><br><span class="line">  // With jQuery:</span><br><span class="line">  $(&apos;#output&apos;).html(html);</span><br><span class="line">  // Vanilla JS:</span><br><span class="line">  document.getElementById(&apos;output&apos;).innerHTML = html;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>大多数情况下，EJS 将会按照我们的预期运行; 但是, 仍然需要注意：</p>
+<ol>
+<li>显然, 如果你没有文件系统的访问权限, <code>ejs.renderFile</code> 将无法正常工作。</li>
+<li>相同的原因, 除非为 include 设置一个回调函数，否则 include 无法正常工作。如下所示：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let str = &quot;Hello &lt;%= include(&apos;file&apos;, &#123;person: &apos;John&apos;&#125;); %&gt;&quot;,</span><br><span class="line">      fn = ejs.compile(str, &#123;client: true&#125;);</span><br><span class="line"></span><br><span class="line">fn(data, null, function(path, d)&#123; // include callback</span><br><span class="line">  // path -&gt; &apos;file&apos;</span><br><span class="line">  // d -&gt; &#123;person: &apos;John&apos;&#125;</span><br><span class="line">  // Put your code here</span><br><span class="line">  // Return the contents of file as a string</span><br><span class="line">&#125;); // returns rendered string</span><br></pre></td></tr></table></figure>
+
+<h3 id="在-Express-中使用-EJS"><a href="#在-Express-中使用-EJS" class="headerlink" title="在 Express 中使用 EJS"></a>在 Express 中使用 EJS</h3><p><a href="https://github.com/mde/ejs/wiki/Using-EJS-with-Express" target="_blank" rel="noopener">此 GitHub Wiki 页面</a> 介绍了几种向 Express 传递 EJS 参数的方式。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+        <category>ejs</category>
+      </categories>
+      <tags>
+        <tag>ejs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Electron之shoppinglist案例</title>
     <url>/2020/03/11/Electron%E4%B9%8Bshoppinglist%E6%A1%88%E4%BE%8B/</url>
     <content><![CDATA[<h2 id="Electron项目结构的搭建"><a href="#Electron项目结构的搭建" class="headerlink" title="Electron项目结构的搭建"></a>Electron项目结构的搭建</h2><h3 id="1-直接搭建electron的项目"><a href="#1-直接搭建electron的项目" class="headerlink" title="1. 直接搭建electron的项目"></a>1. 直接搭建electron的项目</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">// 全局安装webpack了的话 生成package.json</span><br><span class="line"> <span class="attribute">npm</span> init </span><br><span class="line">// <span class="number">1</span>.本地开发环境安装electron库</span><br><span class="line"> npm i -D electron </span><br><span class="line">//  在目录下书写  主进程 渲染进程入口文件 main.js为主进程入口  index.html 为  渲染进程入口页面</span><br></pre></td></tr></table></figure>
