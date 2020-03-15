@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Typora + PicGo搭建集成图床</title>
+    <url>/2020/03/15/Typora-PicGo%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p>之前推荐过一波<a href="http://mp.weixin.qq.com/s?__biz=MzU4NjE1NTI2Mw==&mid=2247486141&idx=1&sn=bff7bc11e935d3ffad66bdca0a694bcd&chksm=fdfedf2dca89563bcc7255cdeb8b4ff34e46858bc616dd52602718fdc221ff470d419d93045f&scene=21#wechat_redirect" target="_blank" rel="noopener"><strong>自用的 Markdown 编辑器</strong></a>，当时提到了 <strong>Typora</strong>，缺点就是<strong>无法集成图床</strong>。</p>
+<p>其中一个折中的办法就是手动使用 PicGo 上传到图床，然后将地址粘贴到 Typora。</p>
+<p><strong>那么 Typora 中能不能直接粘贴图片后，就自动上传到图床呢？</strong></p>
+<p>网上搜索时，给出的解决方案大都是 Mac 下的：Typora+iPic。</p>
+<p>可惜矮矬穷的小编用的是 Windows。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibawlP21FH3pNqiaBOXe0rjSClVbHU5bA05OUy5Hj1pqSHxrAMfm60s8w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>今天无意间打开 Typora，检测更新时，发现这一幕！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibfHcOChhVgWHW6Ea7DQDp8K5ic4ibtusIyuaJBCLMUYYHL2nYQOQy0ttQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">▲ 更新日志</p>
+<p>没想到啊，没想到</p>
+<p><strong>浓眉大眼的 Typora 和 PicGo 竟然勾结在一起了！</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibGiadibosZfFszSDPPJoBhSUAx9F5TctCQ4qZPibicrTgszf5ibYZN3kWvhw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>小编当即试用了一把，感觉还不错，后面可以考虑将 Typora 作为主力 Markdown 编辑器了。</p>
+<p><strong>毕竟颜值高！</strong></p>
+<p>下面分享下 Typora + PicGo 的设置步骤。</p>
+<p>当然，<strong>只是针对 Windows 版。</strong></p>
+<h1 id="PicGo设置"><a href="#PicGo设置" class="headerlink" title="PicGo设置"></a>PicGo设置</h1><h2 id="版本要求"><a href="#版本要求" class="headerlink" title="版本要求"></a>版本要求</h2><p>PicGo 2.2.0 及以上。</p>
+<p>图床的设置这里不说了，不会的，自行百度。</p>
+<p><img src="/.com//gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img"></p>
+<h2 id="激活PicGo-Server"><a href="#激活PicGo-Server" class="headerlink" title="激活PicGo-Server"></a>激活PicGo-Server</h2><p>2.2.0 版本之后，<strong>PicGo 内部会默认开启一个小型的服务器，用于配合其他应用来调用 PicGo 进行上传。</strong></p>
+<p><strong>如何设置呢？</strong></p>
+<p>打开 PicGo 详细页面，进入 <strong>PicGo 设置–设置Server</strong></p>
+<p>参考下图进行设置即可。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibYzaktN0BbibDSQcCAtPM7PwJDCeCJ0vicv0icgxZic7OcRQreGOY5BYnug/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<h1 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h1><p>下面是 Typora 的设置。</p>
+<h2 id="版本要求-1"><a href="#版本要求-1" class="headerlink" title="版本要求"></a>版本要求</h2><p>Typora 0.9.84 及以上。</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p><strong>文件–偏好设置–图像</strong></p>
+<p>参考图片中的进行配置。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibONeqdr6RcAdibv98blwnmxn4EeZ9rlTqib09Rtzdc7Io9yotrlbZICRQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>选择本机 PicGo 的路径。</p>
+<h2 id="验证图片上传"><a href="#验证图片上传" class="headerlink" title="验证图片上传"></a>验证图片上传</h2><p>这里还可以<strong>验证图片上传功能</strong>。</p>
+<p>验证成功会返回下图结果：</p>
+<p><img src="/.com//gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="img">▲ 验证上传</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>上面的设置完成后，在 Typora 里写字时，就可以自动上传图片到图床啦。</p>
+<h2 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h2><p>可以直接选择图片，然后拖拽到编辑页面。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLib9CG1r50jnYJxeooh9SKSVfwXKCHs7H9ooXLJ4YIbHXFrCP2OO409HQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img">▲ 拖拽上传</p>
+<h2 id="编辑器内插入"><a href="#编辑器内插入" class="headerlink" title="编辑器内插入"></a>编辑器内插入</h2><p>使用快捷键 <strong>Ctrl + Shift + I</strong>，可以调出插入图片的功能。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLib8gLicndHpeQdUkxSwy24Ha9SegaP4INGAI1LrQT6XqdHDticHQEbibMwQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img">▲ 编辑器内插入</p>
+<h2 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h2><p>也可以直接复制图片，然后再编辑器中直接粘贴。</p>
+<p>或者<strong>截图后直接粘贴</strong>（比如 Snipaste）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibCicanLDicNK7TjZE6Ymoncjf0DodjibHdYgh7ibveq9NXTTnaOOEU8YEWA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img">▲ 截图后直接粘贴</p>
+<p>这里需要多一个<strong>点击**</strong>上传<strong>**图片</strong>的操作。</p>
+<p>然后图片就可以上传到图床了。</p>
+<p>另外，还可以看到<strong>所有的上传在</strong> <strong>Pi**</strong>cGo 的相册里都能找到：**</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6b3KbEywh0VeEPHfrJL8Nicic38RXLblLibCEjwu5y6OJwKsXUFIYBibICpHRtNM8UAul0WbJDT3hzRj6paDRDclxg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<h1 id="说在后面"><a href="#说在后面" class="headerlink" title="说在后面"></a>说在后面</h1><p>Typora+PicGo，终于安排上了！</p>
+<p>真香啊！</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>typora</tag>
+        <tag>picGo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>EJS学习入门</title>
     <url>/2020/03/13/EJS%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h2 id="EJS之生成网页案例"><a href="#EJS之生成网页案例" class="headerlink" title="EJS之生成网页案例"></a>EJS之生成网页案例</h2><ol>
