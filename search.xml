@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-04-11之牢骚</title>
+    <url>/2020/04/11/2020-04-11%E4%B9%8B%E7%89%A2%E9%AA%9A/</url>
+    <content><![CDATA[<p>噫吁嚱，危乎高哉！太难了，2020全球爆发新型冠状病毒疫情，广东（lz在广东）等地，各大行业受到极大影响！现在想找份工作都难！</p>
+<a id="more"></a>
+
+<p>​    通知面试的都是一些技术培训机构。搞的是：人在广州，迷茫之中！无论是需要一份实习，还是一份工作都太难了，薪资低，offer少，面试难！今年的金三银四？？？完全么得了呀！2020就只能啃老了吗！</p>
+<p>   面试HR有两个还算是同乡！只是无奈技术<img src="/.com//C:%5CUsers%5Clenovo%5CAppData%5CLocal%5CTemp%5CSGPicFaceTpBq%5C10488%5C05F7078E.gif" alt="img"></p>
+<p>算了，终究是自己太菜了！还是要不然，就先回去培训或者回家提升提升再战吧！</p>
+]]></content>
+      <tags>
+        <tag>前端面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Typora + PicGo搭建集成图床</title>
     <url>/2020/03/15/Typora-PicGo%E6%90%AD%E5%BB%BA%E9%9B%86%E6%88%90%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p>之前推荐过一波<a href="http://mp.weixin.qq.com/s?__biz=MzU4NjE1NTI2Mw==&mid=2247486141&idx=1&sn=bff7bc11e935d3ffad66bdca0a694bcd&chksm=fdfedf2dca89563bcc7255cdeb8b4ff34e46858bc616dd52602718fdc221ff470d419d93045f&scene=21#wechat_redirect" target="_blank" rel="noopener"><strong>自用的 Markdown 编辑器</strong></a>，当时提到了 <strong>Typora</strong>，缺点就是<strong>无法集成图床</strong>。</p>

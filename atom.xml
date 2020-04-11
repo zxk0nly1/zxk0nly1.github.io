@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-15T09:04:36.497Z</updated>
+  <updated>2020-04-11T15:18:22.323Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020-04-11之牢骚</title>
+    <link href="http://yoursite.com/2020/04/11/2020-04-11%E4%B9%8B%E7%89%A2%E9%AA%9A/"/>
+    <id>http://yoursite.com/2020/04/11/2020-04-11%E4%B9%8B%E7%89%A2%E9%AA%9A/</id>
+    <published>2020-04-11T15:06:01.000Z</published>
+    <updated>2020-04-11T15:18:22.323Z</updated>
+    
+    <content type="html"><![CDATA[<p>噫吁嚱，危乎高哉！太难了，2020全球爆发新型冠状病毒疫情，广东（lz在广东）等地，各大行业受到极大影响！现在想找份工作都难！</p><a id="more"></a><p>​    通知面试的都是一些技术培训机构。搞的是：人在广州，迷茫之中！无论是需要一份实习，还是一份工作都太难了，薪资低，offer少，面试难！今年的金三银四？？？完全么得了呀！2020就只能啃老了吗！</p><p>   面试HR有两个还算是同乡！只是无奈技术<img src="/.com//C:%5CUsers%5Clenovo%5CAppData%5CLocal%5CTemp%5CSGPicFaceTpBq%5C10488%5C05F7078E.gif" alt="img"></p><p>算了，终究是自己太菜了！还是要不然，就先回去培训或者回家提升提升再战吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;噫吁嚱，危乎高哉！太难了，2020全球爆发新型冠状病毒疫情，广东（lz在广东）等地，各大行业受到极大影响！现在想找份工作都难！&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="前端面试" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Typora + PicGo搭建集成图床</title>
@@ -642,35 +663,6 @@
     
     
       <category term="node" scheme="http://yoursite.com/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue/clii安装踩坑</title>
-    <link href="http://yoursite.com/2019/12/12/vue-cli%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91/"/>
-    <id>http://yoursite.com/2019/12/12/vue-cli%E5%AE%89%E8%A3%85%E8%B8%A9%E5%9D%91/</id>
-    <published>2019-12-12T12:47:45.000Z</published>
-    <updated>2020-02-14T10:14:54.253Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Vue脚手架搭建"><a href="#Vue脚手架搭建" class="headerlink" title="Vue脚手架搭建"></a>Vue脚手架搭建</h3><h4 id="1-Vue简介"><a href="#1-Vue简介" class="headerlink" title="1 Vue简介"></a>1 Vue简介</h4><h5 id="现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计"><a href="#现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计" class="headerlink" title="现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计"></a>现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计</h5><h4 id="2-安装vue-cli脚手架"><a href="#2-安装vue-cli脚手架" class="headerlink" title="2 安装vue/cli脚手架"></a>2 安装vue/cli脚手架</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install @vue/cli -g</span></span><br></pre></td></tr></table></figure><p>如果全局安装过旧版本的vue-cli（1.x或者2.x)需要先卸载旧版的vue-cli(Vue3与旧版本不兼容)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm uninstall vue-cli -g </span></span><br><span class="line">//或者yarn global remove vue-cli</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/5814981-fd406123ad261b9f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/939/format/webp" alt="vue-cli"></p><p><u>可以看到我之前的版本是2.9.6，卸载成功后，vue命令便不存在了</u> </p><a id="more"></a><p>另外，Vue-Cli 3 需要nodejs的版本&gt;=8.9</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node -v(查看node版本信息)</span></span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/5814981-a9d6d36fc8564b44.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/516/format/webp" alt="node"></p><h4 id="3-安装-vue-cli"><a href="#3-安装-vue-cli" class="headerlink" title="3.安装@vue/cli"></a>3.安装@vue/cli</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cnpm install -g @vue/cli </span></span><br><span class="line">//或者yarn global add @vue/cli</span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/5814981-3d5dfb1fb27d5689.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/677/format/webp" alt="@vue/cli"></p><h4 id="4-查看Vue版本"><a href="#4-查看Vue版本" class="headerlink" title="4.查看Vue版本"></a>4.查看Vue版本</h4><p><img src="https://upload-images.jianshu.io/upload_images/5814981-97dc60d5a8968aab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/677/format/webp" alt="vue"></p><h4 id="5使用Vue新建项目"><a href="#5使用Vue新建项目" class="headerlink" title="5使用Vue新建项目"></a>5使用Vue新建项目</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue create my-pro</span></span><br><span class="line">//文件名 不支持驼峰（含大写字母）</span><br></pre></td></tr></table></figure><h4 id="默认选项后，成功新建项目demo"><a href="#默认选项后，成功新建项目demo" class="headerlink" title="默认选项后，成功新建项目demo"></a>默认选项后，成功新建项目demo</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> my-pro</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm run serve</span></span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/5814981-0c45fee0960e693f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/547/format/webp" alt="run"></p><h4 id="6-查看运行结果"><a href="#6-查看运行结果" class="headerlink" title="6 查看运行结果"></a>6 查看运行结果</h4><p><img src="https://upload-images.jianshu.io/upload_images/5814981-e532bc879ad294ef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/767/format/webp" alt="8080"></p><h4 id="7-踩坑实例"><a href="#7-踩坑实例" class="headerlink" title="7 踩坑实例"></a>7 踩坑实例</h4><p>有时会安装@vue/cli出现错误，使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i npm -g (更新npm版本)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm i cnpm --registry=https://registry.npm.taobao.org</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cnpm i -g @vue/cli</span></span><br></pre></td></tr></table></figure><p><strong>使用以上命令更新镜像源，使用淘宝镜像源来安装下载（国内）</strong></p><h4 id="8-拉取2-x模板"><a href="#8-拉取2-x模板" class="headerlink" title="8 拉取2.x模板"></a>8 拉取2.x模板</h4><h5 id="Vue-CLI-3-覆盖了旧版本的vue-命令，如果需要使用旧版本的-vue-init-功能，可以全局安装一个桥接工具："><a href="#Vue-CLI-3-覆盖了旧版本的vue-命令，如果需要使用旧版本的-vue-init-功能，可以全局安装一个桥接工具：" class="headerlink" title="Vue CLI 3 覆盖了旧版本的vue 命令，如果需要使用旧版本的 vue init 功能，可以全局安装一个桥接工具："></a>Vue CLI 3 覆盖了旧版本的<code>vue</code> 命令，如果需要使用旧版本的 <code>vue init</code> 功能，可以全局安装一个桥接工具：</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g @vue/cli-init //`vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vue init webpack my-project</span></span><br></pre></td></tr></table></figure><h4 id="9-安装插件"><a href="#9-安装插件" class="headerlink" title="9 安装插件"></a>9 安装插件</h4><h5 id="官方提示：vue-add-的设计意图是为了安装和调用-Vue-CLI-插件。这不意味着替换掉普通的-npm-包。对于这些普通的-npm-包，你仍然需要选用包管理器-！"><a href="#官方提示：vue-add-的设计意图是为了安装和调用-Vue-CLI-插件。这不意味着替换掉普通的-npm-包。对于这些普通的-npm-包，你仍然需要选用包管理器-！" class="headerlink" title="官方提示：vue add 的设计意图是为了安装和调用 Vue CLI 插件。这不意味着替换掉普通的 npm 包。对于这些普通的 npm 包，你仍然需要选用包管理器 ！"></a><strong><em>官方提示：</em></strong><code>vue add</code> 的设计意图是为了安装和调用 Vue CLI 插件。这不意味着替换掉普通的 npm 包。对于这些普通的 npm 包，你仍然需要选用包管理器 ！</h5><p><strong><em>官方警告：</em>我们推荐在运行 <code>vue add</code> 之前将项目的最新状态提交，因为该命令可能调用插件的文件生成器并很有可能更改你现有的文件。</strong> </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue add @vue/eslint </span></span><br><span class="line">//如果不带 @vue 前缀，该命令会换作解析一个 unscoped 的包，你也可以基于一个指定的 scope 使用（eg：vue add @foo/bar）</span><br></pre></td></tr></table></figure><h4 id="10-图形化界面"><a href="#10-图形化界面" class="headerlink" title="10 图形化界面"></a>10 图形化界面</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vue ui</span></span><br></pre></td></tr></table></figure><p><img src="https://upload-images.jianshu.io/upload_images/5814981-e93d4fca9ff20679.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/549/format/webp" alt="ui"></p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-b51ecf3e250c645e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/684/format/webp" alt="img"></p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-40447e81043f981e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/643/format/webp" alt="img1"></p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-18a81fa7ca54212b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/643/format/webp" alt="img2"></p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-4bfb10a6bb59934f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/289/format/webp" alt="img3"></p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-12ca22daf4d36d3e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/564/format/webp" alt="img4"></p><p><strong><em>安装完成：</em>你可以在这管理（安装、删除）插件、运行并分析你的项目文件</strong> </p><p><img src="https://upload-images.jianshu.io/upload_images/5814981-ff86292f519d23a8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1042/format/webp" alt="img5"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文章来源：https://my.oschina.net/wangnian/blog/2051369</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Vue脚手架搭建&quot;&gt;&lt;a href=&quot;#Vue脚手架搭建&quot; class=&quot;headerlink&quot; title=&quot;Vue脚手架搭建&quot;&gt;&lt;/a&gt;Vue脚手架搭建&lt;/h3&gt;&lt;h4 id=&quot;1-Vue简介&quot;&gt;&lt;a href=&quot;#1-Vue简介&quot; class=&quot;headerlink&quot; title=&quot;1 Vue简介&quot;&gt;&lt;/a&gt;1 Vue简介&lt;/h4&gt;&lt;h5 id=&quot;现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计&quot;&gt;&lt;a href=&quot;#现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计&quot; class=&quot;headerlink&quot; title=&quot;现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计&quot;&gt;&lt;/a&gt;现在Vue作为最火的前端开发框架，具有入门快，效率高等特点，广受互联网公司的喜爱，纷纷使用和推荐Vue框架来做前端的开发与设计&lt;/h5&gt;&lt;h4 id=&quot;2-安装vue-cli脚手架&quot;&gt;&lt;a href=&quot;#2-安装vue-cli脚手架&quot; class=&quot;headerlink&quot; title=&quot;2 安装vue/cli脚手架&quot;&gt;&lt;/a&gt;2 安装vue/cli脚手架&lt;/h4&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; npm install @vue/cli -g&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;如果全局安装过旧版本的vue-cli（1.x或者2.x)需要先卸载旧版的vue-cli(Vue3与旧版本不兼容)&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; npm uninstall vue-cli -g &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;//或者yarn global remove vue-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/5814981-fd406123ad261b9f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/939/format/webp&quot; alt=&quot;vue-cli&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;u&gt;可以看到我之前的版本是2.9.6，卸载成功后，vue命令便不存在了&lt;/u&gt; &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="教程" scheme="http://yoursite.com/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   
